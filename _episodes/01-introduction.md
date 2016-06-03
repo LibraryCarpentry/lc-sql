@@ -15,193 +15,152 @@ keypoints:
 - "Each page's configuration is stored at the top of that page."
 - "Groups of files are stored in collection directories whose names begin with an underscore."
 ---
-This episode describes the tools we use to build and manage lessons.
-These simplify many tasks, but make other things more complicated.
 
-## Repositories on GitHub
+## What is SQL?
 
-Our lessons are stored in Git repositories (or "repos") on GitHub.
-We use the term *fork* to mean "a copy of a GitHub-hosted repo that is also hosted on GitHub"
-and the term *clone* to mean "a copy of a GitHub-hosted repo that's located on someone else's machine".
-In both cases,
-the duplicate has a reference that points to the original repo.
+SQL (Structured Query Language) is a powerful language used to interrogate and
+manipulate relational databases. It is highly specialised. It is not a general
+programming language that you can use to write an entire program. However, SQL
+queries can be embedded in other programming languages to let any program work
+with databases. There are several different kinds of SQL, but all support the
+same basic statements that we will be covering today.
 
-In an ideal world,
-we would put all of the common files used by our lessons
-(such as the CSS style files and the image files with project logos)
-in a template repo.
-The master copy of each lesson would be a fork of that repo,
-and each author's working copy would be a fork of that master:
+## Relational databases
 
-![Forking Repositories]({{ site.root }}/fig/forking.svg)
+Relational databases consist of one or more tables of data. These tables have
+_fields_ (columns) and _records_ (rows). Every field has a data _type_. Every
+value in the same field of each record has the same _type_. These tables can be
+linked to each when a field in one table can be matched to a field in another
+table. SQL _queries_ are the commands that let you look up data in a database or
+make calculations based on columns.
 
-However, GitHub only allows a user to have one fork of any particular repo.
-This creates a problem for us because an author may be involved in writing several lessons,
-each with its own repo.
-We therefore use [GitHub Importer][github-importer] to create new lessons.
-After the lesson has been created,
-we manually add the [template repository]({{ site.template_repo }}) as a remote called `template`
-to update the lesson when the template changes.
+## Why use SQL
 
-![Repository Links]({{ site.root }}/fig/repository-links.svg)
+Using SQL lets you keep the data separate from the analysis. There is no risk of
+accidentally changing data when you are analysing it. If the data is changed,
+a saved query can be re-run to analyse the new data.
 
-## GitHub Pages
+SQL is optimised for handling large amounts of data. Using data types helps with
+quality control of entries - you will receive an error if you try to enter a word
+into a field that should contain a number. Understanding the nature of relational
+databases, and using SQL, will help you in using databases in programming languages
+and in doing similar things using programming languages such as R or Python.
 
-If a repository has a branch called `gh-pages` (short for "GitHub Pages"),
-GitHub publishes its content to create a website for the repository.
-If the repository's URL is `https://github.com/USERNAME/REPOSITORY`,
-the website is `https://USERNAME.github.io/REPOSITORY`.
+## Why are Librarians well suited to SQL?
+Librarianship is about information management. We help sort and organise
+information and we help people find information. Most of us use mediated queries
+to help people find the information they need e.g. conducting a search via
+a library catalogue. With SQL, you can directly construct your database queries
+without the constraints (e.g. field name or search limitations) imposed by
+a mediated search interface. Librarians are good at searching information so
+don’t be afraid – constructing queries using SQL is simply a different and more
+direct way of finding information. 
 
-GitHub Pages sites can include static HTML pages,
-which are published as-is,
-or they can use [Jekyll][jekyll] as described below
-to compile HTML and/or Markdown pages with embedded directives
-to create the pages for display.
+## Database Management Systems
 
-> ## Why Doesn't My Site Appear?
->
-> If the root directory of a repository contains a file called `.nojekyll`,
-> GitHub will *not* generate a website for that repository's `gh-pages` branch.
-{: .callout}
+There are a number of different database management systems for working with
+relational data. We're going to use SQLite today, but basically everything we
+teach you will apply to the other database systems as well (e.g., MySQL,
+PostgreSQL, MS Access, Filemaker Pro). The only things that will differ are the
+details of exactly how to import and export data and the datatypediffs.
 
-We write lessons in Markdown because it's simple to learn
-and isn't tied to any specific language.
-(The ReStructured Text format popular in the Python world,
-for example,
-is a complete unknown to R programmers.)
-If authors want to write lessons in something else,
-such as [R Markdown][r-markdown],
-they must generate HTML or Markdown that [Jekyll][jekyll] can process
-and commit that to the repository.
-The [next episode]({{ site.root }}/02-formatting/) describes the Markdown we use.
+## Database Design
 
-> ## Teaching Tools
->
-> We do *not* prescribe what tools instructors should use when actually teaching:
-> the [Jupyter Notebook][jupyter],
-> [RStudio][rstudio],
-> and the good ol' command line are equally welcome up on stage.
-> All we specify is the format of the lesson notes.
-{: .callout}
+* Every row-column combination contains a single _atomic_ value, i.e., not
+   containing parts we might want to work with separately.
+* One field per type of information
+* No redundant information
+    * Split into separate tables with one table per class of information
+    * Needs an identifier in common between tables – shared column - to
+       reconnect (foreign key).
 
-## Jekyll
+## Introduction to SQLite Manager
 
-GitHub uses [Jekyll][jekyll] to turn Markdown into HTML.
-It looks for text files that begin with a header formatted like this:
+Let's all open the database we downloaded in SQLite Manager by clicking on the
+open file icon.
 
-~~~
----
-variable: value
-other_variable: other_value
----
-...stuff in the page...
-~~~
-{: .source}
+You can see the tables in the database by looking at the left hand side of the
+screen under Tables.
 
-and inserts the values of those variables into the page when formatting it.
-The three dashes that start the header *must* be the first three characters in the file:
-even a single space before them will make [Jekyll][jekyll] ignore the file.
+To see the contents of a table, click on that table and then click on the Browse
+and search tab in the right hand section of the screen.
 
-The header's content must be formatted as [YAML][yaml],
-and may contain Booleans, numbers, character strings, lists, and dictionaries of name/value pairs.
-Values from the header are referred to in the page as `page.variable`.
-For example,
-this page:
+If we want to write a query, we click on the Execute SQL tab.
 
-~~~
----
-name: Science
----
-Today we are going to study {{page.name}}.
-~~~
 
-is translated into:
+## Dataset Description
 
-~~~
-<html>
-<body>
-<p>Today we are going to study Science.</p>
-</body>
-</html>
-~~~
+The data we will be using is a catalogue of journal articles from 51 different
+journals published during 2015. Articles are published in different languages,
+by different publishers and under different licences.
 
-> ## Back in the Day...
->
-> The previous version of our template did not rely on Jekyll,
-> but instead required authors to build HTML on their desktops
-> and commit that to the lesson repository's `gh-pages` branch.
-> This allowed us to use whatever mix of tools we wanted for creating HTML (e.g., [Pandoc][pandoc]),
-> but complicated the common case for the sake of uncommon cases,
-> and didn't model the workflow we want learners to use.
-{: .callout}
+## Import
 
-## Configuration
+1. Download the CSV files from
+    [Figshare](https://dx.doi.org/10.6084/m9.figshare.3409471)
+1. Start a New Database __Database -> New Database__
+2. Start the import __Database -> Import__
+3. Select the file to import
+4. Give the table a name that matches the file name (articles, journals,
+    licences, languages  publishers), or use the default
+5. If the first row has column headings, check the appropriate box
+6. Make sure the delimiter and quotation options are appropriate for the CSV
+    files. Ensure 'Ignore trailing Separator/Delimiter' is left _unchecked_.
+7. Press __OK__
+8. When asked if you want to modify the table, click __OK__
+9. Set the data types for each field: choose TEXT for fields with text
+   (e.g. `Title`, `Authors`, `DOI`, etc.) and INT for fields with numbers
+   (e.g. `Citation_Count`, `Author_Count`, `Day`, etc.)
 
-[Jekyll][jekyll] also reads values from a configuration file called `_config.yml`,
-which are referred to in pages as `site.variable`.
-The [lesson template]({{ site.template_repo }}) does *not* include `_config.yml`,
-since each lesson will change some of its value,
-which would result in merge collisions each time the lesson was updated from the template.
-Instead,
-the [template]({{ site.template_repo }}) contains a script called `bin/initialize`
-which should be run *once* to create an initial `_config.yml` file.
-The author should then edit the values in the top half of the file.
+You can also use this same approach to append new data to an existing table.
 
-The [template]({{ site.template_repo }}) also contains `_config_dev.yml`,
-which overrides some settings for use during desktop development.
-The Makefile that comes with the [template]({{ site.template_repo }})
-adds these values to those in `_config.yml` when running a local server
-(see [below](#previewing)).
+## Adding data to existing tables
 
-## Collections
+1. Browse & Search -> Add
+1. Enter data into a csv file and append
 
-If several Markdown files are stored in a directory whose name begins with an underscore,
-[Jekyll][jekyll] creates a [collection][jekyll-collection] for them.
-We rely on this for both lesson episodes (stored in `_episodes`)
-and extra files (stored in `_extras`).
-For example,
-putting the extra files in `_extras` allows us to populate the "Extras" menu pulldown automatically.
-To clarify what will appear where,
-we store files that appear directly in the navigation bar
-in the root directory of the lesson.
-[The last episode]({{ site.root }}/03-organization/) describes these files.
 
-## Installing
+## Data types
 
-You can preview changes by pushing to the `gh-pages` branch of your own repository,
-but it's often easier to view them locally first.
-To do that,
-you will need to install [Jekyll][jekyll] and a few other packages used by GitHub Pages.
-The easiest way to do that is:
+| Data type                          | Description                                                                                              |
+|------------------------------------|:---------------------------------------------------------------------------------------------------------|
+| CHARACTER(n)                       | Character string. Fixed-length n                                                                         |
+| VARCHAR(n) or CHARACTER VARYING(n) | Character string. Variable length. Maximum length n                                                      |
+| BINARY(n)                          | Binary string. Fixed-length n                                                                            |
+| BOOLEAN                            | Stores TRUE or FALSE values                                                                              |
+| VARBINARY(n) or BINARY VARYING(n)  | Binary string. Variable length. Maximum length n                                                         |
+| INTEGER(p)                         | Integer numerical (no decimal).                                                                          |
+| SMALLINT                           | Integer numerical (no decimal).                                                                          |
+| INTEGER                            | Integer numerical (no decimal).                                                                          |
+| BIGINT                             | Integer numerical (no decimal).                                                                          |
+| DECIMAL(p,s)                       | Exact numerical, precision p, scale s.                                                                   |
+| NUMERIC(p,s)                       | Exact numerical, precision p, scale s. (Same as DECIMAL)                                                 |
+| FLOAT(p)                           | Approximate numerical, mantissa precision p. A floating number in base 10 exponential notation.          |
+| REAL                               | Approximate numerical                                                                                    |
+| FLOAT                              | Approximate numerical                                                                                    |
+| DOUBLE PRECISION                   | Approximate numerical                                                                                    |
+| DATE                               | Stores year, month, and day values                                                                       |
+| TIME                               | Stores hour, minute, and second values                                                                   |
+| TIMESTAMP                          | Stores year, month, day, hour, minute, and second values                                                 |
+| INTERVAL                           | Composed of a number of integer fields, representing a period of time, depending on the type of interval |
+| ARRAY                              | A set-length and ordered collection of elements                                                          |
+| MULTISET                           | A variable-length and unordered collection of elements                                                   |
+| XML                                | Stores XML data                                                                                          |
 
-1.  Install Ruby if you don't already have it.
-2.  Install Ruby Gems (Ruby's package manager).
-3.  `gem install github-pages` (which will give you Jekyll and things it depends on).
 
-See [the Jekyll installation documentation][jekyll-install]
-for full instructions.
+## SQL Data Type Quick Reference
 
-## Previewing
+Different databases offer different choices for the data type definition.
 
-[Jekyll][jekyll] can be used in two ways:
-to compile source files into HTML pages in the `_site` directory,
-or to do that and also run a small web server at <http://127.0.0.1:4000/>
-so that the pages can be previewed.
-We recommend using the latter,
-since it gives a more accurate impression of what your lesson will actually look like.
+The following table shows some of the common names of data types between the various database platforms:
 
-The Makefile in the root directory of the project contains commands for building the site.
-`make site` builds files but does not run a server,
-while `make serve` builds the files and runs a server.
-(It also re-builds the site whenever it notices changes in the source files.)
-Run `make` on its own to get a full list of commands.
+| Data type                                               | Access                    | SQLServer            | Oracle             | MySQL          | PostgreSQL    |
+|:--------------------------------------------------------|:--------------------------|:---------------------|:-------------------|:---------------|:--------------|
+| boolean                                                 | Yes/No                    | Bit                  | Byte               | N/A            | Boolean       |
+| integer                                                 | Number (integer)          | Int                  | Number             | Int / Integer  | Int / Integer |
+| float                                                   | Number (single)           | Float / Real         | Number             | Float          | Numeric       |
+| currency                                                | Currency                  | Money                | N/A                | N/A            | Money         |
+| string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
+| string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
+| binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
 
-[github-importer]: https://import.github.com/
-[jekyll]: http://jekyllrb.com/
-[jekyll-collection]: https://jekyllrb.com/docs/collections/
-[jekyll-install]: https://jekyllrb.com/docs/installation/
-[jupyter]: https://jupyter.org/
-[pandoc]: https://pandoc.org/
-[r-markdown]: http://rmarkdown.rstudio.com/
-[rstudio]: https://www.rstudio.com/
-[yaml]: http://yaml.org/
