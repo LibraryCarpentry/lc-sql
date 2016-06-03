@@ -17,218 +17,249 @@ keypoints:
 - "Special sections are formatted as blockquotes that open with a level-2 header and close with a class identifier."
 - "Special sections may be callouts or challenges; other styles are used by the template itself."
 ---
-A lesson consists of one or more episodes,
-each of which has:
+## Writing my first query
 
-*   a [YAML][yaml] header containing required values
-*   some teachable content
-*   some exercises
+Let's start by using the __articles__ table. Here we have data on every
+article that has been published, including the title of the article, the
+authors, date of publication, etc.
 
-The diagram below shows the internal structure of a single episode file
-(click on the image to see a larger version):
-
-<a href="{{ site.root }}/fig/episode-format.png"><img src="{{ site.root }}/fig/episode-format-small.png" alt="Formatting Rules" /></a>
-
-## Locations and Names
-
-Episode files are stored in `_episodes` so that [Jekyll][jekyll] will create a [collection][jekyll-collection] for them.
-Episodes are named `dd-subject.md`,
-where `dd` is a two-digit sequence number (with a leading 0)
-and `subject` is a one- or two-word identifier.
-For example,
-the episodes of this example lesson are
-`_episodes/01-tooling.md`
-`_episodes/02-formatting.md`,
-and `_episodes/03-organization.md`.
-These become `/01-tooling/index.html`, `/02-formatting/index.html`, and `/03-organization/index.html` in the published site.
-When referring to other episodes, use:
-
-{% raw %}
-    [link text]({{ site.root }}/dd-subject/)
-{% endraw %}
-
-i.e., use the episode's directory path below the site root
-*without* the `index.html` (which the web server fills in automatically).
-This will ensure that the link is valid both when previewing during desktop development
-and when the site is published on GitHub.
-
-## Episode Header
-
-Each episode's [YAML][yaml] header must contain:
-
-*   the episode's title
-*   time estimates for teaching and exercises
-*   motivating questions
-*   lesson objectives
-*   a summary of key points
-
-These values are stored in the header so that [Jekyll][jekyll] will read them
-and make them accessible in other pages as `site.episodes.the_episode.key`,
-where `the_episode` is the particular episode
-and `key` is the key in the [YAML][yaml] header.
-This lets us do things like
-list each episode's key questions in the syllabus on the lesson home page.
-
-> ## Raw Text
->
-> Markdown in YAML values in the header is *not* rendered when the value is used elsewhere.
-{: .callout}
-
-## Episode Structure
-
-The episode layout template in `_layouts/episode.html` automatically creates
-an introductory block that summarizes the lesson's teaching time,
-exercise time,
-key questions,
-and objectives.
-It also automatically creates a closing block that lists its key points.
-In between,
-authors should use only:
-
-*   paragraphs
-*   images
-*   tables
-*   ordered and unordered lists
-*   code samples (described below).
-*   special blockquotes (described below)
-
-Authors should *not* use:
-
-*   sub-headings
-*   HTML layout (e.g., `div` elements).
-
-## Formatting Code
-
-Inline code fragments are formatted using back-quotes.
-Longer code blocks are formatted by opening and closing the block with `~~~` (three tildes),
-with a class specifier after the block:
-
-    ~~~
-    for thing in collection:
-        do_something
-    ~~~
-    {: .source}
-
-which is rendered as:
+Let’s write an SQL query that selects only the title column from the
+articles table.
 
 ~~~
-for thing in collection:
-    do_something
+SELECT title
+FROM articles;
 ~~~
 {: .source}
 
-The class specified at the bottom using an opening curly brace and colon,
-the class identifier with a leading dot,
-and a closing curly brace.
-The [template]({{ site.template_repo }}) provides three styles for code blocks:
+We have capitalized the words SELECT and FROM because they are SQL keywords.
+SQL is case-insensitive, but it helps for readability, and is good style.
 
-*   `.error`: error messages.
-*   `.output`: program output.
-*   `.source`: program source.
-
-> ## Why No Syntax Highlighting?
->
-> We do not use syntax highlighting for code blocks
-> because some learners' systems won't do it,
-> or will do it differently than what they see on screen.
-{: .callout}
-
-## Special Blockquotes
-
-We use blockquotes to group headings and text
-rather than wrapping them in `div` elements.
-in order to avoid confusing [Jekyll][jekyll]'s parser
-(which sometimes has trouble with Markdown inside HTML).
-Each special blockquote must started with a level-2 header,
-but may contain anything after that.
-For example,
-a callout is formatted like this:
+If we want more information, we can add a new column to the list of fields,
+right after `SELECT`:
 
 ~~~
-> ## Callout Title
->
-> text
-> text
-> text
->
-> ~~~
-> code
-> ~~~
-{: .callout}
+SELECT title, authors, issns, date
+FROM articles;
 ~~~
+{: .source}
 
-(Note the empty lines within the blockquote after the title and before the code block.)
-This is rendered as:
+Or we can select all of the columns in a table using the wildcard '*'
 
-> ## Callout Title
+~~~
+SELECT *
+FROM articles;
+~~~
+{: .source}
+
+## Unique values
+
+If we want only the unique values so that we can quickly see the ISSNs of
+journals included in the collection, we use `DISTINCT`
+
+~~~
+SELECT DISTINCT issns
+FROM articles;
+~~~
+{: .source}
+
+If we select more than one column, then the distinct pairs of values are
+returned
+
+~~~
+SELECT DISTINCT issns, day, month, year
+FROM articles;
+~~~
+{: .source}
+
+## Calculated values
+
+We can also do calculations with the values in a query.
+For example, if we wanted to look at the relative popularity of an article,
+so we divide by 10 (because we know the most popular article has 10 citations).
+
+~~~
+SELECT first_author, citation_count/10.0
+FROM articles;
+~~~
+{: .source}
+
+When we run the query, the expression `citation_count / 10.0` is evaluated for each
+row and appended to that row, in a new column.  Expressions can use any fields,
+any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
+functions. For example, we could round the values to make them easier to read.
+
+~~~
+SELECT first_author, title, ROUND(author_count/16.0, 2)
+FROM articles;
+~~~
+{: .source}
+
+> ## Challenge
 >
-> text
-> text
-> text
->
-> ~~~
-> code
-> ~~~
-{: .callout}
-
-The [lesson template]({{ site.template_repo }}) defines styles
-for the following special blockquotes:
-
-<div class="row">
-  <div class="col-md-6" markdown="1">
-
-> ## .callout
->
-> An aside or other comment.
-{: .callout}
-
-> ## `.challenge`
->
-> An exercise.
+> Write a query that returns the title, first_author, citation_count,
+> author_count, month and year
 {: .challenge}
 
-> ## `.checklist`
+## Filtering
+
+Databases can also filter data – selecting only the data meeting certain
+criteria.  For example, let’s say we only want data for a specific ISSN
+for the _Theory and Applications of Mathematics & Computer Science_ journal,
+which has a ISSN code 2067-2764|2247-6202.  We need to add a
+`WHERE` clause to our query:
+
+~~~
+SELECT *
+FROM articles
+WHERE issns='2067-2764|2247-6202';
+~~~
+{: .source}
+
+
+We can use more sophisticated conditions by combining tests with `AND` and `OR`.
+For example, suppose we want the data on _Theory and Applications of Mathematics
+& Computer Science_ published after June:
+
+~~~
+SELECT *
+FROM articles
+WHERE (issns='2067-2764|2247-6202') AND (month > 06);
+~~~
+{: .source}
+
+Note that the parentheses are not needed, but again, they help with
+readability.  They also ensure that the computer combines `AND` and `OR`
+in the way that we intend.
+
+If we wanted to get data for the *Humanities* and *Religions* journals, which have
+ISSNs codes `2076-0787` and `2077-1444`, we could combine the tests using OR:
+
+~~~
+SELECT *
+FROM articles
+WHERE (issns = '2076-0787') OR (issns = '2077-1444');
+~~~
+{: .source}
+
+> ## Challenge
 >
-> Checklists.
-{: .checklist}
+> Write a query that returns the title, first_author, issns, month and year
+> for all single author papers with more than 4 citations
+{: .challenge}
 
-> ## `.keypoints`
+## Building more complex queries
+
+Now, lets combine the above queries to get data for the 3 journals from
+June on.  This time, let’s use IN as one way to make the query easier
+to understand.  It is equivalent to saying `WHERE (issns = '2076-0787') OR (issns
+= '2077-1444') OR (issns = '2067-2764|2247-6202')`, but reads more neatly:
+
+~~~
+SELECT *
+FROM articles
+WHERE (month > 06) AND (issns IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
+~~~
+{: .source}
+
+We started with something simple, then added more clauses one by one, testing
+their effects as we went along.  For complex queries, this is a good strategy,
+to make sure you are getting what you want.  Sometimes it might help to take a
+subset of the data that you can easily see in a temporary database to practice
+your queries on before working on a larger or more complicated database.
+
+When the queries become more complex, it can be useful to add comments. In SQL,
+comments are started by `--`, and end at the end of the line. For example, a
+commented version of the above query can be written as:
+
+~~~
+-- Get post June data on selected journals
+-- These are in the articles table, and we are interested in all columns
+SELECT * FROM articles
+-- Sampling month is in the column `month`, and we want to include
+-- everything after June
+WHERE (month > 06)
+-- selected journals have the `issns` 2076-0787, 2077-1444, 2067-2764|2247-6202
+AND (issns IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
+~~~
+{: .source}
+
+Although SQL queries often read like plain English, it is *always* useful to add
+comments; this is especially true of more complex queries.
+
+## Sorting
+
+We can also sort the results of our queries by using `ORDER BY`.
+For simplicity, let’s go back to the articles table and alphabetize it by issns.
+
+~~~
+SELECT *
+FROM articles
+ORDER BY issns ASC;
+~~~
+{: .source}
+
+The keyword `ASC` tells us to order it in Ascending order.
+We could alternately use `DESC` to get descending order.
+
+~~~
+SELECT *
+FROM articles
+ORDER BY first_author DESC;
+~~~
+{: .guide}
+
+`ASC` is the default.
+
+We can also sort on several fields at once.
+To truly be alphabetical, we might want to order by genus then species.
+
+~~~
+SELECT *
+FROM articles
+ORDER BY issns DESC, first_author ASC;
+~~~
+{: .guide}
+
+> ## Challenge
 >
-> Key points of an episode.
-{: .keypoints}
+> Write a query that returns title, first_author, issns and citation_count from
+> the articles table, sorted with the most cited article at the top and
+> alphabetically
+{: .challenge}
 
-  </div>
-  <div class="col-md-6" markdown="1">
+## Order of execution
 
-> ## `.objectives`
+Another note for ordering. We don’t actually have to display a column to sort by
+it.  For example, let’s say we want to order the articles by their ISSN, but
+we only want to see Authors and Titles.
+
+~~~
+SELECT authors, title
+FROM articles
+WHERE issns = '2067-2764|2247-6202'
+ORDER BY date ASC, first_author ASC;
+~~~
+{: .source}
+
+We can do this because sorting occurs earlier in the computational pipeline than
+field selection.
+
+The computer is basically doing this:
+
+1. Filtering rows according to WHERE
+2. Sorting results according to ORDER BY
+3. Displaying requested columns or expressions.
+
+Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
+BY`. It is possible to write a query as a single line, but for readability,
+we recommend to put each clause on its own line.
+
+> ## Challenge
 >
-> Episode objectives.
-{: .objectives}
-
-> ## `.prereq`
->
-> Prerequisites.
-{: .prereq}
-
-> ## `.solution`
->
-> Exercise solution.
-{: .solution}
-
-> ## `.testimonial`
->
-> A laudatory quote from a user.
-{: .testimonial}
-
-  </div>
-</div>
-
-Most authors will only use `.callout`, `.challenge`, and `.prereq`,
-as the others are automatically generated by the template.
-Note that `.prereq` is meant for describing things that learners should know before starting this lesson;
-setup instructions do not have a particular style,
-but are instead put on the `setup.md` page.
-
-[jekyll]: http://jekyllrb.com/
-[jekyll-collection]: https://jekyllrb.com/docs/collections/
-[yaml]: http://yaml.org/
+> Let's try to combine what we've learned so far in a single
+> query.  Using the articles table write a query to display the three date fields,
+> `issn`, and `citation_count`, for articles published after June, ordered
+> alphabetically by first author name. Write the query as a single line, then
+> put each clause on its own line, and see how more legible the query becomes!
+{: .challenge}
