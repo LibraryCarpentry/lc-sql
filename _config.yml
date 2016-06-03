@@ -3,16 +3,16 @@
 #------------------------------------------------------------
 
 # Domain for searches.
-domain: "https://gvwilson.github.io/new-lesson-example"
+domain: "https://data-lessons.github.io/library-sql"
 
 # URL for repository.
-repo: "https://github.com/gvwilson/new-lesson-example"
+repo: "https://github.com/data-lessons/library-sql"
 
 # Root URL for lesson below domain.
-root: "/new-lesson-example"
+root: "/library-sql"
 
 # Overall lesson title.
-title: "Lesson Example"
+title: "SQL Introduction for Librarians"
 
 # Contact email address.
 email: gvwilson@software-carpentry.org
@@ -21,7 +21,7 @@ email: gvwilson@software-carpentry.org
 kind: "lesson"
 
 # Which carpentry is this ("swc", "dc")?
-carpentry: "dc"
+carpentry: "swc"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
