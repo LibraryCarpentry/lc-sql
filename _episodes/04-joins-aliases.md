@@ -1,9 +1,9 @@
 ---
-title: "Mechanics"
-teaching: 5
-exercises: 0
+title: "Joins and aliases"
+teaching: 30
+exercises: 30
 questions:
-- "What do lesson maintainers do?"
+- "Linking tables together and using shorthand"
 objectives:
 - "FIXME"
 keypoints:
