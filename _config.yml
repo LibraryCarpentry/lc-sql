@@ -12,16 +12,16 @@ repo: "https://github.com/data-lessons/library-sql"
 root: "/library-sql"
 
 # Overall lesson title.
-title: "SQL Introduction for Librarians"
+title: "SQL for Libraries"
 
 # Contact email address.
-email: gvwilson@software-carpentry.org
+email: m@tthi.as
 
 # What kind of thing is this ("workshop", "lesson")?
 kind: "lesson"
 
 # Which carpentry is this ("swc", "dc")?
-carpentry: "swc"
+carpentry: "dc"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).

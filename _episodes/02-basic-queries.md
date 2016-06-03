@@ -1,16 +1,16 @@
 ---
-title: "Formatting"
-teaching: 10
-exercises: 0
+title: "Basic queries"
+teaching: 25
+exercises: 20
 questions:
-- "How are Software and Data Carpentry lessons formatted?"
+- "First steps in querying databases"
 objectives:
-- "Explain the header of each episode."
+- "FIXME"
 - "Explain the overall structure of each episode."
 - "Explain why blockquotes are used to format parts of episodes."
 - "Explain the use of code blocks in episodes."
 keypoints:
-- "Lesson episodes are stored in _episodes/dd-subject.md."
+- "FIXME"
 - "Each episode's title must include a title, time estimates, motivating questions, lesson objectives, and key points."
 - "Episodes should not use sub-headings or HTML layout."
 - "Code blocks can be have the source, regular output, or error class."
