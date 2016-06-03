@@ -1,14 +1,14 @@
 ---
-title: "GitHub, Markdown, and Jekyll"
-teaching: 10
+title: "Introduction to SQL"
+teaching: 15
 exercises: 0
 questions:
-- "How are pages published?"
+- "What is SQL? Why is it significant?"
 objectives:
-- "Explain how GitHub Pages produce web sites from Git repositories."
+- "FIXME"
 - "Explain Jekyll's formatting rules."
 keypoints:
-- "Lessons are stored in Git repositories on GitHub."
+- "FIXME"
 - "Lessons are written in Markdown."
 - "Jekyll translates the files in the gh-pages branch into HTML for viewing."
 - "The site's configuration is stored in _config.yml."
