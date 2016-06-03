@@ -1,13 +1,13 @@
 ---
-title: "Lesson Organization"
-teaching: 10
-exercises: 0
+title: "Aggregation"
+teaching: 30
+exercises: 30
 questions:
-- "How are the files in a lesson organized?"
+- "Using queries to summmarise data"
 objectives:
-- "Explain overall organization of lesson files."
+- "FIXME"
 keypoints:
-- "Auxiliary files are stored in the _layouts, _includes, and assets directories."
+- "FIXME"
 - "The code of conduct, license, Makefile, and contribution guidelines should not be modified."
 - "The README, authors' list, and citation instructions must be updated for each lesson."
 - "The home page, reference guide, setup instructions, discussion page, and instructors' guide must be updated for each lesson."

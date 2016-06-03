@@ -11,7 +11,7 @@ please see [the setup instructions](/setup/).
 
 > ## Prerequisites
 >
-> Use the `.prereq` style to specify prerequisites.
+> Install [Firefox](https://www.mozilla.org/en-US/firefox/products/) and [SQLite](https://www.sqlite.org/)
 {: .prereq}
 
 [contributing]: {{ site.repo }}/blob/gh-pages/CONTRIBUTING.md
