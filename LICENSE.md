@@ -4,7 +4,7 @@ title: "Licenses"
 permalink: /license/
 ---
 
-*Library Carpentry builds on the work of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]. It uses the same contribution guidelines as these projects. This can be found below.*
+*Library Carpentry builds on the work of [Software Carpentry][http://software-carpentry.org/] and [Data Carpentry][http://www.datacarpentry.org/]. It uses the same contribution guidelines as these projects. This can be found below.*
 
 ______
 
