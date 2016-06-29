@@ -7,6 +7,7 @@ permalink: /license/
 *Library Carpentry builds on the work of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]. It uses the same contribution guidelines as these projects. This can be found below.*
 
 ______
+
 ## Instructional Material
 
 All Software Carpentry and Data Carpentry instructional material is
