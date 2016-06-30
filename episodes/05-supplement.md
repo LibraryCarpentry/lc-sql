@@ -1,5 +1,5 @@
 ---
-title: "Database design -- supplement"
+title: "Database design supplement"
 teaching: 15
 exercises: 0
 questions:
