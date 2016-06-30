@@ -3,19 +3,11 @@ title: "Basic queries"
 teaching: 25
 exercises: 20
 questions:
-- "First steps in querying databases"
+- "How do you query databases using SQL?"
 objectives:
-- "FIXME"
-- "Explain the overall structure of each episode."
-- "Explain why blockquotes are used to format parts of episodes."
-- "Explain the use of code blocks in episodes."
+- "understand how SQL can be used to query databases"
 keypoints:
-- "FIXME"
-- "Each episode's title must include a title, time estimates, motivating questions, lesson objectives, and key points."
-- "Episodes should not use sub-headings or HTML layout."
-- "Code blocks can be have the source, regular output, or error class."
-- "Special sections are formatted as blockquotes that open with a level-2 header and close with a class identifier."
-- "Special sections may be callouts or challenges; other styles are used by the template itself."
+- "SQL is ideal for querying databases"
 ---
 ## Writing my first query
 
