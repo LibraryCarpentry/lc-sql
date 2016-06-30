@@ -3,18 +3,11 @@ title: "Database design -- supplement"
 teaching: 15
 exercises: 0
 questions:
-- "FIXME
 - "What is SQL? Why is it significant?"
 objectives:
-- "FIXME"
-- "Explain Jekyll's formatting rules."
+- "to understand the signifance and utilty of SQL"
 keypoints:
-- "FIXME"
-- "Lessons are written in Markdown."
-- "Jekyll translates the files in the gh-pages branch into HTML for viewing."
-- "The site's configuration is stored in _config.yml."
-- "Each page's configuration is stored at the top of that page."
-- "Groups of files are stored in collection directories whose names begin with an underscore."
+- "SQL is one of many database management systems"
 ---
 
 Database Design
