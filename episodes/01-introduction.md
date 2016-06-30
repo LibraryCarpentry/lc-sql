@@ -5,15 +5,9 @@ exercises: 0
 questions:
 - "What is SQL? Why is it significant?"
 objectives:
-- "FIXME"
-- "Explain Jekyll's formatting rules."
+- "to be able to explain what SQL is"
 keypoints:
-- "FIXME"
-- "Lessons are written in Markdown."
-- "Jekyll translates the files in the gh-pages branch into HTML for viewing."
-- "The site's configuration is stored in _config.yml."
-- "Each page's configuration is stored at the top of that page."
-- "Groups of files are stored in collection directories whose names begin with an underscore."
+- "SQL is a powerful language used to interrogate and manipulate relational databases"
 ---
 
 ## What is SQL?
