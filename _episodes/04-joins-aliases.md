@@ -5,9 +5,9 @@ exercises: 30
 questions:
 - "Linking tables together and using shorthand"
 objectives:
-- "FIXME"
+- "to understand how to link tables together"
 keypoints:
-- "FIXME"
+- "SQL is ideal for linking tables"
 ---
 
 ## Joins
