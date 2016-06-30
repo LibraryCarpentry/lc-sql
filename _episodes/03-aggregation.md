@@ -3,11 +3,11 @@ title: "Aggregation"
 teaching: 30
 exercises: 30
 questions:
-- "How do you aggregate databases in SQL?"
+- "How do you aggregate recoeds in SQL?"
 objectives:
-- "to understand how to aggregate databases in SQL"
+- "to understand how to aggregate records in SQL"
 keypoints:
-- "SQL is ideal for aggregating databases"
+- "SQL is ideal for aggregating database records"
 ---
 
 ## `COUNT` and `GROUP BY`
