@@ -3,15 +3,11 @@ title: "Aggregation"
 teaching: 30
 exercises: 30
 questions:
-- "Using queries to summmarise data"
+- "How do you aggregate databases in SQL?"
 objectives:
-- "FIXME"
+- "to understand how to aggregate databases in SQL"
 keypoints:
-- "FIXME"
-- "The code of conduct, license, Makefile, and contribution guidelines should not be modified."
-- "The README, authors' list, and citation instructions must be updated for each lesson."
-- "The home page, reference guide, setup instructions, discussion page, and instructors' guide must be updated for each lesson."
-- "The Makefile stores commonly-used commands."
+- "SQL is ideal for aggregating databases"
 ---
 
 ## `COUNT` and `GROUP BY`
