@@ -37,9 +37,9 @@ There are many other aggregate functions included in SQL including
 
 > ## Challenge
 >
-> Write a query that returns: total weight, average weight, and the min and
-> max weights for all animals caught over the duration of the survey. Can you
-> modify it so that it outputs these values only for weights between 5 and 10?
+> Write a query that returns: total, average, the min and max number of
+> citations for each journal. Can you modify it so that it outputs only
+> journals with more than 5 citations in average?
 {: .challenge}
 
 Now, let's see how many articles were published in each journal. We do this
@@ -59,10 +59,10 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Write queries that return:
 >
-> 1. How many individuals were counted in each year.
+> 1. How many articles were counted each month.
 a) in total;
-b) per each species.
-> 2. Average weight of each species in each year.
+b) per each journal.
+> 2. Average number of citations of each journal in each month.
 Can you modify the above queries combining them into one?
 {: .challenge}
 
@@ -106,8 +106,9 @@ of these groups (`HAVING`).
 
 > ## Challenge
 >
-> Write a query that returns, from the `species` table, the number of
-`genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+> Write a query that returns, from the `articles` table, the average number of
+> `citations` for each journal, only for the journals with 5 or more citations
+> on average.
 {: .challenge}
 
 ## Ordering aggregated results.
@@ -166,8 +167,9 @@ results in the _Views_ tab just like a table
 
 > ## Challenge
 >
-> Write a query that returns the number of each species
-caught in each year sorted from most often caught species to the least
-occurring ones within each year starting from the most recent records. Save
-this query as a `VIEW`.
+> Write a query that returns the number of articles published in each journal
+> on each month, sorted from most popular journal to the ones with least
+> publications each month starting from the most recent records. Save this
+> query as a `VIEW`.
+
 {: .challenge}
