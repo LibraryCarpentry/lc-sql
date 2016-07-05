@@ -57,12 +57,6 @@ ON articles.issns = journals.issns;
 ~~~
 {: .source}
 
-> ## Challenge:
->
-> Write a query that returns the genus, the species, and the weight
-> of every individual captured at the site.
-{: .challenge}
-
 Joins can be combined with sorting, filtering, and aggregation.  So, if we
 wanted average number of authors for articles on different journals, we
 could do something like
@@ -76,6 +70,13 @@ GROUP BY articles.issns;
 ~~~
 {: .source}
 
+> ## Challenge:
+>
+> Write a query that returns the journal title, total number of articles published
+> and average number of citations for every journal.
+{: .challenge}
+
+
 It is worth mentioning that you can join multiple tables. For example:
 
 SELECT title, first_author, journal_title, language
@@ -87,14 +88,8 @@ ON languages.id = articles.languageid
 
 > ## Challenge:
 >
-> Write a query that returns the number of genus of the animals caught in each
-> plot in descending order.
-{: .challenge}
-
-> ## Challenge:
->
-> Write a query that finds the average weight of each rodent species
-> (i.e., only include species with Rodent in the taxa field).
+> Write a query that returns the journal title, publisher name, and number of
+> articles published, ordered by number of articles in descending order.
 {: .challenge}
 
 ## Aliases
@@ -139,83 +134,78 @@ questions into a sensible SQL query (and subsequently visualize and interpret
 our results).
 
 Have a look at the following questions; these questions are written in plain
-English. Can you translate them to *SQL queries* and give a suitable answer?  
+English. Can you translate them to *SQL queries* and give a suitable answer?
 
-> ## Challenge 1 
-> How many plots from each type are there?  
+> ## Challenge 1
+> How many plots from each type are there?
 {: .challenge}
-
-> ## Challenge 2
-> How many specimens are of each gender are there for each year?  
-{: .challenge}
-
-> ## Challenge 3 
-> How many specimens of each species were captured in each type of plot?  
-{: .challenge}
-
-> ## Challenge 4 
-> What is the average weight of each taxa?  
-{: .challenge}
-
-> ## Challenge 5
-> What is the percentage of each species in each taxa?  
-{: .challenge}
-
-> ## Challenge 6
-> What are the minimum, maximum and average weight for each species of Rodent?  
-{: .challenge}
-
-> ## Challenge 7 
-> What is the hindfoot length for male and female rodent of each species?
-> Is there a Male / Female difference?  
-{: .challenge}
-
-> ## Challenge 8
-> What is the average weight of each rodent species over the course of the years?
-> Is there any noticeable trend for any of the species?  
-{: .challenge}
-
-Proposed solutions:
 
 > ## Solution 1
 > ~~~
-> `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
+> SELECT first_author, COUNT( * ) AS n_articles
+> FROM articles
+> GROUP BY first_author
+> ORDER BY n_articles DESC
 > ~~~
 {: .solution}
+
+> ## Challenge 2
+> How many papers have a single author? How many have 2 authors? How many 3? etc?
+{: .challenge}
 
 > ## Solution 2
 > ~~~
-> `SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year`
+> SELECT author_count, count( * )
+> FROM articles
+> GROUP BY author_count
 > ~~~
 {: .solution}
+
+> ## Challenge 3
+> How many articles are published for each language? (Ignore articles where
+> language is unknown).
+{: .challenge}
 
 > ## Solution 3
 > ~~~
-> `SELECT species_id, plot_type, count(*) FROM surveys JOIN plots ON surveys.plot_id=plots.plot_id WHERE species_id IS NOT null GROUP BY species_id, plot_type`
+> SELECT language, count( * )
+> FROM articles
+> JOIN languages
+> ON articles.languageid=languages.id
+> WHERE language IS NOT null
+> GROUP BY language
 > ~~~
 {: .solution}
+
+> ## Challenge 4
+> How many articles are published for each licence type, and what is the average
+> number of citations for that licence type
+{: .challenge}
 
 > ## Solution 4
 > ~~~
-> `SELECT taxa, AVG(weight) FROM surveys JOIN species ON species.species_id=surveys.species_id GROUP BY taxa`
+> SELECT licence, avg( citation_count ), count( * )
+> FROM articles
+> JOIN licences
+> ON articles.licenceid=licences.id
+> WHERE licence IS NOT null
+> GROUP BY licence
 > ~~~
 {: .solution}
+
+> ## Challenge 5
+> Create a view with article, journal and publisher information
+{: .challenge}
 
 > ## Solution 5
 > ~~~
-> `SELECT taxa, 100.0*count(*)/(SELECT count(*) FROM surveys) FROM surveys JOIN species ON surveys.species_id=species.species_id GROUP BY taxa`
-> ~~~
-{: .solution}
-
-> ## Solution 6
-> ~~~
-> `SELECT surveys.species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id`
-> ~~~
-{: .solution}
-
-> ## Solution 7
-> ~~~
-> `SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex`
+> CREATE VIEW all_data AS
+> SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
+> FROM articles
+> JOIN journals
+> ON articles.issns=journals.issns
+> JOIN publishers
+> ON publishers.id=journals.publisherid
 > ~~~
 {: .solution}
 
