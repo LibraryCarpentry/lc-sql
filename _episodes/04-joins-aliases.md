@@ -138,79 +138,78 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 
 > ## Challenge 1
 > How many plots from each type are there?
+>
+> > ## Solution 1
+> > ~~~
+> > SELECT first_author, COUNT( * ) AS n_articles
+> > FROM articles
+> > GROUP BY first_author
+> > ORDER BY n_articles DESC
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
-> ## Solution 1
-> ~~~
-> SELECT first_author, COUNT( * ) AS n_articles
-> FROM articles
-> GROUP BY first_author
-> ORDER BY n_articles DESC
-> ~~~
-{: .solution}
 
 > ## Challenge 2
 > How many papers have a single author? How many have 2 authors? How many 3? etc?
+>
+> > ## Solution 2
+> > ~~~
+> > SELECT author_count, count( * )
+> > FROM articles
+> > GROUP BY author_count
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
-> ## Solution 2
-> ~~~
-> SELECT author_count, count( * )
-> FROM articles
-> GROUP BY author_count
-> ~~~
-{: .solution}
 
 > ## Challenge 3
 > How many articles are published for each language? (Ignore articles where
 > language is unknown).
+>
+> > ## Solution 3
+> > ~~~
+> > SELECT language, count( * )
+> > FROM articles
+> > JOIN languages
+> > ON articles.languageid=languages.id
+> > WHERE language IS NOT null
+> > GROUP BY language
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
-> ## Solution 3
-> ~~~
-> SELECT language, count( * )
-> FROM articles
-> JOIN languages
-> ON articles.languageid=languages.id
-> WHERE language IS NOT null
-> GROUP BY language
-> ~~~
-{: .solution}
 
 > ## Challenge 4
 > How many articles are published for each licence type, and what is the average
 > number of citations for that licence type
+>
+> > ## Solution 4
+> > ~~~
+> > SELECT licence, avg( citation_count ), count( * )
+> > FROM articles
+> > JOIN licences
+> > ON articles.licenceid=licences.id
+> > WHERE licence IS NOT null
+> > GROUP BY licence
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
-> ## Solution 4
-> ~~~
-> SELECT licence, avg( citation_count ), count( * )
-> FROM articles
-> JOIN licences
-> ON articles.licenceid=licences.id
-> WHERE licence IS NOT null
-> GROUP BY licence
-> ~~~
-{: .solution}
 
 > ## Challenge 5
 > Create a view with article, journal and publisher information
+>
+> > ## Solution 5
+> > ~~~
+> > CREATE VIEW all_data AS
+> > SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
+> > FROM articles
+> > JOIN journals
+> > ON articles.issns=journals.issns
+> > JOIN publishers
+> > ON publishers.id=journals.publisherid
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
-> ## Solution 5
-> ~~~
-> CREATE VIEW all_data AS
-> SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
-> FROM articles
-> JOIN journals
-> ON articles.issns=journals.issns
-> JOIN publishers
-> ON publishers.id=journals.publisherid
-> ~~~
-{: .solution}
-
-> ## Solution 8
-> ~~~
-> `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
-> ~~~
-{: .solution}

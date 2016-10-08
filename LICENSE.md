@@ -3,11 +3,6 @@ layout: page
 title: "Licenses"
 permalink: /license/
 ---
-
-*Library Carpentry builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). It uses the same license as these projects. This can be found below.*
-
-______
-
 ## Instructional Material
 
 All Software Carpentry and Data Carpentry instructional material is
@@ -78,7 +73,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Trademark
 
-"Software Carpentry" an "Data Carpentry" and their respective logos
+"Software Carpentry" and "Data Carpentry" and their respective logos
 are registered trademarks of [NumFOCUS][numfocus].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
