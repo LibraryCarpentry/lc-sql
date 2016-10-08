@@ -3,6 +3,12 @@ layout: page
 title: "Licenses"
 permalink: /license/
 ---
+
+*Library Carpentry builds on the work of [Software
+Carpentry]({{site.swc_site}}) and [Data
+Carpentry]({{site.dc_site}}). It uses the same license as these
+projects. This can be found below.*
+
 ## Instructional Material
 
 All Software Carpentry and Data Carpentry instructional material is
