@@ -22,7 +22,7 @@ Using the wildcard simply counts the number of records (rows)
 SELECT COUNT(*)
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 We can also find out how many authors have participated in these articles.
 
@@ -30,7 +30,7 @@ We can also find out how many authors have participated in these articles.
 SELECT COUNT(*), SUM(author_count)
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
@@ -50,7 +50,7 @@ SELECT issns, COUNT( * )
 FROM articles
 GROUP BY issns;
 ~~~
-{: .source}
+{: .sql}
 
 `GROUP BY` tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give `GROUP BY` a comma separated list.
@@ -81,7 +81,7 @@ FROM articles
 GROUP BY issns
 HAVING COUNT( * ) >= 10;
 ~~~
-{: .source}
+{: .sql}
 
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields.
@@ -97,7 +97,7 @@ FROM articles
 GROUP BY issns
 HAVING occurrences >= 10;
 ~~~
-{: .source}
+{: .sql}
 
 Note that in both queries, `HAVING` comes _after_ `GROUP BY`. One way to
 think about this is: the data are retrieved (`SELECT`), can be filtered
@@ -123,7 +123,7 @@ FROM articles
 GROUP BY issns
 ORDER BY COUNT( * ) DESC;
 ~~~
-{: .source}
+{: .sql}
 
 ## Saving queries for future use
 
@@ -144,7 +144,7 @@ SELECT issns, COUNT(*)
 FROM articles
 GROUP BY issns;
 ~~~
-{: .source}
+{: .sql}
 
 Now, we will be able to access these results with a much shorter notation:
 
@@ -152,7 +152,7 @@ Now, we will be able to access these results with a much shorter notation:
 SELECT *
 FROM journal_counts;
 ~~~
-{: .source}
+{: .sql}
 
 Assuming we do not need this view anymore, we can remove it from the database
 almost as we would a table:
@@ -160,7 +160,7 @@ almost as we would a table:
 ~~~
 DROP VIEW journal_counts;
 ~~~
-{: .source}
+{: .sql}
 
 You can also add a view using _Create View_ in the _View_ menu and see the
 results in the _Views_ tab just like a table
@@ -171,5 +171,4 @@ results in the _Views_ tab just like a table
 > on each month, sorted from most popular journal to the ones with least
 > publications each month starting from the most recent records. Save this
 > query as a `VIEW`.
-
 {: .challenge}
