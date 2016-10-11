@@ -22,7 +22,7 @@ articles table.
 SELECT title
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 We have capitalized the words SELECT and FROM because they are SQL keywords.
 SQL is case-insensitive, but it helps for readability, and is good style.
@@ -34,7 +34,7 @@ right after `SELECT`:
 SELECT title, authors, issns, date
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 Or we can select all of the columns in a table using the wildcard '*'
 
@@ -42,7 +42,7 @@ Or we can select all of the columns in a table using the wildcard '*'
 SELECT *
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 ## Unique values
 
@@ -53,7 +53,7 @@ journals included in the collection, we use `DISTINCT`
 SELECT DISTINCT issns
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 If we select more than one column, then the distinct pairs of values are
 returned
@@ -62,7 +62,7 @@ returned
 SELECT DISTINCT issns, day, month, year
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 ## Calculated values
 
@@ -74,7 +74,7 @@ so we divide by 10 (because we know the most popular article has 10 citations).
 SELECT first_author, citation_count/10.0
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 When we run the query, the expression `citation_count / 10.0` is evaluated for each
 row and appended to that row, in a new column.  Expressions can use any fields,
@@ -85,7 +85,7 @@ functions. For example, we could round the values to make them easier to read.
 SELECT first_author, title, ROUND(author_count/16.0, 2)
 FROM articles;
 ~~~
-{: .source}
+{: .sql}
 
 > ## Challenge
 >
@@ -106,7 +106,7 @@ SELECT *
 FROM articles
 WHERE issns='2067-2764|2247-6202';
 ~~~
-{: .source}
+{: .sql}
 
 
 We can use more sophisticated conditions by combining tests with `AND` and `OR`.
@@ -118,7 +118,7 @@ SELECT *
 FROM articles
 WHERE (issns='2067-2764|2247-6202') AND (month > 06);
 ~~~
-{: .source}
+{: .sql}
 
 Note that the parentheses are not needed, but again, they help with
 readability.  They also ensure that the computer combines `AND` and `OR`
@@ -132,7 +132,7 @@ SELECT *
 FROM articles
 WHERE (issns = '2076-0787') OR (issns = '2077-1444');
 ~~~
-{: .source}
+{: .sql}
 
 > ## Challenge
 >
@@ -152,7 +152,7 @@ SELECT *
 FROM articles
 WHERE (month > 06) AND (issns IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
 ~~~
-{: .source}
+{: .sql}
 
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy,
@@ -174,7 +174,7 @@ WHERE (month > 06)
 -- selected journals have the `issns` 2076-0787, 2077-1444, 2067-2764|2247-6202
 AND (issns IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
 ~~~
-{: .source}
+{: .sql}
 
 Although SQL queries often read like plain English, it is *always* useful to add
 comments; this is especially true of more complex queries.
@@ -189,7 +189,7 @@ SELECT *
 FROM articles
 ORDER BY issns ASC;
 ~~~
-{: .source}
+{: .sql}
 
 The keyword `ASC` tells us to order it in Ascending order.
 We could alternately use `DESC` to get descending order.
@@ -199,7 +199,7 @@ SELECT *
 FROM articles
 ORDER BY first_author DESC;
 ~~~
-{: .guide}
+{: .sql}
 
 `ASC` is the default.
 
@@ -211,7 +211,7 @@ SELECT *
 FROM articles
 ORDER BY issns DESC, first_author ASC;
 ~~~
-{: .guide}
+{: .sql}
 
 > ## Challenge
 >
@@ -232,7 +232,7 @@ FROM articles
 WHERE issns = '2067-2764|2247-6202'
 ORDER BY date ASC, first_author ASC;
 ~~~
-{: .source}
+{: .sql}
 
 We can do this because sorting occurs earlier in the computational pipeline than
 field selection.
