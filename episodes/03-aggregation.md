@@ -3,7 +3,7 @@ title: "Aggregation"
 teaching: 30
 exercises: 30
 questions:
-- "How do you aggregate recoeds in SQL?"
+- "How do you aggregate records in SQL?"
 objectives:
 - "to understand how to aggregate records in SQL"
 keypoints:
