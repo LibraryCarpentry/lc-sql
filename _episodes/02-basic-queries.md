@@ -31,7 +31,7 @@ If we want more information, we can add a new column to the list of fields,
 right after `SELECT`:
 
 ~~~
-SELECT title, authors, issns, date
+SELECT title, authors, issns, year
 FROM articles;
 ~~~
 {: .sql}
