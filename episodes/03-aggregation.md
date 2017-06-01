@@ -129,10 +129,7 @@ ORDER BY COUNT( * ) DESC;
 
 It is not uncommon to repeat the same operation more than once, for example
 for monitoring or reporting purposes. SQL comes with a very powerful mechanism
-to do this: views. Views are a form of query that is saved in the database,
-and can be used to look at, filter, and even update information. One way to
-think of views is as a table, that can read, aggregate, and filter information
-from several places before showing it to you.
+to do this: views. Views are queries saved in the database. You query it as a (virtual) table, populated every time you query it.
 
 Creating a view from a query requires to add `CREATE VIEW viewname AS`
 before the query itself. For example, if we want to save the query giving
