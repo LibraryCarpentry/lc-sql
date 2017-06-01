@@ -1,4 +1,4 @@
-*Learner's Profiles*
+**Learner's Profiles**
 
 Elias is a senior librarian in Utrecht University Library, specialized in manuscripts and special collections. 
 
