@@ -10,13 +10,15 @@ keypoints:
 - "SQL is a powerful language used to interrogate and manipulate relational databases"
 ---
 
+
+
 ## What is SQL?
 
-SQL (Structured Query Language) is a powerful language used to interrogate and
-manipulate relational databases. It is highly specialised. It is not a general
+**S**tructured **Q**uery **L**anguage, or SQL (sometimes pronounced "sequel"), is a powerful language used to interrogate and
+manipulate relational databases. It is not a general
 programming language that you can use to write an entire program. However, SQL
-queries can be embedded in other programming languages to let any program work
-with databases. There are several different kinds of SQL, but all support the
+queries can be called from programming languages to let any program work
+with databases. There are several different variants of SQL, but all support the
 same basic statements that we will be covering today.
 
 ## Relational databases
@@ -24,7 +26,7 @@ same basic statements that we will be covering today.
 Relational databases consist of one or more tables of data. These tables have
 _fields_ (columns) and _records_ (rows). Every field has a data _type_. Every
 value in the same field of each record has the same _type_. These tables can be
-linked to each when a field in one table can be matched to a field in another
+linked to each other when a field in one table can be matched to a field in another
 table. SQL _queries_ are the commands that let you look up data in a database or
 make calculations based on columns.
 
@@ -34,7 +36,7 @@ Using SQL lets you keep the data separate from the analysis. There is no risk of
 accidentally changing data when you are analysing it. If the data is changed,
 a saved query can be re-run to analyse the new data.
 
-SQL is optimised for handling large amounts of data. Using data types helps with
+SQL is optimised for handling large amounts of data. Data types help
 quality control of entries - you will receive an error if you try to enter a word
 into a field that should contain a number. Understanding the nature of relational
 databases, and using SQL, will help you in using databases in programming languages
@@ -42,7 +44,7 @@ and in doing similar things using programming languages such as R or Python.
 
 ## Why are Librarians well suited to SQL?
 Librarianship is about information management. We help sort and organise
-information and we help people find information. Most of us use mediated queries
+information and we help people find information. Most of us go through mediated queries
 to help people find the information they need e.g. conducting a search via
 a library catalogue. With SQL, you can directly construct your database queries
 without the constraints (e.g. field name or search limitations) imposed by
@@ -56,7 +58,7 @@ There are a number of different database management systems for working with
 relational data. We're going to use SQLite today, but basically everything we
 teach you will apply to the other database systems as well (e.g., MySQL,
 PostgreSQL, MS Access, Filemaker Pro). The only things that will differ are the
-details of exactly how to import and export data and the datatypediffs.
+details of exactly how to import and export data and possibly some differences in datatype.
 
 ## Database Design
 
