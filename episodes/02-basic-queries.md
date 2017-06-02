@@ -25,7 +25,7 @@ FROM articles;
 {: .sql}
 
 We have capitalized the words SELECT and FROM because they are SQL keywords.
-SQL is case-insensitive, but it helps for readability, and is good style.
+This makes no difference to the SQL interpreter as it is case-insensitive, but it helps for readability and is therefore considered good style.
 
 If we want more information, we can add a new column to the list of fields,
 right after `SELECT`:
@@ -120,9 +120,7 @@ WHERE (issns='2067-2764|2247-6202') AND (month > 06);
 ~~~
 {: .sql}
 
-Note that the parentheses are not needed, but again, they help with
-readability.  They also ensure that the computer combines `AND` and `OR`
-in the way that we intend.
+Parentheses are used merely for readability in this case, but can be required to disambiguate formulas for the SQL interpreter.
 
 If we wanted to get data for the *Humanities* and *Religions* journals, which have
 ISSNs codes `2076-0787` and `2077-1444`, we could combine the tests using OR:
@@ -251,7 +249,7 @@ we recommend to put each clause on its own line.
 >
 > Let's try to combine what we've learned so far in a single
 > query.  Using the articles table write a query to display the three date fields,
-> `issn`, and `citation_count`, for articles published after June, ordered
+> `issns`, and `citation_count`, for articles published after June, ordered
 > alphabetically by first author name. Write the query as a single line, then
 > put each clause on its own line, and see how more legible the query becomes!
 {: .challenge}
