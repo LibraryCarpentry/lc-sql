@@ -37,9 +37,8 @@ There are many other aggregate functions included in SQL including
 
 > ## Challenge
 >
-> Write a query that returns: total, average, the min and max number of
-> citations for each journal. Can you modify it so that it outputs only
-> journals with more than 5 citations in average?
+> Write a query that returns the total, average, minimum and maximum number of
+> citations of all of the articles.
 {: .challenge}
 
 Now, let's see how many articles were published in each journal. We do this
@@ -109,6 +108,13 @@ of these groups (`HAVING`).
 > Write a query that returns, from the `articles` table, the average number of
 > `citations` for each journal, only for the journals with 5 or more citations
 > on average.
+{: .challenge}
+
+> ## Challenge
+>
+> Write a query that returns, from the `articles` table: the total, average,
+> min and max number of citations for each journal. Can you modify it so that
+> it outputs only journals with more than 5 citations in average?
 {: .challenge}
 
 ## Ordering aggregated results.
