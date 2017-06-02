@@ -35,6 +35,12 @@ FROM articles;
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
 
+> ## Challenge
+>
+> Write a query that returns the total, average, minimum and maximum number of
+> citations of all of the articles.
+{: .challenge}
+
 Now, let's see how many articles were published in each journal. We do this
 using a `GROUP BY` clause
 
