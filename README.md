@@ -1,5 +1,7 @@
 # Library Carpentry
 
+The Library Carpentry module [SQL for Librarians](https://data-lessons.github.io/library-sql/) is maintained by [Elaine Wong](https://github.com/elainewong).
+
 ## Background
 
 Library Carpentry is a software skills training programme aimed at library and information professions. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/).
