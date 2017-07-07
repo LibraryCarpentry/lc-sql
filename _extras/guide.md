@@ -13,7 +13,7 @@ ____
 Librarians like handouts. To make a handout for this lesson, adapt/print from [http://data-lessons.github.io/library-sqlreference/](http://data-lessons.github.io/library-sql/reference/).
 
 ____
-# General
+# General notes of SQL
 
 > **database** (dā'tə-bās') noun:
 > "A collection of data arranged for ease and speed of search and retrieval by a computer"
