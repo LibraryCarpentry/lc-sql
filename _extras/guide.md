@@ -10,7 +10,7 @@ ____
 ____
 ## Making a handout
 
-Librarians like handouts. To make a handout for this lesson, adapt/print from [http://data-lessons.github.io/library-sqlreference/](http://data-lessons.github.io/library-sql/reference/).
+Librarians like handouts. To make a handout for this lesson, adapt/print from [http://data-lessons.github.io/library-sql/reference/](http://data-lessons.github.io/library-sql/reference/).
 
 ____
 # General notes of SQL
