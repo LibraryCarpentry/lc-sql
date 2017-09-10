@@ -67,7 +67,7 @@ could do something like
 SELECT articles.issns, journal_title, ROUND(AVG(author_count), 2)
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns;
+ON articles.issns = journals.issns
 GROUP BY articles.issns;
 ~~~
 {: .source}
