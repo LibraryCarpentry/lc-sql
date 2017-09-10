@@ -81,6 +81,10 @@ row and appended to that row, in a new column.  Expressions can use any fields,
 any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
 functions. For example, we could round the values to make them easier to read.
 
+> Note that we divide by `10.0` and `16.0` instead of `10` and `16` to avoid losing the remainder.
+> In SQLite, if you divide an integer by an integer, you get an integer, removing everything behind
+> the decimal, making 9/10 = 0 instead of 0.9.
+
 ~~~
 SELECT first_author, title, ROUND(author_count/16.0, 2)
 FROM articles;
@@ -88,10 +92,19 @@ FROM articles;
 {: .sql}
 
 > ## Challenge
->
 > Write a query that returns the title, first_author, citation_count,
 > author_count, month and year
+>
+> > ## Solution
+> > ~~~
+> > SELECT  title, first_author, citation_count, author_count, month, year
+> > FROM articles
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
+
 
 ## Filtering
 
@@ -133,10 +146,19 @@ WHERE (issns = '2076-0787') OR (issns = '2077-1444');
 {: .sql}
 
 > ## Challenge
->
 > Write a query that returns the title, first_author, issns, month and year
 > for all single author papers with more than 4 citations
+>
+> > ## Solution
+> > ~~~
+> > SELECT title, first_author, issns, month, year
+> > FROM articles
+> > WHERE (author_count=1) and (citation_count>4);
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
 
 ## Building more complex queries
 
@@ -189,7 +211,7 @@ ORDER BY issns ASC;
 ~~~
 {: .sql}
 
-The keyword `ASC` tells us to order it in Ascending order.
+The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
 ~~~
@@ -199,10 +221,10 @@ ORDER BY first_author DESC;
 ~~~
 {: .sql}
 
-`ASC` is the default.
+`ASC` is the default, so by omiting ASC or DESC, SQLite will sort ASC (asceding).
 
-We can also sort on several fields at once.
-To truly be alphabetical, we might want to order by genus then species.
+We can also sort on several fields at once, in different directions.
+For example, we can order by issns descending and then first_author ascending in the same query.
 
 ~~~
 SELECT *
@@ -212,11 +234,20 @@ ORDER BY issns DESC, first_author ASC;
 {: .sql}
 
 > ## Challenge
->
 > Write a query that returns title, first_author, issns and citation_count from
 > the articles table, sorted with the most cited article at the top and
-> alphabetically
+> alphabetically by title
+>
+> > ## Solution
+> > ~~~
+> > SELECT title, first_author, issns, citation_count
+> > FROM articles
+> > ORDER BY citation_count DESC, title ASC;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
 
 ## Order of execution
 
@@ -246,10 +277,21 @@ BY`. It is possible to write a query as a single line, but for readability,
 we recommend to put each clause on its own line.
 
 > ## Challenge
->
 > Let's try to combine what we've learned so far in a single
 > query.  Using the articles table write a query to display the three date fields,
 > `issns`, and `citation_count`, for articles published after June, ordered
 > alphabetically by first author name. Write the query as a single line, then
 > put each clause on its own line, and see how more legible the query becomes!
+>
+> > ## Solution
+> > ~~~
+> > SELECT title, authors, day, month, year, issns, citation_count
+> > FROM articles
+> > WHERE month>6
+> > ORDER BY first_author;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
+
