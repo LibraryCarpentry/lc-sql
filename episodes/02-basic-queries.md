@@ -259,7 +259,7 @@ we only want to see Authors and Titles.
 SELECT authors, title
 FROM articles
 WHERE issns = '2067-2764|2247-6202'
-ORDER BY date ASC, first_author ASC;
+ORDER first_author ASC;
 ~~~
 {: .sql}
 
