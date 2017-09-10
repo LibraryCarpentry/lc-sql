@@ -229,7 +229,6 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 >
 > > ## Solution 5
 > > ~~~
-
 > > SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
 > > FROM articles
 > > JOIN journals
