@@ -89,7 +89,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > {: .sql}
 > {: .solution}
-> > ## Solution 2a)
+> > ## Solution 2)
 > > ~~~
 > > SELECT month, issns, AVG(citation_count)
 > > FROM articles
@@ -97,7 +97,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > {: .sql}
 > {: .solution}
-> > ## Solution 2b)
+> > ## Solution 3)
 > > ~~~
 > > SELECT month, issns, AVG(citation_count), SUM(citation_count)
 > > FROM articles
