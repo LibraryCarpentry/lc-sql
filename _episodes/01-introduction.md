@@ -107,7 +107,7 @@ by different publishers and under different licences.
 9. When asked if you want to modify the table, click __OK__
 10. Set the data types for each field: choose TEXT for fields with text:
    (`Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `First_Author`),
-   and INT for fields with numbers:
+   and INTEGER for fields with numbers:
    (`id`, `LanguageId`, `LicenceId`, `Citation_Count`, `Author_Count`, `Day`, `Month`, `Year`).
 11. Click __OK__
 
