@@ -12,6 +12,8 @@ keypoints:
 
 ## Joins
 
+![](../assets/img/join.png)
+
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
@@ -70,10 +72,19 @@ GROUP BY articles.issns;
 ~~~
 {: .source}
 
-> ## Challenge:
->
+> ## Challenge
 > Write a query that returns the journal title, total number of articles published
 > and average number of citations for every journal.
+>
+> > ## Solution
+> > ~~~
+> > SELECT journal_title, count(*), avg(citation_count)
+> > FROM articles
+> > JOIN journals ON articles.issns = journals.issns
+> > GROUP BY articles.issns
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 
@@ -86,11 +97,27 @@ ON articles.issns = journals.issns
 JOIN languages
 ON languages.id = articles.languageid
 
+
 > ## Challenge:
 >
 > Write a query that returns the journal title, publisher name, and number of
 > articles published, ordered by number of articles in descending order.
+>
+> > ## Solution
+> > ~~~
+> > SELECT journal_title, publisher, count(*)
+> > FROM articles
+> > JOIN journals
+> > ON articles.issns = journals.issns
+> > JOIN publishers
+> > ON publishers.id = journals.publisherid
+> > GROUP BY journal_title
+> > ORDER BY count(*) desc
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
 
 ## Aliases
 
@@ -198,11 +225,11 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 {: .challenge}
 
 > ## Challenge 5
-> Create a view with article, journal and publisher information
+> Select title, first_author, author_count, citation_count, month, year, journal_title, publisher
 >
 > > ## Solution 5
 > > ~~~
-> > CREATE VIEW all_data AS
+
 > > SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
 > > FROM articles
 > > JOIN journals
