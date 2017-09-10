@@ -80,6 +80,7 @@ Can you modify the above queries combining them into one?
 > > GROUP BY month
 > > ~~~
 > > {: .sql}
+> {: .solution}
 > > ## Solution 1b)
 > > ~~~
 > > SELECT month, issns, SUM(citation_count)
@@ -87,6 +88,7 @@ Can you modify the above queries combining them into one?
 > > GROUP BY month, issns
 > > ~~~
 > > {: .sql}
+> {: .solution}
 > > ## Solution 2a)
 > > ~~~
 > > SELECT month, issns, AVG(citation_count)
@@ -94,6 +96,7 @@ Can you modify the above queries combining them into one?
 > > GROUP BY month, issns
 > > ~~~
 > > {: .sql}
+> {: .solution}
 > > ## Solution 2b)
 > > ~~~
 > > SELECT month, issns, AVG(citation_count), SUM(citation_count)
@@ -102,7 +105,6 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > {: .sql}
 > {: .solution}
-
 {: .challenge}
 
 ## The `HAVING` keyword
