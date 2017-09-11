@@ -98,7 +98,7 @@ FROM articles;
 > > ## Solution
 > > ~~~
 > > SELECT  title, first_author, citation_count, author_count, month, year
-> > FROM articles
+> > FROM articles;
 > > ~~~
 > > {: .sql}
 > {: .solution}
