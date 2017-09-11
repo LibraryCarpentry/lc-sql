@@ -80,8 +80,9 @@ GROUP BY articles.issns;
 > > ~~~
 > > SELECT journal_title, count(*), avg(citation_count)
 > > FROM articles
-> > JOIN journals ON articles.issns = journals.issns
-> > GROUP BY articles.issns
+> > JOIN journals
+> > ON articles.issns = journals.issns
+> > GROUP BY articles.issns;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -95,7 +96,7 @@ FROM articles
 JOIN journals
 ON articles.issns = journals.issns
 JOIN languages
-ON languages.id = articles.languageid
+ON languages.id = articles.languageid;
 
 
 > ## Challenge:
@@ -112,7 +113,7 @@ ON languages.id = articles.languageid
 > > JOIN publishers
 > > ON publishers.id = journals.publisherid
 > > GROUP BY journal_title
-> > ORDER BY count(*) desc
+> > ORDER BY count(*) desc;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -171,7 +172,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > SELECT first_author, COUNT( * ) AS n_articles
 > > FROM articles
 > > GROUP BY first_author
-> > ORDER BY n_articles DESC
+> > ORDER BY n_articles DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -184,7 +185,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > ~~~
 > > SELECT author_count, count( * )
 > > FROM articles
-> > GROUP BY author_count
+> > GROUP BY author_count;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -201,7 +202,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > JOIN languages
 > > ON articles.languageid=languages.id
 > > WHERE language IS NOT null
-> > GROUP BY language
+> > GROUP BY language;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -218,7 +219,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > JOIN licences
 > > ON articles.licenceid=licences.id
 > > WHERE licence IS NOT null
-> > GROUP BY licence
+> > GROUP BY licence;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -234,7 +235,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > JOIN journals
 > > ON articles.issns=journals.issns
 > > JOIN publishers
-> > ON publishers.id=journals.publisherid
+> > ON publishers.id=journals.publisherid;
 > > ~~~
 > > {: .sql}
 > {: .solution}
