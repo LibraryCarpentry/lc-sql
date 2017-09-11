@@ -43,7 +43,7 @@ There are many other aggregate functions included in SQL including
 > > ## Solution
 > > ~~~
 > > SELECT SUM(citation_count), AVG(citation_count), MIN(citation_count), MAX(citation_count)
-> > FROM articles
+> > FROM articles;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -77,7 +77,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > SELECT month, SUM(citation_count)
 > > FROM articles
-> > GROUP BY month
+> > GROUP BY month;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -85,7 +85,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > SELECT month, issns, SUM(citation_count)
 > > FROM articles
-> > GROUP BY month, issns
+> > GROUP BY month, issns;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -93,7 +93,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > SELECT month, issns, AVG(citation_count)
 > > FROM articles
-> > GROUP BY month, issns
+> > GROUP BY month, issns;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -101,7 +101,7 @@ Can you modify the above queries combining them into one?
 > > ~~~
 > > SELECT month, issns, AVG(citation_count), SUM(citation_count)
 > > FROM articles
-> > GROUP BY month, issns
+> > GROUP BY month, issns;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -155,7 +155,7 @@ of these groups (`HAVING`).
 > > SELECT issns, AVG(citation_count)
 > > FROM articles
 > > GROUP BY issns
-> > HAVING AVG(citation_count)>=5
+> > HAVING AVG(citation_count)>=5;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -172,7 +172,7 @@ of these groups (`HAVING`).
 > > SELECT issns,  SUM(citation_count), AVG(citation_count), MIN(citation_count), MAX(citation_count)
 > > FROM articles
 > > GROUP BY issns
-> > HAVING AVG(citation_count)>5
+> > HAVING AVG(citation_count)>5;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -244,10 +244,9 @@ results in the _Views_ tab just like a table
 > > SELECT COUNT(*), month
 > > FROM articles
 > > GROUP BY issns, month
-> > ORDER BY  count(*) desc, month desc
+> > ORDER BY  count(*) desc, month desc;
 > > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
 
-{: .challenge}
