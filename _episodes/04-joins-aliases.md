@@ -166,7 +166,7 @@ Have a look at the following questions; these questions are written in plain
 English. Can you translate them to *SQL queries* and give a suitable answer?
 
 > ## Challenge 1
-> How many plots from each type are there?
+> How many articles are there from each first_author? Can you make an alias for the number of articles? Can you order the results by articles?
 >
 > > ## Solution 1
 > > ~~~
@@ -227,7 +227,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 {: .challenge}
 
 > ## Challenge 5
-> Select title, first_author, author_count, citation_count, month, year, journal_title, publisher
+> Multiple table joins. Select title, first_author, author_count, citation_count, month, year, journal_title and publisher
 >
 > > ## Solution 5
 > > ~~~
