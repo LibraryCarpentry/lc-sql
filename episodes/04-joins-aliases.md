@@ -90,14 +90,15 @@ GROUP BY articles.issns;
 
 
 It is worth mentioning that you can join multiple tables. For example:
-
-SELECT title, first_author, journal_title, language
+~~~
+SELECT title, first_author, journal_title, publisher
 FROM articles
 JOIN journals
 ON articles.issns = journals.issns
-JOIN languages
-ON languages.id = articles.languageid;
-
+JOIN publishers
+ON publishers.id = journals.publisherid;
+~~~
+{: .source}
 
 > ## Challenge:
 >
