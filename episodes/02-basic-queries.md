@@ -221,7 +221,7 @@ ORDER BY first_author DESC;
 ~~~
 {: .sql}
 
-`ASC` is the default, so by omiting ASC or DESC, SQLite will sort ASC (asceding).
+`ASC` is the default, so by omitting ASC or DESC, SQLite will sort ascending (ASC).
 
 We can also sort on several fields at once, in different directions.
 For example, we can order by issns descending and then first_author ascending in the same query.
