@@ -96,17 +96,21 @@ by different publishers and under different licences.
     [Figshare](https://dx.doi.org/10.6084/m9.figshare.3409471)
 1. Start a New Database __Database -> New Database__
 2. Start the import __Database -> Import__
-3. Select the file to import
+3. Select the file to import (start with articles.csv)
 4. Give the table a name that matches the file name (articles, journals,
     licences, languages  publishers), or use the default
-5. If the first row has column headings, check the appropriate box
-6. Make sure the delimiter and quotation options are appropriate for the CSV
-    files. Ensure 'Ignore trailing Separator/Delimiter' is left _unchecked_.
-7. Press __OK__
-8. When asked if you want to modify the table, click __OK__
-9. Set the data types for each field: choose TEXT for fields with text
-   (e.g. `Title`, `Authors`, `DOI`, etc.) and INT for fields with numbers
-   (e.g. `Citation_Count`, `Author_Count`, `Day`, etc.)
+5. Since the first row has column headings, check the "First row contains column names"- box
+6. Under "Fields separated by", check "Comma".
+   Ensure 'Ignore trailing Separator/Delimiter' is left _unchecked_.
+7. Also, under "Fields enclosed by", ensure that "Double quotes if necessary" is left _checked_.
+8. Press __OK__
+9. When asked if you want to modify the table, click __OK__
+10. Set the data types for each field: choose TEXT for fields with text:
+   (`Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `First_Author`),
+   and INTEGER for fields with numbers:
+   (`id`, `LanguageId`, `LicenceId`, `Citation_Count`, `Author_Count`, `Day`, `Month`, `Year`).
+11. Click __OK__
+
 
 You can also use this same approach to append new data to an existing table.
 
