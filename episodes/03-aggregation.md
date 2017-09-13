@@ -35,11 +35,20 @@ FROM articles;
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
 
+
 > ## Challenge
->
 > Write a query that returns the total, average, minimum and maximum number of
 > citations of all of the articles.
+>
+> > ## Solution
+> > ~~~
+> > SELECT SUM(citation_count), AVG(citation_count), MIN(citation_count), MAX(citation_count)
+> > FROM articles;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
 
 Now, let's see how many articles were published in each journal. We do this
 using a `GROUP BY` clause
@@ -63,6 +72,39 @@ a) in total;
 b) per each journal.
 > 2. Average number of citations of each journal in each month.
 Can you modify the above queries combining them into one?
+>
+> > ## Solution 1a)
+> > ~~~
+> > SELECT month, SUM(citation_count)
+> > FROM articles
+> > GROUP BY month;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+> > ## Solution 1b)
+> > ~~~
+> > SELECT month, issns, SUM(citation_count)
+> > FROM articles
+> > GROUP BY month, issns;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+> > ## Solution 2)
+> > ~~~
+> > SELECT month, issns, AVG(citation_count)
+> > FROM articles
+> > GROUP BY month, issns;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+> > ## Solution 3)
+> > ~~~
+> > SELECT month, issns, AVG(citation_count), SUM(citation_count)
+> > FROM articles
+> > GROUP BY month, issns;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## The `HAVING` keyword
@@ -104,18 +146,39 @@ think about this is: the data are retrieved (`SELECT`), can be filtered
 of these groups (`HAVING`).
 
 > ## Challenge
->
 > Write a query that returns, from the `articles` table, the average number of
 > `citations` for each journal, only for the journals with 5 or more citations
 > on average.
+>
+> > ## Solution
+> > ~~~
+> > SELECT issns, AVG(citation_count)
+> > FROM articles
+> > GROUP BY issns
+> > HAVING AVG(citation_count)>=5;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
+
 > ## Challenge
->
 > Write a query that returns, from the `articles` table: the total, average,
 > min and max number of citations for each journal. Can you modify it so that
 > it outputs only journals with more than 5 citations in average?
+>
+> > ## Solution
+> > ~~~
+> > SELECT issns,  SUM(citation_count), AVG(citation_count), MIN(citation_count), MAX(citation_count)
+> > FROM articles
+> > GROUP BY issns
+> > HAVING AVG(citation_count)>5;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
+
 
 ## Ordering aggregated results.
 
@@ -174,4 +237,16 @@ results in the _Views_ tab just like a table
 > on each month, sorted from most popular journal to the ones with least
 > publications each month starting from the most recent records. Save this
 > query as a `VIEW`.
+>
+> > ## Solution
+> > ~~~
+> > CREATE VIEW journal_counts AS
+> > SELECT COUNT(*), month
+> > FROM articles
+> > GROUP BY issns, month
+> > ORDER BY  count(*) desc, month desc;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+

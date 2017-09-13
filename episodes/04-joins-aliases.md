@@ -12,6 +12,8 @@ keypoints:
 
 ## Joins
 
+![](../assets/img/join.png)
+
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
@@ -65,32 +67,59 @@ could do something like
 SELECT articles.issns, journal_title, ROUND(AVG(author_count), 2)
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns;
+ON articles.issns = journals.issns
 GROUP BY articles.issns;
+~~~
+{: .source}
+
+> ## Challenge
+> Write a query that returns the journal title, total number of articles published
+> and average number of citations for every journal.
+>
+> > ## Solution
+> > ~~~
+> > SELECT journal_title, count(*), avg(citation_count)
+> > FROM articles
+> > JOIN journals
+> > ON articles.issns = journals.issns
+> > GROUP BY articles.issns;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+{: .challenge}
+
+
+It is worth mentioning that you can join multiple tables. For example:
+~~~
+SELECT title, first_author, journal_title, publisher
+FROM articles
+JOIN journals
+ON articles.issns = journals.issns
+JOIN publishers
+ON publishers.id = journals.publisherid;
 ~~~
 {: .source}
 
 > ## Challenge:
 >
-> Write a query that returns the journal title, total number of articles published
-> and average number of citations for every journal.
-{: .challenge}
-
-
-It is worth mentioning that you can join multiple tables. For example:
-
-SELECT title, first_author, journal_title, language
-FROM articles
-JOIN journals
-ON articles.issns = journals.issns
-JOIN languages
-ON languages.id = articles.languageid
-
-> ## Challenge:
->
 > Write a query that returns the journal title, publisher name, and number of
 > articles published, ordered by number of articles in descending order.
+>
+> > ## Solution
+> > ~~~
+> > SELECT journal_title, publisher, count(*)
+> > FROM articles
+> > JOIN journals
+> > ON articles.issns = journals.issns
+> > JOIN publishers
+> > ON publishers.id = journals.publisherid
+> > GROUP BY journal_title
+> > ORDER BY count(*) desc;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
+
 
 ## Aliases
 
@@ -137,14 +166,14 @@ Have a look at the following questions; these questions are written in plain
 English. Can you translate them to *SQL queries* and give a suitable answer?
 
 > ## Challenge 1
-> How many plots from each type are there?
+> How many articles are there from each first_author? Can you make an alias for the number of articles? Can you order the results by articles?
 >
 > > ## Solution 1
 > > ~~~
 > > SELECT first_author, COUNT( * ) AS n_articles
 > > FROM articles
 > > GROUP BY first_author
-> > ORDER BY n_articles DESC
+> > ORDER BY n_articles DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -157,7 +186,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > ~~~
 > > SELECT author_count, count( * )
 > > FROM articles
-> > GROUP BY author_count
+> > GROUP BY author_count;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -174,7 +203,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > JOIN languages
 > > ON articles.languageid=languages.id
 > > WHERE language IS NOT null
-> > GROUP BY language
+> > GROUP BY language;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -191,24 +220,23 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > JOIN licences
 > > ON articles.licenceid=licences.id
 > > WHERE licence IS NOT null
-> > GROUP BY licence
+> > GROUP BY licence;
 > > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
 
 > ## Challenge 5
-> Create a view with article, journal and publisher information
+> Multiple table joins. Select title, first_author, author_count, citation_count, month, year, journal_title and publisher
 >
 > > ## Solution 5
 > > ~~~
-> > CREATE VIEW all_data AS
 > > SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
 > > FROM articles
 > > JOIN journals
 > > ON articles.issns=journals.issns
 > > JOIN publishers
-> > ON publishers.id=journals.publisherid
+> > ON publishers.id=journals.publisherid;
 > > ~~~
 > > {: .sql}
 > {: .solution}
