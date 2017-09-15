@@ -114,7 +114,7 @@ filter the results according to some criteria. SQL offers a mechanism to
 filter the results based on aggregate functions, through the `HAVING` keyword.
 
 For example, we can adapt the last request we wrote to only return information
-about articles with a 10 or more published articles:
+about journals with a 10 or more published articles:
 
 ~~~
 SELECT issns, COUNT( * )
