@@ -67,11 +67,11 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Write queries that return:
 >
-> 1. How many articles were counted each month.
+> 1. How many citations that were counted each month
 a) in total;
-b) per each journal.
+b) per journal.
 > 2. Average number of citations of each journal in each month.
-Can you modify the above queries combining them into one?
+> 3. Can you modify the above queries combining them into one?
 >
 > > ## Solution 1a)
 > > ~~~
