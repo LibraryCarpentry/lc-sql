@@ -67,41 +67,41 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Write queries that return:
 >
-> 1. How many citations that were counted each month
+> 1. How many articles were published under each licence
 a) in total;
 b) per journal.
-> 2. Average number of citations of each journal in each month.
+> 2. Average citation counts of each journal under each licence.
 > 3. Can you modify the above queries combining them into one?
 >
 > > ## Solution 1a)
 > > ~~~
-> > SELECT month, SUM(citation_count)
+> > SELECT LicenceId, COUNT( * )
 > > FROM articles
-> > GROUP BY month;
+> > GROUP BY LicenceId;
 > > ~~~
 > > {: .sql}
 > {: .solution}
 > > ## Solution 1b)
 > > ~~~
-> > SELECT month, issns, SUM(citation_count)
+> > SELECT LicenceId, ISSNs, COUNT( * )
 > > FROM articles
-> > GROUP BY month, issns;
+> > GROUP BY LicenceId, ISSNs;
 > > ~~~
 > > {: .sql}
 > {: .solution}
 > > ## Solution 2)
 > > ~~~
-> > SELECT month, issns, AVG(citation_count)
+> > SELECT LicenceId, ISSNs, avg(citation_count)
 > > FROM articles
-> > GROUP BY month, issns;
+> > GROUP BY LicenceId, ISSNs
 > > ~~~
 > > {: .sql}
 > {: .solution}
 > > ## Solution 3)
 > > ~~~
-> > SELECT month, issns, AVG(citation_count), SUM(citation_count)
+> > SELECT LicenceId, ISSNs, count(*), avg(citation_count)
 > > FROM articles
-> > GROUP BY month, issns;
+> > GROUP BY LicenceId, ISSNs;
 > > ~~~
 > > {: .sql}
 > {: .solution}
