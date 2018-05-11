@@ -125,7 +125,7 @@ The data we will be using consists of 5 csv files that contain tables of article
 To import data, you'll need to open DB Browser for SQLite and download a zip file containing the data files for this tutorial.
 
 1. Download the data files doaj-article-sample.zip from
-    [Figshare](https://dx.doi.org/10.6084/m9.figshare.3409471)
+    [Figshare](https://doi.org/10.6084/m9.figshare.3409471)
 2. Create a New Database (click on the button at the upper left)
 3. Choose a name for the database (for example, joaj-article-db)
 4. The next screen will present a "Create Table" option. We will create our tables by importing CSV files, so you can close this screen (or click on Cancel)
