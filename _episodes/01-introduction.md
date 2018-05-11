@@ -5,7 +5,7 @@ exercises: 0
 questions:
 - "What is SQL? Why is it significant?"
 objectives:
-- "to be able to explain what SQL is"
+- "To be able to explain what SQL is"
 keypoints:
 - "SQL is a powerful language used to interrogate and manipulate relational databases"
 ---
@@ -70,18 +70,9 @@ details of exactly how to import and export data and possibly some differences i
     * Needs an identifier in common between tables – shared column - to
        reconnect (foreign key).
 
-## Introduction to SQLite Manager
+## Introduction to DB Browser for SQLite
 
-Let's all open the database we downloaded in SQLite Manager by clicking on the
-open file icon.
-
-You can see the tables in the database by looking at the left hand side of the
-screen under Tables.
-
-To see the contents of a table, click on that table and then click on the Browse
-and search tab in the right hand section of the screen.
-
-If we want to write a query, we click on the Execute SQL tab.
+To introduce working with DB Browser for SQLite, we will import a dataset and browse it.
 
 
 ## Dataset Description
@@ -94,30 +85,41 @@ by different publishers and under different licences.
 
 1. Download the CSV files from
     [Figshare](https://dx.doi.org/10.6084/m9.figshare.3409471)
-1. Start a New Database __Database -> New Database__
-2. Start the import __Database -> Import__
+1. Run DB Browser for SQLite and click the __New Database__ button in the toolbar. Name the file 'libcarpentry1.db'
+1. Click Cancel on the 'Edit table definition' window that pops up.
+2. Start the import by clicking __File -> Import -> Table from CSV__
 3. Select the file to import (start with articles.csv)
 4. Give the table a name that matches the file name (articles, journals,
-    licences, languages  publishers), or use the default
-5. Since the first row has column headings, check the "First row contains column names"- box
-6. Under "Fields separated by", check "Comma".
-   Ensure 'Ignore trailing Separator/Delimiter' is left _unchecked_.
+    licences, languages  publishers). In this case let's call it 'articles'.
+5. Since the first row has column headings, check the __Column names in first line__ box
+6. Under __Fields separator__, verify that "," is selected.
 7. Also, under "Fields enclosed by", ensure that "Double quotes if necessary" is left _checked_.
 8. Press __OK__
-9. When asked if you want to modify the table, click __OK__
-10. Set the data types for each field: choose TEXT for fields with text:
-   (`Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `First_Author`),
-   and INTEGER for fields with numbers:
+
+
+## Browsing and modifying tables
+
+You can see the tables in the database by looking at the left hand side of the
+screen under Tables.
+
+To see the contents of a table, right-click on that table and then click Browse. Browse the 'articles' table and have a look at the contents.
+
+Now, let's modify the data types of the 'articles' table we just imported. By default all of the fields were imported as text so we need to change numerical fields to a data type that corresponds to a number.
+
+1. Click on the Database Structure tab and Right click the 'articles' table and select __Modify table__
+1. Set the data types to INTEGER for fields with numbers:
    (`id`, `LanguageId`, `LicenceId`, `Citation_Count`, `Author_Count`, `Day`, `Month`, `Year`).
-11. Click __OK__
+1. Click __OK__
+1. Click __Write Changes__ in the toolbar to save the database.
 
-
-You can also use this same approach to append new data to an existing table.
+If we want to write a query, we click on the Execute SQL tab. We will be using this tab later. 
 
 ## Adding data to existing tables
 
-1. Browse & Search -> Add
-1. Enter data into a csv file and append
+There are several ways to add new data to a table without writing SQL
+
+1. Right click and Browse table, then click the __New Record__ button.
+1. Import a CSV file like we did before and name the table the same as an existing table. DB Browser for SQLite will prompt you if you want to add the data to the existing table.
 
 
 ## Data types
