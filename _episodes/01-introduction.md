@@ -86,9 +86,33 @@ If we want to write a query, we click on the Execute SQL tab.
 
 ## Dataset Description
 
-The data we will be using is a catalogue of journal articles from 51 different
-journals published during 2015. Articles are published in different languages,
-by different publishers and under different licences.
+The data we will be using consists of 5 csv files that contain tables of article titles, journals, languages, licenses, and publishers. The information in these tables are from a sample of 51 different journals published during 2015.
+
+'articles.csv' 
+* Contains individual article Titles and the associated citations and metadata
+* (16 fields, 1001 records)
+* Field names: `id`, `Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `LanguageID`, `LicenseID`, `Author_Count`, `First_Author`, `Citation_Count`, `Day`, `Month`, `Year`
+
+'journals.csv'
+* Contains various journal Titles and associated metadata. The table also associates Journal Titles with ISSN numbers that are then referenced in the 'articles' table by the `ISSNs` field.
+* (5 fields, 51 records)
+* Field names: `id`, `ISSN-L`,`ISSNs`, `PublisherID`, `Journal_Title`
+
+'languages.csv'
+* ID table which associates language codes with id numbers. These id numbers are then referenced in the 'articles' table by the `LanguageID` field.
+* (2 fields, 4 records)
+* Field names: `id`, `Language`
+
+'licenses.csv'
+* ID table which associates License codes with id numbers. These id numbers are then referenced in the 'articles' table by the `LicenseID` field.
+* (2 fields, 4 records)
+* Field names: `id`, `Licence`
+
+'publishers.csv'
+* ID table which associates Publisher names with id numbers. These id numbers are then referenced in the 'journals' table by the `PublisherID` field.
+* (2 fields, 6 records)
+* Field names: `id`, `Publisher`
+
 
 ## Import
 
