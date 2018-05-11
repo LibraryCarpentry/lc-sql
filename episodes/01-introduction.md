@@ -92,32 +92,36 @@ by different publishers and under different licences.
 
 ## Import
 
-1. Download the CSV files from
+To import data, you'll need to open DB Browser for SQLite and download a zip file containing the data files for this tutorial.
+
+1. Download the data files doaj-article-sample.zip from
     [Figshare](https://dx.doi.org/10.6084/m9.figshare.3409471)
-1. Start a New Database __Database -> New Database__
-2. Start the import __Database -> Import__
-3. Select the file to import (start with articles.csv)
-4. Give the table a name that matches the file name (articles, journals,
-    licences, languages  publishers), or use the default
-5. Since the first row has column headings, check the "First row contains column names"- box
-6. Under "Fields separated by", check "Comma".
-   Ensure 'Ignore trailing Separator/Delimiter' is left _unchecked_.
-7. Also, under "Fields enclosed by", ensure that "Double quotes if necessary" is left _checked_.
-8. Press __OK__
-9. When asked if you want to modify the table, click __OK__
-10. Set the data types for each field: choose TEXT for fields with text:
+2. Create a New Database (click on the button at the upper left)
+3. Choose a name for the database (for example, joaj-article-db)
+4. The next screen will present a "Create Table" option. We will create our tables by importing CSV files, so you can close this screen (or click on Cancel)
+5. You should now see Tables(0), Indices(0), Views(0), and Triggers(0) in your Database window.
+6. Start the import under File->Import->Table from CSV file...
+7. Navigate to the directory where your doaj-article-sample folder is located
+8. Select the first file to import (start with articles.csv) and click "open"
+9. Keep the tablename "articles" suggested by DB Browser (for later imports, continue to use articles, journals,
+    licences, languages  publishers),
+10. Make sure that the checkbox for "Columnn names in first line" is selected (This is important! Otherwise, your column headers will be considered to be the first row of data)
+11. Under  "Fields separator", make sure that ',' (comma) is selected (efault)
+12. Use '' as "Quote character" (default)
+13. Leave "Trim fields?" checked (default)
+14. Press __OK__
+15. If successful, you'll receive an "Import Complete" notification.
+
+## Modify
+
+Your import is complete, but all your columns are currently stored as text fields. You may want to modify this so that some data is stored as numeric or integer rather than text. 
+
+1. From your main database screen, select "articles", then click on "Modify Table" fromt he menu above
+2. Set the data types for each field: choose TEXT for fields with text:
    (`Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `First_Author`),
    and INTEGER for fields with numbers:
    (`id`, `LanguageId`, `LicenceId`, `Citation_Count`, `Author_Count`, `Day`, `Month`, `Year`).
-11. Click __OK__
-
-
-You can also use this same approach to append new data to an existing table.
-
-## Adding data to existing tables
-
-1. Browse & Search -> Add
-1. Enter data into a csv file and append
+3. Click __OK__
 
 
 ## Data types
