@@ -9,9 +9,9 @@ permalink: /setup/
 
 ### DB Browser for SQLite
 
-You  will need to install [DB Browser for SQLite](http://sqlitebrowser.org) to complete these lessons. DB Browser for SQLite provides a graphical user interface for connecting to and interacting with a SQLLite database. This application bundles SQLite, so you won't need to install SQLite separately.
+You  will need to install [DB Browser for SQLite](http://sqlitebrowser.org) to complete these lessons. DB Browser for SQLite provides a graphical user interface for connecting to and interacting with a SQLite database. This application bundles SQLite, so you won't need to install SQLite separately.
 
-Note: on Windows, the PortableApp download is recommended as the regular version may take a long time to complete on certain systems.
+Note: on Windows, the PortableApp download is recommended as the regular version may take a long time to install on certain systems.
 
 ### SQLite
 
