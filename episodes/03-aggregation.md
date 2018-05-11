@@ -228,7 +228,7 @@ DROP VIEW journal_counts;
 ~~~
 {: .sql}
 
-In DBBrowser for SQLite, you can also create a view from any query by omitting the `CREATE VIEW viewname AS` and instead, clicking the small Save icon at the bottom of the Execute SQL tab and clicking __Save as view__. Whatever method you use to create a view, it will appear in the list of views under the Database Structure tab.
+In DBBrowser for SQLite, you can also create a view from any query by omitting the `CREATE VIEW viewname AS` statement and instead, clicking the small Save icon at the bottom of the Execute SQL tab and then clicking __Save as view__. Whatever method you use to create a view, it will appear in the list of views under the Database Structure tab.
 
 
 > ## Challenge
