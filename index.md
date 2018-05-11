@@ -6,6 +6,6 @@ This Library Carpentry lesson introduces librarians to relational database manag
 
 > ## Prerequisites
 >
-> You will need to install [DB Browser for SQLite](http://sqlitebrowser.org) and [SQLite](https://www.sqlite.org/) to complete this lesson.
+> You will need to install [DB Browser for SQLite](http://sqlitebrowser.org).
 {: .prereq}
 
