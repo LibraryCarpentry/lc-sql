@@ -1,6 +1,6 @@
 # Library Carpentry
 
-The Library Carpentry module [SQL for Librarians](https://data-lessons.github.io/library-sql/) is maintained by [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
+The Library Carpentry module [SQL for Librarians](https://librarycarpentry.github.io/lc-sql/) is maintained by [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
 
 ## Background
 
@@ -61,3 +61,4 @@ you must install the software described below.
 
 [template]: {{ site.workshop_repo }}
 
+Library Carpentry. SQL for Librarians. June 2016. https://librarycarpentry.github.io/lc-sql/.
