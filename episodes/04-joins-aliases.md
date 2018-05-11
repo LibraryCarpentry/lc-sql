@@ -10,6 +10,8 @@ keypoints:
 - "SQL is ideal for linking tables"
 ---
 
+If you haven't already done so, import journals.csv, languages.csv, licences.csv, and publishers.csv
+
 ## Joins
 
 ![](../assets/img/join.png)
@@ -34,7 +36,7 @@ the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are
-telling the manager that we want to combine `articles` with `journals` and that
+telling DB Browser that we want to combine `articles` with `journals` and that
 the common column is `issns`.
 
 ~~~
