@@ -93,7 +93,6 @@ by different publishers and under different licences.
     licences, languages  publishers). In this case let's call it 'articles'.
 5. Since the first row has column headings, check the __Column names in first line__ box
 6. Under __Fields separator__, verify that "," is selected.
-7. Also, under "Fields enclosed by", ensure that "Double quotes if necessary" is left _checked_.
 8. Press __OK__
 
 
