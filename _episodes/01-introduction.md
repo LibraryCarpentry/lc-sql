@@ -3,11 +3,17 @@ title: "Introduction to SQL"
 teaching: 15
 exercises: 0
 questions:
-- "What is SQL? Why is it significant?"
+- "What is SQL?"
+- "Why is it significant?"
+- "What is the relationship between a relational database and SQL?"
 objectives:
-- "to be able to explain what SQL is"
+- "define a relational database"
+- "name the major components of relational database design"
+- "explain what SQL is and why to use it"
+- "identify library skills that translate to using SQL"
 keypoints:
 - "SQL is a powerful language used to interrogate and manipulate relational databases"
+- "Librarians have skills that allow them to transition into using SQL to organize and access data"
 ---
 
 
