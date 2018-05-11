@@ -16,7 +16,7 @@ Note: on Windows, the PortableApp download is recommended as the regular version
 ### SQLite
 
 
-This step is optional. If you are completing the tutorial with DB Browser for SQLite, you won't need to install SQLite separately. If you would like to run SQLite commands directly on the command line, you may need to install [SQLite](https://www.sqlite.org/) separately. 
+This step is optional. If you are completing the tutorial with DB Browser for SQLite, you won't need to install SQLite separately. If you would like to run SQLite commands directly on the command line, you may need to install [SQLite](https://www.sqlite.org/) separately.
 
 #### Linux and Mac OS x
 
