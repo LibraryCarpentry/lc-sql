@@ -3,32 +3,28 @@ layout: page
 title: Setup
 permalink: /setup/
 ---
-1. Installation instructions for core lessons are included in the [workshop template's home page][template],
-   so that they are all in one place.
-   The `setup.md` files of core lessons link to the appropriate sections of the [workshop template page][template].
 
-2. Other lessons' `setup.md` include full installation instructions organized by OS
-   (following the model of the workshop template home page).
+## Software Requirements
 
---------
 
-If you want to set up Jekyll
-so that you can preview changes on your own machine before pushing them to GitHub,
-you must install the software described below.
-(Note: Julian Thilo has written instructions for [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).)
+### DB Browser for SQLite
 
-1.  **Ruby**.
-    This is included with Linux and Mac OS X;
-    the simplest option on Windows is to use [RubyInstaller](http://rubyinstaller.org/).
-    You can test your installation by running `ruby --version`.
-    For more information,
-    see [the Ruby installation guidelines](https://www.ruby-lang.org/en/downloads/).
+You  will need to install [DB Browser for SQLite](http://sqlitebrowser.org) to complete these lessons. DB Browser for SQLite provides a graphical user interface for connecting to and interacting with a SQLLite database. This application bundles SQLite, so you won't need to install SQLite separately.
 
-2.  **[RubyGems](https://rubygems.org/pages/download)**
-    (the package manager for Ruby).
-    You can test your installation by running `gem --version`.
+### SQLite
 
-3.  **[Jekyll](https://jekyllrb.com/)**.
-    You can install this by running `gem install jekyll`.
 
-[template]: {{ site.workshop_repo }}
+This step is optional. If you are completing the tutorial with DB Browser for SQLite, you won't need to install SQLite separately. If you would like to run SQLite commands directly on the command line, you may need to install [SQLite](https://www.sqlite.org/) separately. 
+
+#### Linux and Mac OS x
+
+SQLite command line tools come preinstalled on Linux and Mac OS x.
+
+In order to check they are available type `sqlite3` at the terminal command line. To exit type `.exit`.
+
+#### Windows
+
+On Windows download the [Windows Installer](https://github.com/swcarpentry/windows-installer/releases/download/v0.3/SWCarpentryInstaller.exe)
+Copy the file to a directory and open the directory using the windows command line. Type `sqlite3`.
+
+For a more detailed explanation see this [tutorial](http://www.sqlitetutorial.net/download-install-sqlite/).
