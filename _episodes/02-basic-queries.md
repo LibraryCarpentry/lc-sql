@@ -259,7 +259,7 @@ we only want to see Authors and Titles.
 SELECT authors, title
 FROM articles
 WHERE issns = '2067-2764|2247-6202'
-ORDER first_author ASC;
+ORDER BY first_author ASC;
 ~~~
 {: .sql}
 
@@ -278,7 +278,7 @@ we recommend to put each clause on its own line.
 
 > ## Challenge
 > Let's try to combine what we've learned so far in a single
-> query.  Using the articles table write a query to display the three date fields,
+> query.  Using the articles table write a query to display the title, three date fields,
 > `issns`, and `citation_count`, for articles published after June, ordered
 > alphabetically by first author name. Write the query as a single line, then
 > put each clause on its own line, and see how more legible the query becomes!
