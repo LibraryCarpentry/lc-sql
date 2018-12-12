@@ -1,6 +1,6 @@
 # Library Carpentry
 
-The Library Carpentry module [SQL for Librarians](https://librarycarpentry.github.io/lc-sql/) is maintained by [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), *[Jordan Pedersen]()*, [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
+The Library Carpentry module [SQL for Librarians](https://librarycarpentry.github.io/lc-sql/) is maintained by [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
 
 ## Background
 
