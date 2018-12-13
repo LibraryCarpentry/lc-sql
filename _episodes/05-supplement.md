@@ -5,9 +5,9 @@ exercises: 0
 questions:
 - "What is SQL? Why is it significant?"
 objectives:
-- "to understand the signifance and utilty of SQL"
+- "to understand the signifance and utility of SQL"
 keypoints:
-- "SQL is one of many database management systems"
+- "SQLite is one of many database management systems"
 ---
 
 Database Design
