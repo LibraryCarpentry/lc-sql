@@ -145,6 +145,19 @@ WHERE (issns = '2076-0787') OR (issns = '2077-1444');
 ~~~
 {: .sql}
 
+There are many ways to be very precise using WHERE queries, but sometimes we may want to look for fields that are similar, especially when dealing with messy data which may have some variation in spelling, or where there may be small variations that are not important to the analysis we're doing. For this, we can use the LIKE clause in our query. The LIKE clause can be added after a WHERE clasuse, to build on what we have just been working on, and is structured using quotation marks and percentage signs which book end the term we're looking for.
+
+For example, using the articles table again, let's select all of the resources which have a subject like Crystal structure. We could formulate our query as:
+
+~~~
+SELECT *
+FROM articles
+WHERE Subjects LIKE '%Crystal Structures%'
+~~~
+{: .sql}
+
+Now let's see what variations of the term we got. Notice uppercase and lowercase, the addition of 's' at the end of structures, etc.
+
 > ## Challenge
 > Write a query that returns the title, first_author, issns, month and year
 > for all single author papers with more than 4 citations
