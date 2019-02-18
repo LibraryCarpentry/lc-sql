@@ -1,12 +1,12 @@
 # Library Carpentry
 
-The Library Carpentry module [SQL for Librarians](https://librarycarpentry.github.io/lc-sql/) is maintained by [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
+The Library Carpentry lesson module [SQL for Librarians](https://librarycarpentry.org/lc-sql/) is maintained by [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
 
 ## Background
 
-Library Carpentry is a software skills training programme aimed at library and information professions. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/).
+Library Carpentry is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
 
-Library Carpentry is in the commons and for the commons. It is not tied to any institution of person. For more information on Library Carpentry, see our website [librarycarpentry.github.io](http://librarycarpentry.github.io/).
+Library Carpentry is in the commons and for the commons. It is not tied to any institution of person. For more information on Library Carpentry, see our website [librarycarpentry.org](https://librarycarpentry.org).
 
 ## Contribution
 
@@ -16,9 +16,11 @@ There are many ways of contributing to Library Carpentry:
 - Follow updates on [Twitter](https://twitter.com/LibCarpentry).
 - Make a suggestion or correct an error by [raising an Issue](https://github.com/data-lessons/library-sql/issues).
 
+See the additional ways you can connect with the community by visiting the Library Carpentry [Contact Us](https://librarycarpentry.org/contact/) page.
+
 ## Code of Conduct
 
-All participants should agree to abide by the [Software Carpentry Code of Conduct](http://software-carpentry.org/conduct/).
+All participants should agree to abide by The Carpentries [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html).
 
 ## Authors
 
@@ -28,7 +30,7 @@ Library Carpentry is authored and maintained by the [community](https://github.c
 
 Please cite as:
 
-Library Carpentry. SQL for Librarians. June 2016. https://librarycarpentry.github.io/lc-sql/.
+Library Carpentry. SQL for Librarians. June 2016. https://librarycarpentry.org/lc-sql/.
 
 1. Installation instructions for core lessons are included in the [workshop template's home page][template],
    so that they are all in one place.
@@ -60,5 +62,3 @@ you must install the software described below.
     You can install this by running `gem install jekyll`.
 
 [template]: {{ site.workshop_repo }}
-
-Library Carpentry. SQL for Librarians. June 2016. https://librarycarpentry.github.io/lc-sql/.
