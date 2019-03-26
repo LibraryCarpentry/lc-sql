@@ -204,7 +204,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > FROM articles
 > > JOIN languages
 > > ON articles.languageid=languages.id
-> > WHERE language IS NOT null
+> > WHERE language != ''
 > > GROUP BY language;
 > > ~~~
 > > {: .sql}
