@@ -40,7 +40,7 @@ To import data, you'll need to open DB Browser for SQLite and download a zip fil
 1. Download the data files doaj-article-sample.zip from
     [Figshare](https://doi.org/10.6084/m9.figshare.3409471)
 2. Create a New Database (click on the button at the upper left)
-3. Choose a name for the database (for example, joaj-article-db)
+3. Choose a name for the database (for example, doaj-article-db)
 4. The next screen will present a "Create Table" option. We will create our tables by importing CSV files, so you can close this screen (or click on Cancel)
 5. You should now see Tables(0), Indices(0), Views(0), and Triggers(0) in your Database window.
 6. Start the import under File->Import->Table from CSV file...
@@ -48,8 +48,8 @@ To import data, you'll need to open DB Browser for SQLite and download a zip fil
 8. Select the first file to import (start with articles.csv) and click "open"
 9. Keep the tablename "articles" suggested by DB Browser (for later imports, continue to use articles, journals,
     licences, languages  publishers),
-10. Make sure that the checkbox for "Columnn names in first line" is selected (This is important! Otherwise, your column headers will be considered to be the first row of data)
-11. Under  "Fields separator", make sure that ',' (comma) is selected (efault)
+10. Make sure that the checkbox for "Column names in first line" is selected (This is important! Otherwise, your column headers will be considered to be the first row of data)
+11. Under  "Fields separator", make sure that ',' (comma) is selected (default)
 12. Use '' as "Quote character" (default)
 13. Leave "Trim fields?" checked (default)
 14. Press __OK__
@@ -59,7 +59,7 @@ To import data, you'll need to open DB Browser for SQLite and download a zip fil
 
 Your import is complete, but all your columns are currently stored as text fields. You may want to modify this so that some data is stored as numeric or integer rather than text. 
 
-1. From your main database screen, select "articles", then click on "Modify Table" fromt he menu above
+1. From your main database screen, select "articles", then click on "Modify Table" from the menu above
 2. Set the data types for each field: choose TEXT for fields with text:
    (`Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `First_Author`),
    and INTEGER for fields with numbers:
