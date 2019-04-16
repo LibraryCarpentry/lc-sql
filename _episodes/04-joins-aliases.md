@@ -221,7 +221,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 > > FROM articles
 > > JOIN licences
 > > ON articles.licenceid=licences.id
-> > WHERE licence IS NOT null
+> > WHERE licence != ''
 > > GROUP BY licence;
 > > ~~~
 > > {: .sql}
