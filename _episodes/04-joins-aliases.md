@@ -229,7 +229,7 @@ English. Can you translate them to *SQL queries* and give a suitable answer?
 {: .challenge}
 
 > ## Challenge 5
-> Multiple table joins. Select title, first_author, author_count, citation_count, month, year, journal_title and publisher
+> Write a query that returns title, first_author, author_count, citation_count, month, year, journal_title and publisher for articles in the database.
 >
 > > ## Solution 5
 > > ~~~
