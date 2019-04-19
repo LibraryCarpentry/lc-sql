@@ -78,9 +78,9 @@ direct way of finding information.
 > 
 > In addition, you can read about these two perspectives:
 > 
-> [An Introduction to SQL for Librarians](http://ruthtillman.com/an-introduction-to-sql-for-librarians/)
+> * [An Introduction to SQL for Librarians](http://ruthtillman.com/an-introduction-to-sql-for-librarians/)
 > 
-> [Data Science is Different Now: Learn SQL](https://veekaybee.github.io/2019/02/13/data-science-is-different/)
+> * [Data Science is Different Now: Learn SQL](https://veekaybee.github.io/2019/02/13/data-science-is-different/)
 >
 {: .callout}
 
