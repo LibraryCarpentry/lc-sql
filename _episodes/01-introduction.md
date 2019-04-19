@@ -58,6 +58,34 @@ a mediated search interface. Librarians are good at searching information so
 don’t be afraid – constructing queries using SQL is simply a different and more
 direct way of finding information. 
 
+> ## What are some of the uses for SQL in libraries?
+> 
+> You can use SQL to make macro or large scale changes to metadata records in library databases, for instance, updating journal names so that they are consistent or normalised throughout the database.
+> 
+> For situations where you have to interact with database administrators in your library or wider organisation, you can learn the fundamentals of SQL to become more fluent in the terminology.
+> 
+> Because SQL querying is similar to natural language queries, you can use it to organise a variety of projects (e.g. programme evaluation) and ask questions of the data before going on to use other data analysis tools.
+> 
+> You can use SQL to query your library database and explore new views that are not necessarily provided via library systems patron facing interfaces.
+> 
+> SQL can be used to keep an inventory of items, for instance, for a library's makerspace, or it can be used to track licenses for journals.
+> 
+> For projects involving migrating and cleaning data from one system to the other, SQL can be a handy tool.
+> 
+> With spreadsheets of data scattered throughout folders, SQL can be a useful tool for connecting this data and bringing it together in a database or central data warehouse where it can be accessible to different roles in the library and queried in one place.
+> 
+> It can also help with initial exposure with interacting with a system, in preparation for interacting with a application programming interface or API later on.
+> 
+> In addition, you can read about these two perspectives:
+> 
+> An Introduction to SQL for Librarians
+> http://ruthtillman.com/an-introduction-to-sql-for-librarians/
+> 
+> Data Science is Different Now: Learn SQL
+> https://veekaybee.github.io/2019/02/13/data-science-is-different/
+>
+{: .callout}
+
 ## Database Management Systems
 
 There are a number of different database management systems for working with
