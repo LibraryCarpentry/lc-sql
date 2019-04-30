@@ -3,17 +3,19 @@ title: "Aggregation"
 teaching: 30
 exercises: 30
 questions:
+- "What does aggregation mean?"
 - "How do you aggregate records in SQL?"
 objectives:
-- "to understand how to aggregate records in SQL"
+- "To understand how to aggregate records in SQL"
 keypoints:
-- "SQL is ideal for aggregating database records"
+- "Aggregating data allows us to see smaller subsections of the data for high-level summaries or easier reading for humans"
 ---
 
-## `COUNT` and `GROUP BY`
-
+## What is Aggregation
 Aggregation allows us to combine results by grouping records based on value and
-calculating combined values in groups.
+calculating combined values in groups. 
+
+## `COUNT` and `GROUP BY`
 
 Let’s go to the articles table and find out how many entries there are.
 Using the wildcard simply counts the number of records (rows)
