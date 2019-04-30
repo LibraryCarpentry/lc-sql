@@ -3,10 +3,11 @@ title: "Database design supplement"
 teaching: 15
 exercises: 0
 questions:
-- "What is SQL? Why is it significant?"
+- "What do I need to know to create my own databases in SQL?"
 objectives:
-- "to understand the signifance and utility of SQL"
+- "Understand best practices for designing databases in SQLite or other SQL programs"
 keypoints:
+- "Planning out your database design early helps avoid misunderstanding your data or not being able to ask the questions you want of the data"
 - "SQLite is one of many database management systems"
 ---
 
