@@ -3,12 +3,19 @@ title: "Basic queries"
 teaching: 25
 exercises: 20
 questions:
+- "What is a query?"
 - "How do you query databases using SQL?"
 objectives:
-- "understand how SQL can be used to query databases"
+- "Understand how SQL can be used to query databases"
+- "Understand how to build queries, and the order in which to build the parts"
 keypoints:
 - "SQL is ideal for querying databases"
+- "Many queries take on a basic structure: SELECT data FROM table WHERE certain criteria are present" 
 ---
+
+## What is a query?
+Queries can accomplish many different things, and they are the way we are communicating with our data. Some of the most useful queries - the ones we are introducing in this first section - are used to return results from a table that match specific criteria. 
+
 ## Writing my first query
 
 Let's start by using the __articles__ table. Here we have data on every
