@@ -3,11 +3,14 @@ title: "Joins and aliases"
 teaching: 30
 exercises: 30
 questions:
-- "Linking tables together and using shorthand"
+- "How do I join two tables if they share a common point of information?"
+- "What are aliases good for?"
 objectives:
-- "to understand how to link tables together"
+- "Understand how to linking tables together"
+- "Understand when it is valuable to use shorthand"
 keypoints:
-- "SQL is ideal for linking tables"
+- "Joining two tables in SQL is an good way to analyze datasets, especially when both datasets provide partial answers to questions you want to ask"
+- "Creating aliases allows us to spend less time typing, and more time querying!"
 ---
 
 If you haven't already done so, import journals.csv, languages.csv, licences.csv, and publishers.csv
