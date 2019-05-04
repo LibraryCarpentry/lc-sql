@@ -159,7 +159,7 @@ For example, using the articles table again, let's select all of the resources w
 ~~~
 SELECT *
 FROM articles
-WHERE Subjects LIKE '%Crystal Structures%'
+WHERE Subjects LIKE '%Crystal Structures%';
 ~~~
 {: .sql}
 
