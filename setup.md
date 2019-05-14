@@ -17,7 +17,7 @@ Note: on Windows, the PortableApp download is recommended as the regular version
 To import data, you'll need to open DB Browser for SQLite and download a zip file containing the data files for this tutorial.
 
 1. Download the data files doaj-article-sample.zip from 
-[Zenodo](https://github.com/LibraryCarpentry/lc-sql/tree/gh-pages/files).
+[Zenodo](http://doi.org/10.5281/zenodo.2822005).
 2. Open the zip file with the zip utlity on your machine and save the folder and files to a location where you can easily find them. For example, your Desktop.
 2. Contained in the zip file are two files, doaj-article-sample.db and doaj-article-sample.db.sql. You can either open the database file (less steps) or import the SQL file (more steps).
 
