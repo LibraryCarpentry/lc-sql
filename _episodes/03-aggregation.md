@@ -95,7 +95,7 @@ b) per journal.
 > > ~~~
 > > SELECT LicenceId, ISSNs, avg(citation_count)
 > > FROM articles
-> > GROUP BY LicenceId, ISSNs
+> > GROUP BY LicenceId, ISSNs;
 > > ~~~
 > > {: .sql}
 > {: .solution}
