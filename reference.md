@@ -1,6 +1,5 @@
 ---
 layout: reference
-root: .
 ---
 
 ## SQL Cheat Sheet
