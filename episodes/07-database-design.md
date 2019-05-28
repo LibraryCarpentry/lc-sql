@@ -51,11 +51,37 @@ Concepts such as articles or journals are called 'Entities' and are represented 
 
 ## Normalisation
 
-ERDs are helpful in normalising your data which is a process that can be used to create tables and establish relationships between those tables with the goal of eliminating redundancy and inconsistencies in the data. 
+ERDs are helpful in normalising your data which is a process that can be used to create tables and establish relationships between those tables with the goal of eliminating redundancy and inconsistencies in the data. Normalisation is a multi-step process which follows a number of rules:
 
-In the example ERD above, creating a separate table for publishers and linking to it from the journals table via PK and FK identifiers allows us to normalise the data and avoid inconsistencies. If we used one table, we could introduce publisher name errors such as misspellings or alternate names as demonstrated below.
+1. First Normal Form
+2. Second Normal Form
+3. Third Normal Form
+4. BCNF
+5. Fourth Normal Form
 
-![Introducting inconsistencies and normalising data](../assets/img/normalisation.png)
+### First Normal Form (1NF)
+
+* Rule 1 - Each column should contain atomic values. The Subject column violates this rule as it lists multiple entries separated by a comma. 
+* Rule 2 - A column should contain values that are the same type. The Journal column violates this rule as Date and Text types are inter-mixed.
+* Rule 3 - Each column should have a unique name. So having two "ISSN" columns violates this rule.
+* Rule 4 - The order of the data does not matter as SQL can be used to fetch data in any order from the table.
+
+| Title                                                              | Language | ISSN | ISSN      | Subjects                                                                                                       | Journal    |
+|--------------------------------------------------------------------|----------|------|-----------|----------------------------------------------------------------------------------------------------------------|------------|
+| The Fisher Thermodynamics of Quasi-Probabilities                   | 1        | 1099 | 1099-4300 | `Fisher information|quasi-probabilities|complementarity|Physics|QC1-999|Science|Q`                               | Entropy    |
+| Aflatoxin Contamination of the Milk Supply: A Pakistan Perspective | 1        | 2077 | 2077-0472 | `aflatoxins|AFM1|AFB1|milk marketing chains|hepatocellular carcinoma|Agriculture (General)|S1-972|Agriculture|S` | 2015-11-01 |
+|                                                                    |          |      |           |                                                                                                                |            |
+
+### Second Normal Form (2NF)
+* Rule 1 - 1NF rules are followed. 
+* Rule 2 - Data redundancy is reduced through creating separate tables via primary and foreign key relationships. The Language column and the Languages tables demonstrate this. 
+
+| ID | Language | Abbreviation |
+|----|----------|--------------|
+| 1  | English  | EN           |
+| 2  | French   | FR           |
+
+[Study Tonight](https://www.studytonight.com/dbms/database-normalization.php) features tutorials that cover the forms described above along with the additional forms not covered.  
 
 >## Identifying remaining inconsistencies in the ERD
 >
