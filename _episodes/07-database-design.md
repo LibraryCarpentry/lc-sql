@@ -18,13 +18,13 @@ In libraries, spreadsheets are often created to keep lists of a variety of thing
 
 _Hooland, S. & Verborgh, R. (2015). Modelling In Linked data for libraries, archives and museums : how to clean, link and publish your metadata (p. 16). London: Facet Publishing._
 
-Spreadsheets can make data gathering easier but they can also lead to messy data. For instance, see the screenshot of [doaj-article-sample.csv data used in the Library Carpentry OpenRefine lesson](https://librarycarpentry.org/lc-open-refine/setup.html).
-
-![DOAJ Sample Article Data via OpenRefine](../assets/img/doaj-spreadsheet.png)
+Spreadsheets can make data gathering easier but they can also lead to messy data.
 
 >## Identifying inconsistencies in spreadsheet data
 >
-> In the screenshot above of the [doaj-article-sample.csv data used in the Library Carpentry OpenRefine lesson](https://librarycarpentry.org/lc-open-refine/setup.html), can you identify inconsistencies in the data?
+> In the figure below, can you identify where inconsistencies in the data have been introduced?
+>
+> ![Screenshot from the DOAJ Sample Article Data used in the OpenRefine lesson](../assets/img/doaj-spreadsheet.png)
 >
 > > ## Answers
 > > 1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
