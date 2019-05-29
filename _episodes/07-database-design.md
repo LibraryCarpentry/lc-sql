@@ -24,7 +24,7 @@ Spreadsheets can make data gathering easier but they can also lead to messy data
 >
 > In the figure below, can you identify where inconsistencies in the data have been introduced?
 >
-> ![Screenshot from the DOAJ Sample Article Data used in the OpenRefine lesson](../assets/img/doaj-spreadsheet.png)
+> ![OpenRefine DOAJ Sample Article Data](../assets/img/doaj-spreadsheet.png)
 >
 > > ## Answers
 > > 1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
