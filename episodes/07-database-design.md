@@ -18,13 +18,17 @@ In libraries, spreadsheets are often created to keep lists of a variety of thing
 
 _Hooland, S. & Verborgh, R. (2015). Modelling In Linked data for libraries, archives and museums : how to clean, link and publish your metadata (p. 16). London: Facet Publishing._
 
-Spreadsheets can make data gathering easier but they can also lead to messy data. 
+Spreadsheets can make data gathering easier but they can also lead to messy data. For instance, here is a snapshot of data taken from the first 3 rows of the [doaj-article-sample.csv file used in the Library Carpentry OpenRefine lesson](https://librarycarpentry.org/lc-open-refine/setup.html).
+
+| ID | Title                                                                                                                         | Authors                                                   | DOI                        | URL                                                       | Date       | Language | Subjects                                                                                                       |
+|----|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|----------------------------|-----------------------------------------------------------|------------|----------|----------------------------------------------------------------------------------------------------------------|
+| 1  | The Fisher Thermodynamics of Quasi-Probabilities                                                                              | Flavia Pennini|Angelo Plastino                            | 10.3390/e17127853          | https://doaj.org/article/b75e8d5cca3f46cbbd63e91be5b32412 | 01/11/2015 | EN       | Fisher information|quasi-probabilities|complementarity|Physics|QC1-999|Science|Q                               |
+| 2  | Aflatoxin Contamination of the Milk Supply: A Pakistan Perspective                                                            | Naveed Aslam|Peter C. Wynn                                | 10.3390/agriculture5041172 | https://doaj.org/article/0edc5af6672641c0bd45608812a34f9e | 01/11/2015 | EN       | aflatoxins|AFM1|AFB1|milk marketing chains|hepatocellular carcinoma|Agriculture (General)|S1-972|Agriculture|S |
+| 3  | Metagenomic Analysis of Upwelling-Affected Brazilian Coastal Seawater Reveals Sequence Domains of Type I PKS and Modular NRPS | Rafael R. C. Cuadrat|Juliano C. Cury|Alberto M. R. Dávila | 10.3390/ijms161226101      | https://doaj.org/article/d9fe469f75a0442382b84ba4f50007ee | 01/11/2015 | EN       | PKS|NRPS|metagenomics|environmental genomics|upwelling|coastal environment|Chemistry|QD1-999|Science|Q         |
 
 >## Identifying inconsistencies in spreadsheet data
 >
-> In the figure below, can you identify where inconsistencies in the data can be introduced?
->
-> ![Spreadsheet of journal and articles data](../assets/img/doaj-spreadsheet.png)
+> In the table above, the data snapshot taken from the [doaj-article-sample.csv file used in the Library Carpentry OpenRefine lesson](https://librarycarpentry.org/lc-open-refine/setup.html), can you identify inconsistencies in the data?
 >
 > > ## Answers
 > > 1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
