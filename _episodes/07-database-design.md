@@ -39,7 +39,14 @@ Over time, if you gather enough data in spreadsheets, you are likely to end up w
 
 ## Database Design
 
-Database design involves a model or plan developed to guide how the data can be stored, organized and manipulated. The design addresses what data must be stored, how it might be classified, and it identifies the interrelationships between the data.   
+Database design involves a model or plan developed to guide how the data can be stored, organized and manipulated. The design addresses what data must be stored, how it might be classified, and it identifies the interrelationships between the data.
+
+## Terminology
+In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the "fields", "records", and "values" terminology which is commonly used in databases to refer to columns, rows, and cells in spreadsheets. 
+
+To design a database, we must first decide what things to represent as tables. A table is the physical manifestation of an "entity". An entity is the conceptual representation of the thing we want to store in the database. An entity has "attributes" that describe it. For example, an article or a journal is an entity. Attributes would be things like the article title, or journal ISSN.  
+
+In order to design a database, it is useful to describe on an abstract level the entities we would like to capture along with how the different entities are related to each other. We do this using and entity relationship diagram (ER diagram or ERD).
 
 ## Entity Relationship Diagram (ER Diagram or ERD)
 
@@ -47,7 +54,13 @@ ERDs are helpful tools for visualising and structuring your data more efficientl
 
 ![Articles Database](../assets/img/articles-erd.png)
 
-Concepts such as articles or journals are called 'Entities' and are represented as tables. An entity can have 'Attributes' or columns that describe it, for instance, an article title or a journal ISSN, which are listed in the entity table. Relationships between entities and their attributes are represented by lines linking them together. They are linked by primary and foreign keys. A primary key, or PK, uniquely identifies a record in a table and is noramlly named 'id', short for identifier. A foreign key, or FK, is a reference to a primary key from another table. In the ERD above, 'PublisherId' is a foreign key in the 'journals' table which is linked to the 'publishers' table and 'id' attribute which is a primary key. The degrees of relationship between entities, also known as 'cardinality', can either be one-to-one, one-to-many or many-to-many. Again, using the example above, a publisher can have many journals, so the relationship is noted as one-to-many or '1' to '*'.
+Relationships between entities and their attributes are represented by lines linking them together. For example, the line linking journals and publishers is interpreted as follows: The 'journals' entity is related to the 'publishers' entity through the attributes 'PublisherId' and 'id' respectively.
+
+Conceptually, we know that a journal has only one publisher but a publisher can publish many journals. This is known as a one-to-many relationship. In modeling relationships, we usually assign a unique identifier to the 'one' side of the relationship and use that same identifier to refer to that entity on the 'many' side. In 'publishers' table, the 'id' attribute is that unique identifier. We use that same identifier in the 'journals' table to refer to an individual publisher. That way, there is an unambiguous way for us to distinguish which journals are associated with which publisher in a way that keeps the integrity of the data (see the Normalization section below).
+
+## More Terminology
+Using the journals-publishers example, in database terms, the 'id' attribute in 'publishers' is known as the primary key (PK) and the 'PublisherId' attribute is known as the foreign key (FK). In additon to one-to-many relationships (sometimes indicated as 1 to * or 1 to ∞ but there are other notations too), another common relationship is the many-to-many relationship. The degree of relationship between entities is known as their 'cardinality'.
+
 
 ## Normalisation
 
