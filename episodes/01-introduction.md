@@ -35,7 +35,7 @@ linked to each other when a field in one table can be matched to a field in anot
 table. SQL _queries_ are the commands that let you look up data in a database or
 make calculations based on columns.
 
-## Why use SQL
+## Why use SQL?
 
 SQL is well established and has been around since the 1970s. It is still widely used 
 in a variety of settings. 
