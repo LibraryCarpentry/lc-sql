@@ -35,6 +35,13 @@ linked to each other when a field in one table can be matched to a field in anot
 table. SQL _queries_ are the commands that let you look up data in a database or
 make calculations based on columns.
 
+![A small relational database](../assets/img/table-dogs-db.png)
+
+This example database has three tables to store a list of dogs. Each dog has a breed,
+and each breed has a country of origin. Working backwards, a country might be referred
+to from multiple breeds, and a breed  might be referred to by multiple dogs. The id field
+in each table is a _primary key_, which is the identifer used to uniquely identify a record.
+
 ## Why use SQL
 
 SQL is well established and has been around since the 1970s. It is still widely used 
