@@ -40,7 +40,7 @@ Database design involves a model or plan developed to guide how the data can be 
 ## Terminology
 <img src="../assets/img/field-record-value.png" alt="Fields, Records, Values" width="500"/>
 
-In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the "fields", "records", and "values" terminology. These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. 
+In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the "fields", "records", and "values" terminology. These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. Fields store a single kind of information (text, integers, etc.), records are a set of fields containing specific values.
 
 To design a database, we must first decide what kinds of things we want to represent as tables. A table is the physical manifestation of an "entity". An entity is the conceptual representation of the thing we want to store in the database. An entity has "attributes" that describe it. For example, an article or a journal is an entity. Attributes would be things like the article title, or journal ISSN.  
 
