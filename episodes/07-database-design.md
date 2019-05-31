@@ -68,6 +68,8 @@ In the example ERD above, creating a separate table for publishers and linking t
 
 ![Introducting inconsistencies and normalising data](../assets/img/normalisation.png)
 
+There are a number of normal forms in the normalisation process that can help you reduce redundancy in database tables. [Study Tonight](https://www.studytonight.com/dbms/database-normalization.php) features tutorials where you can learn more about them.  
+
 >## Identifying remaining inconsistencies in the ERD
 >
 > Are there other tables and relationships you can create to further normalise the data and avoid inconsistencies?
