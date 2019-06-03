@@ -1,5 +1,5 @@
 ---
-title: "Database Design (Draft)"
+title: "Database Design"
 teaching: 25
 exercises: 20
 questions:
