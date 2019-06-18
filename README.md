@@ -1,6 +1,6 @@
 # Library Carpentry
 
-The Library Carpentry lesson module [SQL for Librarians](https://librarycarpentry.org/lc-sql/) is maintained by *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), [Lise Doucette](https://github.com/librarianlise), [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
+The [Library Carpentry: SQL](https://librarycarpentry.org/lc-sql/) lesson module is maintained by *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), [Lise Doucette](https://github.com/librarianlise), [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
 
 ## Background
 
@@ -30,7 +30,7 @@ Library Carpentry is authored and maintained by the [community](https://github.c
 
 Please cite as:
 
-Library Carpentry. SQL for Librarians. June 2016. https://librarycarpentry.org/lc-sql/.
+Library Carpentry: SQL. June 2016. https://librarycarpentry.org/lc-sql/.
 
 1. Installation instructions for core lessons are included in the [workshop template's home page][template],
    so that they are all in one place.
