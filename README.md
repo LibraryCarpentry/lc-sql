@@ -1,22 +1,27 @@
-# Library Carpentry
+# Maintainers for Library Carpentry: SQL
 
-The [Library Carpentry: SQL](https://librarycarpentry.org/lc-sql/) lesson module is maintained by *[Jordan Pedersen](https://github.com/JordanPedersen)*, [Kristin Lee](https://github.com/kristindawn), [Chris Erdmann](https://github.com/libcce), [Lise Doucette](https://github.com/librarianlise), [Elaine Wong](https://github.com/elainewong) and [Janice Chan](https://github.com/icecjan).
+- [Jordan Pedersen](https://github.com/JordanPedersen) (Lead)
+- [Kristin Lee](https://github.com/kristindawn)
+- [Chris Erdmann](https://github.com/libcce)
+- [Lise Doucette](https://github.com/librarianlise)
 
-## Background
+Past Maintainers:
 
-Library Carpentry is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
+- [Elaine Wong](https://github.com/elainewong)
+- [Janice Chan](https://github.com/icecjan).
 
-Library Carpentry is in the commons and for the commons. It is not tied to any institution of person. For more information on Library Carpentry, see our website [librarycarpentry.org](https://librarycarpentry.org).
+## Library Carpentry
 
-## Contribution
+[Library Carpentry](https://librarycarpentry.org) is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
 
-There are many ways of contributing to Library Carpentry:
+## License
 
-- Join our [Gitter discussion forum](https://gitter.im/LibraryCarpentry/).
-- Follow updates on [Twitter](https://twitter.com/LibCarpentry).
-- Make a suggestion or correct an error by [raising an Issue](https://github.com/data-lessons/library-sql/issues).
+All Software, Data, and Library Carpentry instructional material is made available under the [Creative Commons Attribution
+license][cc-by-human]. The following is a human-readable summary of (and not a substitute for) the [full legal text of the CC BY 4.0 license][cc-by-legal].
 
-See the additional ways you can connect with the community by visiting the Library Carpentry [Contact Us](https://librarycarpentry.org/contact/) page.
+## Contributing
+
+There are many ways to discuss and contribute to Library Carpentry lessons. Visit the lesson [discussion page](https://librarycarpentry.org/lc-sql/discuss/index.html) to learn more. Also see [Contributing](https://github.com/LibraryCarpentry/lc-sql/blob/gh-pages/CONTRIBUTING.md).
 
 ## Code of Conduct
 
@@ -24,41 +29,12 @@ All participants should agree to abide by The Carpentries [Code of Conduct](http
 
 ## Authors
 
-Library Carpentry is authored and maintained by the [community](https://github.com/LibraryCarpentry/lc-sql/network/members).
+Library Carpentry is authored and maintained through issues, commits, and pull requests from the community.
 
 ## Citation
 
-Please cite as:
-
 Library Carpentry: SQL. June 2016. https://librarycarpentry.org/lc-sql/.
 
-1. Installation instructions for core lessons are included in the [workshop template's home page][template],
-   so that they are all in one place.
-   The `setup.md` files of core lessons link to the appropriate sections of the [workshop template page][template].
+## Checking and Previewing the Lesson
 
-2. Other lessons' `setup.md` include full installation instructions organized by OS
-   (following the model of the workshop template home page).
-
-
-## Contributing
-
-If you want to set up Jekyll
-so that you can preview changes on your own machine before pushing them to GitHub,
-you must install the software described below.
-(Note: Julian Thilo has written instructions for [installing Jekyll on Windows](http://jekyll-windows.juthilo.com/).)
-
-1.  **Ruby**.
-    This is included with Linux and Mac OS X;
-    the simplest option on Windows is to use [RubyInstaller](http://rubyinstaller.org/).
-    You can test your installation by running `ruby --version`.
-    For more information,
-    see [the Ruby installation guidelines](https://www.ruby-lang.org/en/downloads/).
-
-2.  **[RubyGems](https://rubygems.org/pages/download)**
-    (the package manager for Ruby).
-    You can test your installation by running `gem --version`.
-
-3.  **[Jekyll](https://jekyllrb.com/)**.
-    You can install this by running `gem install jekyll`.
-
-[template]: {{ site.workshop_repo }}
+To check and preview a lesson locally, see [http://carpentries.github.io/lesson-example/07-checking/index.html](http://carpentries.github.io/lesson-example/07-checking/index.html).
