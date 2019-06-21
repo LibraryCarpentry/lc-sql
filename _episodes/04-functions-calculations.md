@@ -1,5 +1,5 @@
 ---
-title: "Aggregation & calculating values"
+title: "Aggregating & calculating values"
 teaching: 15
 exercises: 5
 questions:
