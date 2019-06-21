@@ -29,14 +29,12 @@ GROUP BY is used by SQL to arrange identical data into groups. In this case, we 
 As you can see, it is difficult to tell though what ISSN has the highest average citation count and the least. We can improve upon the query above by using `ORDER BY` and `DESC`. 
 
 ~~~
-SELECT ISSNs, AVG(Citation_Count) AS Avg_Citation_Count
+SELECT ISSNs, AVG(Citation_Count)
 FROM articles
 GROUP BY ISSNs 
-ORDER BY Avg_Citation_Count DESC;
+ORDER BY AVG(Citation_Count) DESC;
 ~~~
 {: .sql}
-
-`AS` is used to create another column called `Avg_Citation_Count` to contain the calculations.
 
 > ## Challenge
 > Write a query that returns the title count grouped by `ISSNs` in descending order. Which ISSN has the most titles?
@@ -51,7 +49,6 @@ ORDER BY Avg_Citation_Count DESC;
 > > {: .sql}
 > {: .solution}
 {: .challenge}
-
 
 ## Calculations
 
