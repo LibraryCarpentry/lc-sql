@@ -17,7 +17,7 @@ keypoints:
 
 ## Filtering
 
-SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the _Theory and Applications of Mathematics & Computer Science_ journal from the `articles` table. The journal has an ISSN code '2067-2764|2247-6202'.  To filter by this ISSN code, we will use the `WHERE` clause.
+SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the _Theory and Applications of Mathematics & Computer Science_ journal from the `articles` table. The journal has an ISSN code `2067-2764|2247-6202`.  To filter by this ISSN code, we will use the `WHERE` clause.
 
 ~~~
 SELECT *
