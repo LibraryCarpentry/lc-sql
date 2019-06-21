@@ -1,5 +1,5 @@
 ---
-title: "Order of Execution & Building Complex Queries"
+title: "Ordering and commenting"
 teaching: 15
 exercises: 0
 questions:
@@ -11,7 +11,7 @@ keypoints:
 - "Queries often have the structure: SELECT data FROM table WHERE certain criteria are present." 
 ---
 
-## Order of Execution
+## Order of execution
 
 Let's say we had the following query:
 
@@ -27,18 +27,18 @@ What is interesting to note about this query is that we don't necessarily have t
 
 We can do this because sorting occurs earlier in the computational pipeline than field selection.
 
-The computer is basically doing this:
+> ## The computer is basically doing this:
+>
+> 1. Filtering rows according to WHERE
+> 2. Sorting results according to ORDER BY
+> 3. Displaying requested columns or expressions.
+>
+{: .callout}
 
-1. Filtering rows according to WHERE
-2. Sorting results according to ORDER BY
-3. Displaying requested columns or expressions.
-
-Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
-BY`. It is possible to write a query as a single line, but for readability,
-we recommend to put each clause on its own line.
+Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER BY`. It is possible to write a query as a single line, but for readability, we recommend to put each clause on its own line.
 
 
-## Building Complex Queries
+## Complex queries & commenting
 
 Consider the following query:
 
