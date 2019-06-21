@@ -26,7 +26,7 @@ FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs;
 ~~~
-{: .source}
+{: .sql}
 
 `ON` is similar to `WHERE`, it filters things out according to a test condition.  We use the `table.colname` format to tell the SQL manager what column in which table we are referring to.
 
@@ -38,7 +38,7 @@ FROM articles
 JOIN journals
 USING (ISSNs);
 ~~~
-{: .source}
+{: .sql}
 
 This figure shows the relations between the tables and helps to visualise joining or linking the tables in the database:
 ![Articles Database](../assets/img/articles-erd.png)
@@ -52,7 +52,7 @@ FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs;
 ~~~
-{: .source}
+{: .sql}
 
 Joins can be combined with sorting, filtering, and aggregation.  So, if we wanted the average number of authors for articles on each journal, we can use the following query:
 
@@ -63,7 +63,7 @@ JOIN journals
 ON articles.ISSNs = journals.ISSNs
 GROUP BY articles.ISSNs;
 ~~~
-{: .source}
+{: .sql}
 
 The `ROUND` function allows us to round the `Author_Count` number returned by the `AVG` function by 2 decimal places.
 
@@ -92,7 +92,7 @@ ON articles.ISSNs = journals.ISSNs
 JOIN publishers
 ON publishers.id = journals.PublisherId;
 ~~~
-{: .source}
+{: .sql}
 
 > ## Challenge:
 >
@@ -129,7 +129,7 @@ FROM articles AS ar
 JOIN journals  AS jo
 ON ar.ISSNs = jo.ISSNs;
 ~~~
-{: .source}
+{: .sql}
 
 And column names:
 
@@ -139,7 +139,7 @@ FROM articles AS ar
 JOIN journals  AS jo
 ON ar.issns = jo.issns;
 ~~~
-{: .source}
+{: .sql}
 
 The `AS` isn't technically required, so you could do:
 
@@ -147,7 +147,7 @@ The `AS` isn't technically required, so you could do:
 SELECT a.Title t
 FROM articles a;
 ~~~
-{: .source}
+{: .sql}
 
 But using `AS` is much clearer so it is good style to include it.
 
