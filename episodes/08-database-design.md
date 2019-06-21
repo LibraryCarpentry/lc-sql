@@ -1,5 +1,5 @@
 ---
-title: "Database Design"
+title: "Database design"
 teaching: 25
 exercises: 20
 questions:
@@ -51,6 +51,7 @@ In order to design a database, it is useful to describe on an abstract level the
 ERDs are helpful tools for visualising and structuring your data more efficiently. They allow you to map relationships between concepts and ultimately construct a relational database. The following is an ERD of the database used in this lesson:
 
 ![Articles Database](../assets/img/articles-erd.png)
+OR you can view the [dbdiagram.io interactive version of the ERD]([dbdiagram.io](https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530)).
 
 Relationships between entities and their attributes are represented by lines linking them together. For example, the line linking journals and publishers is interpreted as follows: The 'journals' entity is related to the 'publishers' entity through the attributes 'PublisherId' and 'id' respectively.
 
