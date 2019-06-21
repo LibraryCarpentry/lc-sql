@@ -114,6 +114,8 @@ ON publishers.id = journals.PublisherId;
 > {: .solution}
 {: .challenge}
 
+There are different types of joins which you can learn more about at [SQL Joins Explained](http://www.sql-join.com/sql-join-types).
+
 
 ## Aliases
 
