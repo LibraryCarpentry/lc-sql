@@ -16,6 +16,8 @@ SQL queries help us *ask* specific *questions* which we want to answer about our
 
 Have a look at the following questions; these questions are written in plain English. Can you translate them to *SQL queries* and give a suitable answer?
 
+Also, if you would like to learn more SQL concepts and try additional challenges, see the [Software Carpentry Databases and SQL](https://swcarpentry.github.io/sql-novice-survey/) lesson.
+
 > ## Challenge 1
 > How many `articles` are there from each `First_author`? Can you make an alias for the number of articles? Can you order the results by articles?
 >
