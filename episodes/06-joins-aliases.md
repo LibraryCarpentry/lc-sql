@@ -1,125 +1,114 @@
 ---
 title: "Joins and aliases"
-teaching: 30
-exercises: 30
+teaching: 25
+exercises: 20
 questions:
 - "How do I join two tables if they share a common point of information?"
-- "What are aliases good for?"
+- "How can I use aliases to improve my queries?"
 objectives:
-- "Understand how to linking tables together"
-- "Understand when it is valuable to use shorthand"
+- "Understand how to link tables together via joins."
+- "Understand when it is valuable to use aliases or shorthand."
 keypoints:
-- "Joining two tables in SQL is an good way to analyze datasets, especially when both datasets provide partial answers to questions you want to ask"
+- "Joining two tables in SQL is an good way to analyse datasets, especially when both datasets provide partial answers to questions you want to ask."
 - "Creating aliases allows us to spend less time typing, and more time querying!"
 ---
 
-If you haven't already done so, import journals.csv, languages.csv, licences.csv, and publishers.csv
-
 ## Joins
 
-![](../assets/img/join.png)
+The SQL `JOIN` clause allows us to combine columns from one or more tables in a database by using values common to each. It follows the `FROM` clause in a SQL statement. We also need to tell the computer which columns provide the link between the two
+tables using the word `ON`.  
 
-To combine data from two tables we use the SQL `JOIN` command, which comes after
-the `FROM` command.
-
-We also need to tell the computer which columns provide the link between the two
-tables using the word `ON`.  What we want is to join the data with the same
-journal name.
+Let's start by joining data from the `articles` table with the `journals` table. The `ISSNs` columns in both these tables links them.
 
 ~~~
 SELECT *
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns;
+ON articles.ISSNs = journals.ISSNs;
 ~~~
 {: .source}
 
-`ON` is like `WHERE`, it filters things out according to a test condition.  We use
-the `table.colname` format to tell the manager what column in which table we are
-referring to.
+`ON` is similar to `WHERE`, it filters things out according to a test condition.  We use the `table.colname` format to tell the SQL manager what column in which table we are referring to.
 
-Alternatively, we can use the word `USING`, as a short-hand.  In this case we are
-telling DB Browser that we want to combine `articles` with `journals` and that
-the common column is `issns`.
+Alternatively, we can use the word `USING`, as a short-hand.  In this case we are telling DB Browser that we want to combine `articles` with `journals` and that the common column is `ISSNs`.
 
 ~~~
 SELECT *
 FROM articles
 JOIN journals
-USING (issns);
+USING (ISSNs);
 ~~~
 {: .source}
 
-We often won't want all of the fields from both tables, so anywhere we would
-have used a field name in a non-join query, we can use `table.colname`.
+This figure shows the relations between the tables and helps to visualise joining or linking the tables in the database:
+![Articles Database](../assets/img/articles-erd.png)
+We will cover [relational database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) in the next episode.
 
-For example, what if we wanted information on published articles in different
-journals, but instead of their ISSN we wanted the actual journal title.
+When joining tables, you can specify the columns you want by using `table.colname` instead of selecting all the columns using `*`. For example:
 
 ~~~
-SELECT articles.issns, journal_title, title, first_author, citation_count, author_count, month, year
+SELECT articles.ISSNs, journals.Journal_Title, articles.Title, articles.First_Author, articles.Month, articles.Year
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns;
+ON articles.ISSNs = journals.ISSNs;
 ~~~
 {: .source}
 
-Joins can be combined with sorting, filtering, and aggregation.  So, if we
-wanted average number of authors for articles on different journals, we
-could do something like
+Joins can be combined with sorting, filtering, and aggregation.  So, if we wanted the average number of authors for articles on each journal, we can use the following query:
 
 ~~~
-SELECT articles.issns, journal_title, ROUND(AVG(author_count), 2)
+SELECT articles.ISSNs, journals.Journal_Title, ROUND(AVG(articles.Author_Count), 2)
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns
-GROUP BY articles.issns;
+ON articles.ISSNs = journals.ISSNs
+GROUP BY articles.ISSNs;
 ~~~
 {: .source}
+
+The `ROUND` function allows us to round the `Author_Count` number returned by the `AVG` function by 2 decimal places.
 
 > ## Challenge
-> Write a query that returns the journal title, total number of articles published
-> and average number of citations for every journal.
+> Write a query that `JOINS` the `articles` and `journals` tables and that returns the `Journal_Title`, total number of articles published and average number of citations for every journal ISSN.
 >
 > > ## Solution
 > > ~~~
-> > SELECT journal_title, count(*), avg(citation_count)
+> > SELECT journals.Journal_Title, count(*), avg(articles.Citation_Count)
 > > FROM articles
 > > JOIN journals
-> > ON articles.issns = journals.issns
-> > GROUP BY articles.issns;
+> > ON articles.ISSNs = journals.ISSNs
+> > GROUP BY articles.ISSNs;
 > > ~~~
 > > {: .sql}
 > {: .solution}
 {: .challenge}
 
+You can also join multiple tables. For example:
 
-It is worth mentioning that you can join multiple tables. For example:
 ~~~
-SELECT title, first_author, journal_title, publisher
+SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
 FROM articles
 JOIN journals
-ON articles.issns = journals.issns
+ON articles.ISSNs = journals.ISSNs
 JOIN publishers
-ON publishers.id = journals.publisherid;
+ON publishers.id = journals.PublisherId;
 ~~~
 {: .source}
 
 > ## Challenge:
 >
-> Write a query that returns the journal title, publisher name, and number of
+> Write a query that returns the `Journal_Title`, `Publisher` name, and number of
 > articles published, ordered by number of articles in descending order.
 >
 > > ## Solution
 > > ~~~
-> > SELECT journal_title, publisher, count(*)
+> > SELECT journals.Journal_Title, publishers.Publisher, COUNT(*)
 > > FROM articles
 > > JOIN journals
-> > ON articles.issns = journals.issns
+> > ON articles.ISSNs = journals.ISSNs
 > > JOIN publishers
-> > ON publishers.id = journals.publisherid
-> > GROUP BY journal_title
-> > ORDER BY count(*) desc;
+> > ON publishers.id = journals.PublisherId
+> > GROUP BY Journal_Title
+> > ORDER BY COUNT(*) DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -128,18 +117,18 @@ ON publishers.id = journals.publisherid;
 
 ## Aliases
 
-As queries get more complex names can get long and unwieldy. To help make things
-clearer we can use aliases to assign new names to things in the query.
+As queries get more complex, names can get long and unwieldy. To help make things clearer we can use aliases to assign new names to items in the query.
 
 We can alias both table names:
 
 ~~~
-SELECT ar.title, ar.first_author, jo.journal_title
+SELECT ar.Title, ar.First_Author, jo.Journal_Title
 FROM articles AS ar
 JOIN journals  AS jo
-ON ar.issns = jo.issns;
+ON ar.ISSNs = jo.ISSNs;
 ~~~
 {: .source}
+
 And column names:
 
 ~~~
@@ -150,99 +139,13 @@ ON ar.issns = jo.issns;
 ~~~
 {: .source}
 
-The `AS` isn't technically required, so you could do
+The `AS` isn't technically required, so you could do:
 
 ~~~
-SELECT a.title t
+SELECT a.Title t
 FROM articles a;
 ~~~
 {: .source}
 
-but using `AS` is much clearer so it is good style to include it.
+But using `AS` is much clearer so it is good style to include it.
 
-## Extra Challenges (optional)
-
-SQL queries help us *ask* specific *questions* which we want to answer about
-our data. The real skill with SQL is to know how to translate our scientific
-questions into a sensible SQL query (and subsequently visualize and interpret
-our results).
-
-Have a look at the following questions; these questions are written in plain
-English. Can you translate them to *SQL queries* and give a suitable answer?
-
-> ## Challenge 1
-> How many articles are there from each first_author? Can you make an alias for the number of articles? Can you order the results by articles?
->
-> > ## Solution 1
-> > ~~~
-> > SELECT first_author, COUNT( * ) AS n_articles
-> > FROM articles
-> > GROUP BY first_author
-> > ORDER BY n_articles DESC;
-> > ~~~
-> > {: .sql}
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 2
-> How many papers have a single author? How many have 2 authors? How many 3? etc?
->
-> > ## Solution 2
-> > ~~~
-> > SELECT author_count, count( * )
-> > FROM articles
-> > GROUP BY author_count;
-> > ~~~
-> > {: .sql}
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 3
-> How many articles are published for each language? (Ignore articles where
-> language is unknown).
->
-> > ## Solution 3
-> > ~~~
-> > SELECT language, count( * )
-> > FROM articles
-> > JOIN languages
-> > ON articles.languageid=languages.id
-> > WHERE language != ''
-> > GROUP BY language;
-> > ~~~
-> > {: .sql}
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 4
-> How many articles are published for each licence type, and what is the average
-> number of citations for that licence type
->
-> > ## Solution 4
-> > ~~~
-> > SELECT licence, avg( citation_count ), count( * )
-> > FROM articles
-> > JOIN licences
-> > ON articles.licenceid=licences.id
-> > WHERE licence != ''
-> > GROUP BY licence;
-> > ~~~
-> > {: .sql}
-> {: .solution}
-{: .challenge}
-
-> ## Challenge 5
-> Write a query that returns title, first_author, author_count, citation_count, month, year, journal_title and publisher for articles in the database.
->
-> > ## Solution 5
-> > ~~~
-> > SELECT title, first_author, author_count, citation_count, month, year, journal_title, publisher
-> > FROM articles
-> > JOIN journals
-> > ON articles.issns=journals.issns
-> > JOIN publishers
-> > ON publishers.id=journals.publisherid;
-> > ~~~
-> > {: .sql}
-> {: .solution}
-{: .challenge}
