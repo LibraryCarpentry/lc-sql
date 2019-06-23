@@ -1,7 +1,7 @@
 ---
 title: "Extra challenges (optional)"
-teaching: 25
-exercises: 20
+teaching: 0
+exercises: 35
 questions:
 - "Are there extra challenges to practice translating plain English queries to SQL queries?"
 objectives:
