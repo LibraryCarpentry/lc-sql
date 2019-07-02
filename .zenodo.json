@@ -1,0 +1,101 @@
+{
+  "contributors": [
+    {
+      "type": "Editor",
+      "name": "Jordan Pedersen",
+      "orcid": "0000-0003-4548-9957"
+    },
+    {
+      "type": "Editor",
+      "name": "Kristin Lee",
+      "orcid": "0000-0003-4906-1800"
+    },
+    {
+      "type": "Editor",
+      "name": "Christopher Erdmann",
+      "orcid": "0000-0003-2554-180X"
+    },
+    {
+      "type": "Editor",
+      "name": "Lise Doucette"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Christopher Erdmann",
+      "orcid": "0000-0003-2554-180X"
+    },
+    {
+      "name": "James Baker",
+      "orcid": "0000-0002-2682-6922"
+    },
+    {
+      "name": "Fernando Rios"
+    },
+    {
+      "name": "Janice Chan"
+    },
+    {
+      "name": "Tim Dennis",
+      "orcid": "0000-0001-6632-3812"
+    },
+    {
+      "name": "Belinda Weaver"
+    },
+    {
+      "name": "Anna-Maria Sichani"
+    },
+    {
+      "name": "Jamene Brooks-Kieffer"
+    },
+    {
+      "name": "Ruud Steltenpool"
+    },
+    {
+      "name": "222064h"
+    },
+    {
+      "name": "Dan Michael Heggø",
+      "orcid": "0000-0002-6189-5958"
+    },
+    {
+      "name": "Elaine Wong",
+      "orcid": "0000-0002-9799-3576"
+    },
+    {
+      "name": "Emanuele Lanzani"
+    },
+    {
+      "name": "thegsi"
+    },
+    {
+      "name": "Reid Otsuji",
+      "orcid": "0000-0002-1842-0295"
+    },
+    {
+      "name": "David Kane",
+      "orcid": "0000-0002-1625-6815"
+    },
+    {
+      "name": "Jeffrey Oliver",
+      "orcid": "0000-0003-2160-1086"
+    },
+    {
+      "name": "Katrin Leinweber",
+      "orcid": "0000-0001-5135-5758"
+    },
+    {
+      "name": "Kunal Marwaha",
+      "orcid": "0000-0001-9084-6971"
+    },
+    {
+      "name": "mdschleu"
+    },
+    {
+      "name": "orobecca"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  }
+}
