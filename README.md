@@ -8,7 +8,9 @@
 Past Maintainers:
 
 - [Elaine Wong](https://github.com/elainewong)
-- [Janice Chan](https://github.com/icecjan).
+- [Janice Chan](https://github.com/icecjan)
+
+Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-sql-maintainers).
 
 ## Library Carpentry
 
