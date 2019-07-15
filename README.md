@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266102.svg)](https://doi.org/10.5281/zenodo.3266102)  
+
 # Maintainers for Library Carpentry: SQL
 
 - [Jordan Pedersen](https://github.com/JordanPedersen) (Lead)
@@ -35,7 +37,7 @@ Library Carpentry is authored and maintained through issues, commits, and pull r
 
 ## Citation
 
-Library Carpentry: SQL. June 2016. https://librarycarpentry.org/lc-sql/.
+Jordan Perdersen (Ed.), Kristin Lee (Ed.), Christopher Erdmann (Ed.), Lise Doucette (Ed.), Elaine Wong (Ed.), Janice Chan (Ed.), James Baker, Fernando Rios, Tim Dennis, Belinda Weaver, … orobecca. (2019, July). LibraryCarpentry/lc-sql: Library Carpentry: Introduction to SQL, June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3266102
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266102.svg)](https://doi.org/10.5281/zenodo.3266102)
 
