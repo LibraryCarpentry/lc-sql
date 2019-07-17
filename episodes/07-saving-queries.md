@@ -24,9 +24,9 @@ the number of journals in a view, we can write:
 
 ~~~
 CREATE VIEW journal_counts AS
-SELECT issns, COUNT(*)
+SELECT ISSNs, COUNT(*)
 FROM articles
-GROUP BY issns;
+GROUP BY ISSNs;
 ~~~
 {: .sql}
 
@@ -55,18 +55,19 @@ under the Database Structure tab.
 
 > ## Challenge
 >
-> Write a query that returns the number of articles published in each journal
-> on each month, sorted from most popular journal to the ones with least
-> publications each month starting from the most recent records. Save this
-> query as a `VIEW`.
+> Write a `CREATE VIEW` query that `JOINS` the `articles` table with the 
+> `journals` table on `ISSNs` and returns the `COUNT` of article records 
+> grouped by the `Journal_Title` in `DESC` order. 
 >
 > > ## Solution
 > > ~~~
 > > CREATE VIEW journal_counts AS
-> > SELECT COUNT(*), month
+> > SELECT journals.Journal_Title, COUNT(*)
 > > FROM articles
-> > GROUP BY issns, month
-> > ORDER BY  count(*) desc, month desc;
+> > JOIN journals
+> > ON articles.ISSNs = journals.ISSNs
+> > GROUP BY Journal_Title
+> > ORDER BY COUNT(*) DESC
 > > ~~~
 > > {: .sql}
 > {: .solution}
