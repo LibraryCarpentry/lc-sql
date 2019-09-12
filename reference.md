@@ -96,6 +96,26 @@ ON alias1.column_name = alias2.column_name;
 - we can use aliases to assign new names to things in the query.
 - we can use as to rename column names too. E.g. `SELECT journal_title AS journal`.
 
+_____
+### Saving queries
+
+~~~
+CREATE VIEW viewname AS
+SELECT column_names
+FROM table_name;
+~~~
+- create a stored query or virtual table in database for repeated queries
+
+_____
+### Commenting
+
+~~~
+-- Select all columns
+SELECT * 
+-- From the table_name
+FROM table_name
+~~~
+- we can create comments in SQL queries to help us/others understand the query better
 
 _____
 ### Operators
