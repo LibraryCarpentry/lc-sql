@@ -9,7 +9,7 @@ ____
 ____
 ## Making a handout
 
-Librarians like handouts. To make a handout for this lesson, adapt/print from [https://librarycarpentry.org/lc-sql/reference](https://librarycarpentry.org/lc-sql/reference).
+To make a handout for this lesson, adapt/print from [https://librarycarpentry.org/lc-sql/reference](https://librarycarpentry.org/lc-sql/reference).
 
 ____
 # General notes of SQL
@@ -33,44 +33,15 @@ ____
 
 ## Overall
 
-Relational databases are not as widely used in science as in business,
-but they are still a common way to store large data sets with complex structure.
-Even when the data itself isn't in a database,
-the metadata could be:
-for example,
-meteorological data might be stored in files on disk,
-but data about when and where observations were made,
-data ranges,
-and so on could be in a database
-to make it easier for scientists to find what they want to.
+* Libraries often start off with spreadsheet-based projects and there are a number of examples provided in the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) where they might move to a database and use SQL. The _What are some of the uses of SQL in libraries_ section can be possibly turned into a group exercise where workshop participants can share some projects that can benefit from moving to a database. 
 
-*   The first few sections (up to "Missing Data") usually go very quickly.
-    The pace usually slows down a bit when null values are discussed
-    mostly because learners have a lot of details to keep straight by this point.
-    Things *really* slow down during the discussion of joins,
-    but this is the key idea in the whole lesson:
-    important ideas like primary keys and referential integrity
-    only make sense once learners have seen how they're used in joins.
-    It's worth going over things a couple of times if necessary (with lots of examples).
+* If you are short on time, consider pointing workshop participants to the [Ordering and commenting](https://librarycarpentry.org/lc-sql/05-ordering-commenting/index.html) and [Saving queries](https://librarycarpentry.org/lc-sql/07-saving-queries/index.html) episodes to refer to later. 
 
-*   The sections on creating and modifying data,
-    and programming with databases,
-    can be dropped if time is short.
-    Of the two,
-    people seem to care most about how to add data (which only takes a few minutes to demonstrate).
+* The [Extra challenges](https://librarycarpentry.org/lc-sql/10-extra-challenges/index.html) episode is optional if workshop participants want to try additional challenge exercises later. Depending on time it can be done as homework or at the end of a workshop.
 
-*   Simple calculations are actually easier to do in a spreadsheet; the
-    advantages of using a database become clear as soon as filtering
-    and joins are needed.  Instructors may therefore want to show a
-    spreadsheet with the information from the four database tables
-    consolidated into a single sheet, and demonstrate what's needed in
-    both systems to answer questions like, "What was the average
-    radiation reading in 1931?"
+* [Database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) episode can be positioned at the start, during, at the end of the lesson. It adds more time and can be a more complex episode to teach but it also helps with providing further background on how databases can be helpful with structured data.
 
-*   Some advanced learners may have heard that NoSQL databases
-    (i.e., ones that don't use the relational model)
-    are the next big thing,
-    and ask why we're not teaching those.
+* Some advanced learners may have heard that NoSQL databases (i.e., ones that don't use the relational model) are the next big thing, and ask why we're not teaching those.
     The answers are:
     1.  Relational databases are far more widely used than NoSQL databases.
     2.  We have far more experience with relational databases than with any other kind,
@@ -80,5 +51,5 @@ to make it easier for scientists to find what they want to.
 
 ## Resources
 
-*   `data/*.csv`: CSV versions of data in sample survey database.
-*   `bin/create-db.sql`: generate survey database used in examples based on CSV.
+* Where to go for more SQL tutorials: [https://brohrer.github.io/sql_resources.html](https://brohrer.github.io/sql_resources.html).
+* Software Carpentry has some starter lesson material on interacting with databases with [Python](https://swcarpentry.github.io/sql-novice-survey/10-prog/index.html) and [R](https://swcarpentry.github.io/sql-novice-survey/11-prog-R/index.html).
