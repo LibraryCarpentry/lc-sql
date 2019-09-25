@@ -9,10 +9,10 @@ questions:
 objectives:
 - "Define a relational database."
 - "Explain what SQL is and why to use it."
-- "Identify library skills that translate to using SQL"
+- "Identify library and information skills that relate to using SQL"
 keypoints:
 - "SQL is a powerful language used to interrogate and manipulate relational databases."
-- "People working in library- and information-related roles have skills that allow them to transition into using SQL to organize and access data."
+- "People working in library- and information-related roles have skills that allow them use SQL to organize and access data."
 ---
 
 
@@ -20,10 +20,10 @@ keypoints:
 ## What is SQL?
 
 **S**tructured **Q**uery **L**anguage, or SQL (sometimes pronounced "sequel"), is a powerful language used to interrogate and
-manipulate relational databases. It is not a general
+manipulate relational databases. It is not a general 
 programming language that you can use to write an entire program. However, SQL
 queries can be called from programming languages to let any program interact
-with databases. There are several different variants of SQL, but all support the
+with databases. There are several variants of SQL, but all support the
 same basic statements that we will be covering today.
 
 ## Relational databases
@@ -53,9 +53,9 @@ such as R or Python.
 ## Why are people working in library- and information-related roles well suited to SQL?
 Librarianship is about information management. We help sort and organise
 information and we help people find information. Most of us go through mediated queries
-to help people find the information they need e.g. conducting a search via
+to help people find the information they need, e.g., conducting a search via
 a library catalogue. With SQL, you can directly construct your database queries
-without the constraints (e.g. field name or search limitations) imposed by
+without the constraints (e.g., field name or search limitations) imposed by
 a mediated search interface. Librarians are good at searching information so
 don’t be afraid – constructing queries using SQL is simply a different and more
 direct way of finding information. 
@@ -72,7 +72,7 @@ direct way of finding information.
 > 
 > * SQL can be used to keep an inventory of items, for instance, for a library's makerspace, or it can be used to track licenses for journals.
 > 
-> * For projects involving migrating and cleaning data from one system to the other, SQL can be a handy tool.
+> * For projects involving migrating and cleaning data from one system to another, SQL can be a handy tool.
 > 
 > * With spreadsheets of data scattered throughout folders, SQL can be a useful tool for connecting this data and bringing it together in a database or central data warehouse where it can be accessible to different roles in the library and queried in one place.
 > 
@@ -149,22 +149,18 @@ __publishers__
 
 ## A Note About Data Types
 
-The main data types that are used in doaj-article-sample database are `INTEGER` and `TEXT` which define what value the table column can hold. You can see a complete list of [Data Types in SQLite](https://www.sqlite.org/datatype3.html) with more background information.
+The main data types that are used in doaj-article-sample database are `INTEGER` and `TEXT` which define what value the table column can hold. 
 
 
 ## SQL Data Type Quick Reference
 
-Different databases offer different choices for the data type definition.
+Different database software/platforms have different names and sometimes different definitions of data types, so you'll need to understand the data types for any platform you are using.  The following table explains some of the common data types and how they are represented in SQLite; [more details available on the SQLite website](https://www.sqlite.org/datatype3.html).
 
-The following table shows some of the common names of data types between the various database platforms:
-
-| Data type                                               | Access                    | SQLServer            | Oracle             | MySQL          | PostgreSQL    |
-|:--------------------------------------------------------|:--------------------------|:---------------------|:-------------------|:---------------|:--------------|
-| boolean                                                 | Yes/No                    | Bit                  | Byte               | N/A            | Boolean       |
-| integer                                                 | Number (integer)          | Int                  | Number             | Int / Integer  | Int / Integer |
-| float                                                   | Number (single)           | Float / Real         | Number             | Float          | Numeric       |
-| currency                                                | Currency                  | Money                | N/A                | N/A            | Money         |
-| string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
-| string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
-| binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
-
+| Data type      | Details                                                                                 | Name in SQLite            |
+|:---------------|:----------------------------------------------------------------------------------------|:--------------------------|
+| boolean or binary | this variable type is often used to represent variables that can only have two values: yes or no, true or false.  |doesn't exist - need to use integer data type and values of 0 or 1.|
+| integer | sometimes called whole numbers or counting numbers.  Can be 1,2,3, etc., as well as 0 and negative whole numbers: -1,-2,-3, etc.|INTEGER|
+| float, real, or double | a decimal number or a floating point value.  The largest possible size of the number may be specified. |REAL|
+| text or string |and combination of numbers, letters, symbols.  Platforms may have different data types: one for variables with a set number of characters - e.g., a zip code or postal code, and one for variables with an open number of characters, e.g., an address or description variable. |TEXT|
+|date or datetime|depending on the platform, may represent the date and time or the number of days since a specified date.  This field often has a specified format, e.g., YYYY-MM-DD|doesn't exist - need to use built-in date and time functions and store dates in real, integer, or text formats.  See [Section 2.2 of SQLite documentation](https://www.sqlite.org/datatype3.html#date_and_time_datatype) for more details.
+| blob | a Binary Large OBject can store a large amount of data, documents, audio or video files.|BLOB|
