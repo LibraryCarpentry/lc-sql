@@ -12,7 +12,7 @@ objectives:
 - "Identify library and information skills that relate to using SQL"
 keypoints:
 - "SQL is a powerful language used to interrogate and manipulate relational databases."
-- "People working in library- and information-related roles have skills that allow them use SQL to organize and access data."
+- "People working in library- and information-related roles have skills that allow them to use SQL to organize and access data."
 ---
 
 
@@ -56,8 +56,7 @@ information and we help people find information. Most of us go through mediated 
 to help people find the information they need, e.g., conducting a search via
 a library catalogue. With SQL, you can directly construct your database queries
 without the constraints (e.g., field name or search limitations) imposed by
-a mediated search interface. Librarians are good at searching information so
-don’t be afraid – constructing queries using SQL is simply a different and more
+a mediated search interface. Librarians are good at searching information – constructing queries using SQL is simply a different and more
 direct way of finding information. 
 
 > ## What are some of the uses for SQL in libraries?
