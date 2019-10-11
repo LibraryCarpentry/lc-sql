@@ -108,11 +108,11 @@ If we want to write a query, we click on the Execute SQL tab.
 There are two ways to add new data to a table without writing SQL: 
 
 1. Enter data into a CSV file and append	
-2. Click the Browse Data tab, then click the __New Record__ button.
+2. Click the "Browse Data" tab, then click the "New Record" button.
 
 The steps for adding data from a CSV file are:
 
-1. Choose File->Import->Table from CSV file... 
+1. Choose "File" > "Import" > "Table" from CSV file... 
 2. DB Browser for SQLite will prompt you if you want to add the data to the existing table.
 
 
