@@ -23,24 +23,24 @@ To import data, you'll need to open DB Browser for SQLite and download a zip fil
 ### Open the database file
 
 1. Open DB Browser for SQLite.
-2. Choose File->Open Database from the menu bar at the top of your screen.
+2. Choose "File" > "Open Database" from the menu bar at the top of your screen.
 3. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
-4. Select doaj-article-sample.db.
+4. Select "doaj-article-sample.db".
 
 ### Import the SQL file
 
 1. Open DB Browser for SQLite.
-2. Choose File->Import->Database from SQL file from the menu bar at the top of your screen.
+2. Choose "File" > "Import" > "Database" from SQL file from the menu bar at the top of your screen.
 3. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
-4. Select doaj-article-sample.db.sql.
-5. You will be prompted to 'Save As' (i.e. this is the name of the database).
-6. Type 'doaj-article-sample' in the Save as box.
-7. Make sure that 'SQLite database files' is selected in the drop down and that you save the database to a location where you can easily find it, again, like your Desktop.
-8. Click Save.
-9. You should see an 'Executing SQL...' prompt and an 'Import completed.' prompt when finished.
-10. Click OK.
+4. Select "doaj-article-sample.db.sql".
+5. You will be prompted to "Save As" (i.e. this is the name of the database).
+6. Type "doaj-article-sample" in the "Save as" box.
+7. Make sure that "SQLite database files" is selected in the drop down and that you save the database to a location where you can easily find it, again, like your Desktop.
+8. Click "Save".
+9. You should see an "Executing SQL..." prompt and an "Import completed." prompt when finished.
+10. Click "OK".
 11. You will see one more prompt which says, "Do you want to save the changes made to the database file...".
-12. Click Save.
+12. Click "Save".
 
 ## Alternatives: SQLite and SqliteOnline
 
@@ -67,14 +67,14 @@ This step is optional. If you are completing the tutorial with DB Browser for SQ
 
 #### Open the database file in SqliteOnline
 
-1. Choose File->Open DB from the SqliteOnline menu bar.
+1. Choose "File" > "Open DB" from the SqliteOnline menu bar.
 2. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
-3. Select doaj-article-sample.db.
+3. Select "doaj-article-sample.db".
 
 #### Open the SQL file in SqliteOnline
 
-1. Choose File->Text-SQL->Open SQL from the SqliteOnline menu bar.
+1. Choose "File > "Text-SQL" > "Open SQL" from the SqliteOnline menu bar.
 2. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
-3. Select doaj-article-sample.db.sql. 
+3. Select "doaj-article-sample.db.sql". 
 4. You should see the SQL in a text box below the home icon.
-5. Click the 'Run' button in the SqliteOnline menu bar.
+5. Click the "Run" button in the SqliteOnline menu bar.
