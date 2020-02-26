@@ -39,7 +39,7 @@ ORDER BY Avg_Citation_Count DESC;
 `AS` is used to create another column called `Avg_Citation_Count` to contain the calculations. This is what is called an alias which will be covered later in the lesson.
 
 > ## Challenge
-> Write a query that returns the title count grouped by `ISSNs` in descending order. Which ISSN has the most titles?
+> Write a query that returns the title count grouped by ISSNs and sorted by title count in descending order. Which ISSN has the most titles?
 >
 > > ## Solution
 > > ~~~
