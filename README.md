@@ -3,9 +3,12 @@
 # Maintainers for Library Carpentry: SQL
 
 - [Jordan Pedersen](https://github.com/JordanPedersen) (Lead)
-- [Kristin Lee](https://github.com/kristindawn)
-- [Chris Erdmann](https://github.com/libcce)
 - [Lise Doucette](https://github.com/librarianlise)
+- [Chris Erdmann](https://github.com/libcce)
+- [Jaki Frisina](https://github.com/jfrisina)
+- [Jesse Lambertson](https://github.com/jyssy)
+- [Kristin Lee](https://github.com/kristindawn)
+
 
 Past Maintainers:
 
