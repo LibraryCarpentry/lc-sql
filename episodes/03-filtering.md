@@ -5,7 +5,7 @@ exercises: 10
 questions:
 - "How can I filter data?"
 objectives:
-- "Write queries that `SELECT` data based on conditions."
+- "Write queries that `SELECT` data based on conditions, such as `END`, `OR`, and `NOT`."
 - "Understand how to use the `WHERE` clause in a statement."
 - "Learn how to use comparison keywords such as `LIKE` in a statement."
 keypoints:
@@ -17,22 +17,22 @@ keypoints:
 
 ## Filtering
 
-SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the _Theory and Applications of Mathematics & Computer Science_ journal from the `articles` table. The journal has an ISSN code `2067-2764|2247-6202`.  To filter by this ISSN code, we will use the `WHERE` clause.
+SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the _Acta Crystallographica_ journal from the `articles` table. The journal has an ISSN code `2056-9890`.  To filter by this ISSN code, we will use the `WHERE` clause.
 
 ~~~
 SELECT *
 FROM articles
-WHERE ISSNs='2067-2764|2247-6202';
+WHERE ISSNs='2056-9890';
 ~~~
 {: .sql}
 
 
-We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example, suppose we want the data on _Theory and Applications of Mathematics & Computer Science_ published after June:
+We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example, suppose we want the data on _Acta Crystallographica_ published after October:
 
 ~~~
 SELECT *
 FROM articles
-WHERE (ISSNs='2067-2764|2247-6202') AND (Month > 06);
+WHERE (ISSNs='2056-9890') AND (Month > 10);
 ~~~
 {: .sql}
 
