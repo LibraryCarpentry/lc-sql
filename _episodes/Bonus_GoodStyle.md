@@ -35,3 +35,8 @@ Into something that looks like this:
 
 In some programs (such as MySQL), there will be tools that can automatically "beautify" your code for better readability.
 
+## Commenting
+
+You can add comments to your SQL queries using a hashtag "#". It's a great opportunity for you to express to yourself, or to others, what you are doing. It's essentially a way of making notes within your SQL. To create a comment, start on a new line with a hashtag, and then continue your SQL query on the next line.
+~~~INSERT EXAMPLE~~~~~
+
