@@ -90,12 +90,12 @@ Note that `HAVING` comes _after_ `GROUP BY`. One way to think about this is: the
 In SQL, we can also perform calculations as we query the database. Also known as computed columns, we can use expressions on a column or multiple columns to get new values during our query. For example, what if we wanted to calculate a new column called `CoAuthor_Count`:
 
 ~~~
-SELECT Title, ISSNs, Author_Count -1 AS CoAuthor_Count
+SELECT Title, ISSNs, Author_Count -1
 FROM articles
-ORDER BY CoAuthor_Count DESC;
+ORDER BY Author_Count -1 DESC;
 ~~~
 {: .sql}
 
-We can use any arithmetic operators (`+`, `-`, `*`, and `/`) if we would like. 
+We can use any arithmetic operators (`+`, `-`, `*`, and `/`) if we would like.
 
 If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes a useful episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc/index.html). 
