@@ -50,7 +50,7 @@ into a field that should contain a number. Understanding the nature of relationa
 databases, and using SQL, will help you in using databases in programming languages 
 such as R or Python.
 
-Many web applications (including WordPress and ecommerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve your data to your users.
+Many web applications (including WordPress and ecommerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
 
 ## Why are people working in library- and information-related roles well suited to SQL?
 Librarianship is about information management. We help sort and organise
