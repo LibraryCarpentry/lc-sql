@@ -41,7 +41,7 @@ USING (ISSNs);
 {: .sql}
 
 This figure shows the relations between the tables and helps to visualise joining or linking the tables in the database:
-![Articles Database](../assets/img/articles-erd.png)
+![Articles Database](../assets/img/articles-erd-v02.png)
 We will cover [relational database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) in the next episode.
 
 When joining tables, you can specify the columns you want by using `table.colname` instead of selecting all the columns using `*`. For example:
