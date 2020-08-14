@@ -1,7 +1,7 @@
 ---
 title: "Good Style"
-teaching: 
-exercises: 
+teaching: 10
+exercises: 0
 questions:
 - "What is good SQL Style, and how can I abide by SQL conventions?"
 objectives:
