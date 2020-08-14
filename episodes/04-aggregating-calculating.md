@@ -15,7 +15,9 @@ keypoints:
 
 ## Aggregation
 
-SQL contains functions which allow you to make calculations on data in your database for reports. Some of the most common functions are `MAX, MIN, AVG, COUNT, SUM`. Let's say we wanted to get the average `Citation_Count` for `ISSNs`. We can use `AVG` and the `GROUP BY` clause in a query:
+SQL contains functions which allow you to make calculations on data in your database for reports. Some of the most common functions are `MAX, MIN, AVG, COUNT, SUM`, and they will: `MAX` (find the maximum value in a field), `MIN` (find the minimum value in a field), `AVG` (find the average value of a field), `COUNT` (count the number of values in a field and present the total), and `SUM` (add up the values in a field and present the sum).
+
+Let's say we wanted to get the average `Citation_Count` for each of the `ISSNs`. We can use `AVG` and the `GROUP BY` clause in a query:
 
 ~~~
 SELECT ISSNs, AVG(Citation_Count)
@@ -29,21 +31,19 @@ GROUP BY ISSNs;
 As you can see, it is difficult to tell though what ISSN has the highest average citation count and the least. We can improve upon the query above by using `ORDER BY` and `DESC`. 
 
 ~~~
-SELECT ISSNs, AVG(Citation_Count) AS Avg_Citation_Count
+SELECT ISSNs, AVG(Citation_Count)
 FROM articles
 GROUP BY ISSNs 
 ORDER BY Avg_Citation_Count DESC;
 ~~~
 {: .sql}
 
-`AS` is used to create another column called `Avg_Citation_Count` to contain the calculations. This is what is called an alias which will be covered later in the lesson.
-
 > ## Challenge
-> Write a query that returns the title count grouped by ISSNs and sorted by title count in descending order. Which ISSN has the most titles?
+> Write a query using an aggregate function that returns the number of article titles per ISSNs, sorted by title count in descending order. Which ISSN has the most titles?  (Hint to choosing which aggregate function to use - it is one of the common aggreggate functions `MAX, MIN, AVG, COUNT, SUM`.)
 >
 > > ## Solution
 > > ~~~
-> > SELECT  ISSNs, COUNT(Title) AS Title_Count
+> > SELECT  ISSNs, COUNT(Title)
 > > FROM articles
 > > GROUP BY ISSNs
 > > ORDER BY Title_Count DESC;
@@ -59,15 +59,14 @@ SQL offers a mechanism to filter the results based on aggregate functions, throu
 For example, we can adapt the last request we wrote to only return information about journal `ISSNs` with 10 or more published articles:
 
 ~~~
-SELECT ISSNs, COUNT(*) as Record_Count
+SELECT ISSNs, COUNT(*)
 FROM articles
 GROUP BY ISSNs
 HAVING Record_Count >= 10;
 ~~~
 {: .sql}
 
-The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
-aggregate functions instead of database fields.
+The `HAVING` keyword works exactly like the `WHERE` keyword, but uses aggregate functions instead of database fields.  When you want to filter based on an aggregation like `MAX, MIN, AVG, COUNT, SUM`, use `HAVING`; to filter based on the individual values in a database field, use `WHERE`.
 
 Note that `HAVING` comes _after_ `GROUP BY`. One way to think about this is: the data are retrieved (`SELECT`), can be filtered (`WHERE`), then joined in groups (`GROUP BY`); finally, we only select some of these groups (`HAVING`).
 
@@ -99,4 +98,4 @@ ORDER BY CoAuthor_Count DESC;
 
 We can use any arithmetic operators (`+`, `-`, `*`, and `/`) if we would like. 
 
-If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes an episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc/index.html) which is useful. 
+If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes a useful episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc/index.html). 
