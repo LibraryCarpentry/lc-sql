@@ -56,7 +56,7 @@ In order to check they are available type `sqlite3 --version` at the terminal co
 If this text displays, 'Command 'sqlite3' not found, but can be installed with:
                         sudo apt install sqlite3,' it means sqllite3 is not installed on the Linux machine.
 To install sqlite3, type `sudo apt install sqlite3`.
-To exit type `.exit`.
+To exit type `exit`.
 
 #### Windows
 
