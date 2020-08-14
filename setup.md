@@ -52,7 +52,11 @@ This step is optional. If you are completing the tutorial with DB Browser for SQ
 
 SQLite command line tools come preinstalled on Linux and Mac OS x.
 
-In order to check they are available type `sqlite3` at the terminal command line. To exit type `.exit`.
+In order to check they are available type `sqlite3 --version` at the terminal command line. 
+If this text displays, 'Command 'sqlite3' not found, but can be installed with:
+                        sudo apt install sqlite3,' it means sqllite3 is not installed on the Linux machine.
+To install sqlite3, type `sudo apt install sqlite3`.
+To exit type `.exit`.
 
 #### Windows
 
