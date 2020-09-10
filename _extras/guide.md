@@ -49,6 +49,18 @@ ____
     3.  NoSQL databases are as different from each other as they are from relational databases.
         Until a leader emerges, it isn't clear *which* NoSQL database we should teach.
 
+## Import CSV in SQLite
+
+For instructors demonstrating the use of SQLite, [Aaron Culich](https://github.com/aculich) recommends using a [Directory of Open Access Journals (DOAJ)](https://doaj.org/) example, importing a dataset CSV file from the CERN repository [Zenodo](https://zenodo.org/). The example is below:
+
+~~~
+$ sqlite3 output.db
+sqlite> .mode csv
+sqlite> .import dataset-final-20160825-zenodo.csv
+sqlite> .schema
+~~~
+{: .bash}
+
 ## Resources
 
 * Where to go for more SQL tutorials: [https://brohrer.github.io/sql_resources.html](https://brohrer.github.io/sql_resources.html).
