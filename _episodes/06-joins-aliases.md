@@ -42,7 +42,7 @@ USING (ISSNs);
 
 This figure shows the relations between the tables and helps to visualise joining or linking the tables in the database:
 ![Articles Database](../assets/img/articles-erd-v02.png)
-We will cover [relational database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) in the next episode.
+We will cover [relational database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) in the next episode. In addition to visual above, *[SQL Join Types Explained Visually](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)* provides visual/animated examples to help convey to learners what is happening in SQL `JOIN`s.
 
 When joining tables, you can specify the columns you want by using `table.colname` instead of selecting all the columns using `*`. For example:
 
@@ -150,4 +150,3 @@ FROM articles a;
 {: .sql}
 
 But using `AS` is much clearer so it is good style to include it.
-
