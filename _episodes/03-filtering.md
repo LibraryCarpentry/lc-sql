@@ -5,7 +5,7 @@ exercises: 10
 questions:
 - "How can I filter data?"
 objectives:
-- "Write queries that `SELECT` data based on conditions, such as `END`, `OR`, and `NOT`."
+- "Write queries that `SELECT` data based on conditions, such as `AND`, `OR`, and `NOT`."
 - "Understand how to use the `WHERE` clause in a statement."
 - "Learn how to use comparison keywords such as `LIKE` in a statement."
 keypoints:
