@@ -25,8 +25,8 @@ Spreadsheets can make data gathering easier but they can also lead to messy data
 > > ## Answers
 > > 1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
 > > 2. The full names of authors are used, in first name to last name order, with middle name abbreviated, separated by pipes;
-> > 3. Date format is MM/DD/YYYY and not the commonly used ISO 8601 format; 
-> > 4. The "Subjects" column delimits data by pipes and the data is in a variety of formats such as abbreviations, classifications, and sometimes capitalised. 
+> > 3. Date format is MM/DD/YYYY and not the commonly used ISO 8601 format;
+> > 4. The "Subjects" column delimits data by pipes and the data is in a variety of formats such as abbreviations, classifications, and sometimes capitalised.
 > > **Can you spot anything else?**
 > {: .solution}
 {: .challenge}
@@ -58,12 +58,12 @@ Relationships between entities and their attributes are represented by lines lin
 Conceptually, we know that a journal has only one publisher but a publisher can publish many journals. This is known as a one-to-many relationship. In modeling relationships, we usually assign a unique identifier to the 'one' side of the relationship and use that same identifier to refer to that entity on the 'many' side. In 'publishers' table, the 'id' attribute is that unique identifier. We use that same identifier in the 'journals' table to refer to an individual publisher. That way, there is an unambiguous way for us to distinguish which journals are associated with which publisher in a way that keeps the integrity of the data (see the Normalization section below).
 
 ## More Terminology
-Using the journals-publishers example, in database terms, the 'id' attribute in 'publishers' is known as the primary key (PK) and the 'PublisherId' attribute is known as the foreign key (FK). In additon to one-to-many relationships (sometimes indicated as 1 to * or 1 to ∞ but there are other notations too), another common relationship is the many-to-many relationship. The degree of relationship between entities is known as their 'cardinality'.
+The degree of relationship between entities is known as their 'cardinality'. Using the journals-publishers example, in database terms, a column with a unique identifier in each row is known as a key. For instance, the PublisherId attribute, is one example. A key attribute is often included when designing databases to facilitate joins. In addition to one-to-many relationships (sometimes indicated as 1 to * or 1 to  ∞, to list a couple other possible notations), another common relationship is the many-to-many relationship (which cannot be directly represented in SQL queries). 
 
 
 ## Normalisation
 
-ERDs are helpful in normalising your data which is a process that can be used to create tables and establish relationships between those tables with the goal of eliminating redundancy and inconsistencies in the data. 
+ERDs are helpful in normalising your data which is a process that can be used to create tables and establish relationships between those tables with the goal of eliminating redundancy and inconsistencies in the data.
 
 In the example ERD above, creating a separate table for publishers and linking to it from the journals table via PK and FK identifiers allows us to normalise the data and avoid inconsistencies. If we used one table, we could introduce publisher name errors such as misspellings or alternate names as demonstrated below.
 
