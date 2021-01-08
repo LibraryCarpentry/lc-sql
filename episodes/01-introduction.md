@@ -53,9 +53,9 @@ such as R or Python.
 Many web applications (including WordPress and ecommerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
 
 ## Why are people working in library- and information-related roles well suited to SQL?
-Librarianship is about information management. We help sort and organise
-information and we help people find information. Most of us go through mediated queries
-to help people find the information they need, e.g., conducting a search via
+Librarianship is about information management. As librarians, we help sort and organise
+information, and we help people find information. Most of us go through mediated queries
+to help people find the information they need, e.g., we assist with or conduct a search via
 a library catalogue. With SQL, you can directly construct your database queries
 without the constraints (e.g., field name or search limitations) imposed by
 a mediated search interface. Librarians are good at searching information – constructing queries using SQL is simply a different and more
