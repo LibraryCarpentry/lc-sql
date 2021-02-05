@@ -34,7 +34,7 @@ As you can see, it is difficult to tell though what ISSN has the highest average
 SELECT ISSNs, AVG(Citation_Count)
 FROM articles
 GROUP BY ISSNs 
-ORDER BY Avg_Citation_Count DESC;
+ORDER BY AVG(Citation_Count) DESC;
 ~~~
 {: .sql}
 
