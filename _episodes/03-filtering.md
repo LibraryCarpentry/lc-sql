@@ -68,13 +68,13 @@ To learn more about other comparison keywords you can use, see Beginner SQL Tuto
 
 > ## Challenge
 > Write a query that returns the `Title`, `First_Author`, `Subjects`, `ISSNs`, `Month` and `Year`
-> for all papers where `Subjects` contains "computer" and that have more than 4 citations.
+> for all papers where `Subjects` contains "computer" and that have more than 8 citations.
 >
 > > ## Solution
 > > ~~~
 > > SELECT Title, First_Author, Subjects, ISSNs, Month, Year
 > > FROM articles
-> > WHERE (Subjects LIKE '%computer%') AND (Citation_Count > 4);
+> > WHERE (Subjects LIKE '%computer%') AND (Citation_Count > 8);
 > > ~~~
 > > {: .sql}
 > {: .solution}
