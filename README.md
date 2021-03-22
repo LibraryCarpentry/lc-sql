@@ -10,8 +10,9 @@
 
 Past Maintainers:
 
-- [Elaine Wong](https://github.com/elainewong)
 - [Janice Chan](https://github.com/icecjan)
+- [Jordan Pedersen](https://github.com/JordanPedersen)
+- [Elaine Wong](https://github.com/elainewong)
 
 Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-sql-maintainers).
 
