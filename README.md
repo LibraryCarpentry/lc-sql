@@ -7,8 +7,6 @@
 - [Jaki Frisina](https://github.com/jfrisina)
 - [Jesse Lambertson](https://github.com/jyssy) (Lead)
 - [Kristin Lee](https://github.com/kristindawn)
-- [Jordan Pedersen](https://github.com/JordanPedersen) 
-
 
 Past Maintainers:
 
