@@ -46,7 +46,7 @@ ORDER BY AVG(Citation_Count) DESC;
 > > SELECT  ISSNs, COUNT(Title)
 > > FROM articles
 > > GROUP BY ISSNs
-> > ORDER BY Title_Count DESC;
+> > ORDER BY count(Title) DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
