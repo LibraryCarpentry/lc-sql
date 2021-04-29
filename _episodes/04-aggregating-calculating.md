@@ -90,11 +90,13 @@ Note that `HAVING` comes _after_ `GROUP BY`. One way to think about this is: the
 In SQL, we can also perform calculations as we query the database. Also known as computed columns, we can use expressions on a column or multiple columns to get new values during our query. For example, what if we wanted to calculate a new column called `CoAuthor_Count`:
 
 ~~~
-SELECT Title, ISSNs, Author_Count -1
+SELECT Title, ISSNs, Author_Count -1 as CoAuthor_Count
 FROM articles
 ORDER BY Author_Count -1 DESC;
 ~~~
 {: .sql}
+
+In section [6. Joins and aliases](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html) we are going to learn more about the SQL keyword  `AS`  and how make use of aliases.
 
 We can use any arithmetic operators (`+`, `-`, `*`, and `/`) if we would like.
 
