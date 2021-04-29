@@ -38,8 +38,7 @@ FROM journal_counts;
 ~~~
 {: .sql}
 
-Assuming we do not need this view anymore, we can remove it from the database
-almost as we would a table:
+Assuming we do not need this view anymore, we can remove it from the database.
 
 ~~~
 DROP VIEW journal_counts;
