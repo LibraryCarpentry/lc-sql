@@ -7,6 +7,7 @@
 - [Jaki Frisina](https://github.com/jfrisina)
 - [Jesse Lambertson](https://github.com/jyssy) (Lead)
 - [Kristin Lee](https://github.com/kristindawn)
+- [Julika Mimkes](https://github.com/mimkes)
 
 Past Maintainers:
 
