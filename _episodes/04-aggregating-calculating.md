@@ -43,7 +43,7 @@ ORDER BY AVG(Citation_Count) DESC;
 >
 > > ## Solution
 > > ~~~
-> > SELECT  ISSNs, COUNT(Title)
+> > SELECT ISSNs, COUNT(Title)
 > > FROM articles
 > > GROUP BY ISSNs
 > > ORDER BY count(Title) DESC;
@@ -62,7 +62,7 @@ For example, we can adapt the last request we wrote to only return information a
 SELECT ISSNs, COUNT(*)
 FROM articles
 GROUP BY ISSNs
-HAVING Record_Count >= 10;
+HAVING count(Title) >= 10;
 ~~~
 {: .sql}
 
