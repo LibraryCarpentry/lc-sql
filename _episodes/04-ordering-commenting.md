@@ -81,5 +81,3 @@ JOIN publishers
 ON publishers.id = journals.PublisherId;
 ~~~
 {: .sql}
-
-Although SQL queries often read like plain English, it is *always* useful to write comments especially when the queries become more complex.
