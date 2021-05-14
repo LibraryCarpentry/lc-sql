@@ -28,20 +28,17 @@ they are actually single commands.
 The first one creates a new table;
 its arguments are the names and types of the table's columns.
 For example,
-the following statements create the four tables in our survey database:
+the following statement creates the table `journals`:
 
 ~~~
-CREATE TABLE Person(id text, personal text, family text);
-CREATE TABLE Site(name text, lat real, long real);
-CREATE TABLE Visited(id integer, site text, dated text);
-CREATE TABLE Survey(taken integer, person text, quant text, reading real);
+CREATE TABLE journals(id text, ISSN-L text, ISSNs text, PublisherId text, Journal_Title text);
 ~~~
 {: .sql}
 
 We can get rid of one of our tables using:
 
 ~~~
-DROP TABLE Survey;
+DROP TABLE journals;
 ~~~
 {: .sql}
 
@@ -49,39 +46,21 @@ Be very careful when doing this:
 if you drop the wrong table, hope that the person maintaining the database has a backup,
 but it's better not to have to rely on it.
 
-Different database systems support different data types for table columns,
-but most provide the following:
-
-|data type|  use                                       | 
-|---------|  ----------------------------------------- |
-|INTEGER  |  a signed integer                          |
-|REAL     |  a floating point number                   |
-|TEXT     |  a character string                        |
-|BLOB     |  a "binary large object", such as an image |
-
-Most databases also support Booleans and date/time values;
-SQLite uses the integers 0 and 1 for the former,
-and represents the latter as discussed [earlier]({{ page.root }}/03-filter/#date-types).
-An increasing number of databases also support geographic data types,
-such as latitude and longitude.
-Keeping track of what particular systems do or do not offer,
-and what names they give different data types,
-is an unending portability headache.
+We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference]({{https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference).
 
 When we create a table,
 we can specify several kinds of constraints on its columns.
 For example,
-a better definition for the `Survey` table would be:
+a better definition for the `journals` table would be:
 
 ~~~
-CREATE TABLE Survey(
-    taken   integer not null, -- where reading taken
-    person  text,             -- may not know who took it
-    quant   text not null,    -- the quantity measured
-    reading real not null,    -- the actual reading
-    primary key(taken, quant),
-    foreign key(taken) references Visited(id),
-    foreign key(person) references Person(id)
+CREATE TABLE "journals" (
+	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"ISSN-L"	TEXT,
+	"ISSNs"	TEXT,
+	"PublisherId"	INTEGER,
+	"Journal_Title"	TEXT,
+	CONSTRAINT "PublisherId" FOREIGN KEY("PublisherId") REFERENCES "publishers"("id") 
 );
 ~~~
 {: .sql}
@@ -95,20 +74,21 @@ Once tables have been created,
 we can add, change, and remove records using our other set of commands,
 `INSERT`, `UPDATE`, and `DELETE`.
 
-Here is an example of inserting rows into the `Site` table:
+Here is an example of inserting rows into the `journals` table:
 
 ~~~
-INSERT INTO Site (name, lat, long) VALUES ('DR-1', -49.85, -128.57);
-INSERT INTO Site (name, lat, long) VALUES ('DR-3', -47.15, -126.72);
-INSERT INTO Site (name, lat, long) VALUES ('MSK-4', -48.87, -123.40);
+INSERT INTO "journals" VALUES (1,'2077-0472','2077-0472',2,'Agriculture');
+INSERT INTO "journals" VALUES (2,'2073-4395','2073-4395',2,'Agronomy');
+INSERT INTO "journals" VALUES (3,'2076-2615','2076-2615',2,'Animals');
+
 ~~~
 {: .sql}
 
 We can also insert values into one table directly from another:
 
 ~~~
-CREATE TABLE JustLatLong(lat real, long real);
-INSERT INTO JustLatLong SELECT lat, long FROM Site;
+CREATE TABLE "myjournals"(Journal_Title text, ISSNs text);
+INSERT INTO "myjournals" SELECT Journal_Title, long ISSNs journals;
 ~~~
 {: .sql}
 
@@ -121,8 +101,7 @@ For example, if we made a mistake when entering the lat and long values
 of the last `INSERT` statement above, we can correct it with an update:
 
 ~~~
-/This lesson was inspired from the Chapter 9. Creating and Modifying Data 
-UPDATE Site SET lat = -47.87, long = -122.40 WHERE name = 'MSK-4';
+UPDATE journals SET ISSN-L = 0275-2476, ISSNs = 0275-2476 WHERE id = 3;
 ~~~
 {: .sql}
 
@@ -135,11 +114,11 @@ If all we care about is a single table,
 we can use the `DELETE` command with a `WHERE` clause
 that matches the records we want to discard.
 For example,
-once we realize that Frank Danforth didn't take any measurements,
-we can remove him from the `Person` table like this:
+once we realize that this journal 'Animals' is not an Open Access journal
+we can remove it from the `journals` table like this:
 
 ~~~
-DELETE FROM Person WHERE id = 'danforth';
+DELETE FROM journals WHERE Journal_Title = 'Animals';
 ~~~
 {: .sql}
 
@@ -218,5 +197,5 @@ this technique is outside the scope of this chapter.
 [create-table]: https://www.sqlite.org/lang_createtable.html
 [drop-table]: https://www.sqlite.org/lang_droptable.html
 
-Inspired by the Software Carpentry Course "Databases and SQL", Chapter 9. Creating and Modifying Data
+Adaped from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creating and Modifying Data'.
 https://github.com/swcarpentry/sql-novice-survey/edit/gh-pages/_episodes/09-create.md
