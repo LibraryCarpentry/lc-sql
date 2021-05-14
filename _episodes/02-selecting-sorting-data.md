@@ -31,7 +31,24 @@ FROM articles;
 ~~~
 {: .sql}
 
-We have capitalised the words `SELECT` and `FROM` because they are SQL keywords. This makes no difference to the SQL interpreter as it is case-insensitive, but it helps for readability and is therefore considered good style.
+## Capitalization and good style
+
+In the first query above, we have capitalized the words `SELECT` and `FROM` because they are SQL keywords. Even though capitalization makes no difference to the SQL interpreter, capitalization of these SQL terms helps for readability and is therefore considered good style. As you write and expand your own queries, it might be helpful to pick an option, such as [CamelCase](https://en.wikipedia.org/wiki/Camel_case), and use that style when naming tables and columns. Some tables and columns require capitalization and some do not. An occasional change of capitalization for these table and column names may be needed. 
+
+Example:
+
+~~~
+SELECT Title, Authors, ISSNs, Year
+FROM Articles;
+~~~
+
+instead of 
+
+~~~
+SELECT Title, authors, ISSNs, Year
+FROM articles;
+~~~
+{: .sql}
 
 If we want more information, we can add a new column to the list of fields right after `SELECT`:
 
