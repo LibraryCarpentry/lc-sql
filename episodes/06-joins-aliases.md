@@ -30,6 +30,10 @@ ON articles.ISSNs = journals.ISSNs;
 
 `ON` is similar to `WHERE`, it filters things out according to a test condition.  We use the `table.colname` format to tell the SQL manager what column in which table we are referring to.
 
+We can represent this join using the following diagram.
+
+![Join Diagram for Example](../assets/img/left-join-articles-journals.png)
+
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are telling DB Browser that we want to combine `articles` with `journals` and that the common column is `ISSNs`.
 
 ~~~
