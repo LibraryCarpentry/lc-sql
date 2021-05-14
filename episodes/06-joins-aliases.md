@@ -32,7 +32,7 @@ ON articles.ISSNs = journals.ISSNs;
 
 We can represent this join using the following diagram.
 
-![Join Diagram for Example](../assets/img/left-join-articles-journals.png)
+![Join Diagram for Example](../assets/img/left-join-articles-journals.png|width=442.4 height=308.4)
 
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are telling DB Browser that we want to combine `articles` with `journals` and that the common column is `ISSNs`.
 
