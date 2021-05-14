@@ -12,9 +12,9 @@ keypoints:
 
 ## Spreadsheets
 
-In libraries, spreadsheets are often created to keep lists of a variety of things from keeping an inventory of items to reviewing and selecting resources (See _[What are some of the uses for SQL in libraries?](https://librarycarpentry.org/lc-sql/01-introduction/index.html)_. Spreadsheets, otherwise known as tabular data or flat files, are an easy way to list out data organized by columns and rows. Column headers describe the data contained in corresponding columns. Each row is a record with data about it contained in separate column cells.
+In libraries, spreadsheets are often created to keep lists of a variety of things like an inventory of equipment, reference statistics, or items to review for purchase (See _[What are some of the uses for SQL in libraries?](https://librarycarpentry.org/lc-sql/01-introduction/index.html)_). Spreadsheets, sometimes referred to as tabular data or flat files, are an easy way to display data organized in columns and rows. Column headers describe the data contained in corresponding columns. Each row is a record (sometimes called an observation) with data about it contained in separate column cells.
 
-Spreadsheets can make data gathering easier but they can also lead to messy data.
+Spreadsheets can make data gathering easier but they can also lead to messy data. Over time, if you gather enough data in spreadsheets, you will likely end up with inconsistent data (i.e. misformatted, misspelled data).
 
 >## Identifying inconsistencies in spreadsheet data
 >
@@ -31,20 +31,22 @@ Spreadsheets can make data gathering easier but they can also lead to messy data
 > {: .solution}
 {: .challenge}
 
-Over time, if you gather enough data in spreadsheets, you are likely to end up with inconsistent data (i.e. misformatted, misspelled data). Database design can help.
+Designing a relational database for your data can help reduce the places where these errors can be introduced. You can also use SQL queries to find these issues and address them across your entire dataset. Before you can take advantage of all of these tools, you need to design your database.
 
 ## Database Design
 
-Database design involves a model or plan developed to guide how the data can be stored, organized and manipulated. The design addresses what data must be stored, how it might be classified, and it identifies the interrelationships between the data.
+Database design involves a model or plan developed to determine how the data is stored, organized and manipulated. The design addresses what data will be stored, how they will be classified, and the interrelationships between the data across different tables in the database.
 
 ## Terminology
 <img src="../assets/img/field-record-value.png" alt="Fields, Records, Values" width="500"/>
 
-In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the "fields", "records", and "values" terminology. These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. Fields store a single kind of information (text, integers, etc.), records are a set of fields containing specific values.
+In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the terms "fields", "records", and "values". These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. Fields store a single kind of information (text, integers, etc.) related to one topic (title, author, year), while records are a set of fields containing specific values related to one item in your database (a book, a person, a library).
 
-To design a database, we must first decide what kinds of things we want to represent as tables. A table is the physical manifestation of an "entity". An entity is the conceptual representation of the thing we want to store in the database. An entity has "attributes" that describe it. For example, an article or a journal is an entity. Attributes would be things like the article title, or journal ISSN.  
+To design a database, we must first decide what kinds of things we want to represent as tables. A table is the physical manifestation of a kind of "entity". An entity is the conceptual representation of the thing we want to store informtation about in the database, with each row containing information about one entity. An entity has "attributes" that describe it, represented as fields. For example, an article or a journal is an entity. Attributes would be things like the article title, or journal ISSN which would appear as fields.  
 
-In order to design a database, it is useful to describe on an abstract level the entities we would like to capture along with how the different entities are related to each other. We do this using and entity relationship diagram (ER diagram or ERD).
+To create relationships between tables later on, it is important to designate one column as a primary key. A primary key, often designated as PK, is one attribute of an entity that distinguishes it from the other entities (or records) in your table. The primary key must be unique for each row for this to work. A common way to create a primary key in a table is to make an 'id' field that contains an auto-generated integer that increases by 1 for each new record. This will ensure that your primary key is unique. 
+
+It is useful to describe on an abstract level the entities we would like to capture, along with how the different entities are related to each other. We do this using and entity relationship diagram (ER diagram or ERD).
 
 ## Entity Relationship Diagram (ER Diagram or ERD)
 
@@ -59,8 +61,17 @@ Relationships between entities and their attributes are represented by lines lin
 Conceptually, we know that a journal has only one publisher but a publisher can publish many journals. This is known as a one-to-many relationship. In modeling relationships, we usually assign a unique identifier to the 'one' side of the relationship and use that same identifier to refer to that entity on the 'many' side. In 'publishers' table, the 'id' attribute is that unique identifier. We use that same identifier in the 'journals' table to refer to an individual publisher. That way, there is an unambiguous way for us to distinguish which journals are associated with which publisher in a way that keeps the integrity of the data (see the Normalization section below).
 
 ## More Terminology
-The degree of relationship between entities is known as their 'cardinality'. Using the journals-publishers example, a column with a unique identifier in each row is known as a key: the PublisherId attribute is one such example. A key attribute is often included when designing databases to facilitate joins. In addition to one-to-many relationships (sometimes indicated as 1 to * or 1 to  ∞, to list a couple other possible notations), another common relationship is the many-to-many relationship. 
+The degree of relationship between entities is known as their 'cardinality'. Using the journals-publishers example, the 'publisheres' tble contains a primary key (PK) called 'id'. When the PK is used to create a connection between the original table and a different table, it is called a foreign key (FK) in the other table. To follow the example, we see a field in the 'journal' table called PublisherID that contains the values from the 'id' field in the 'publisher' table, connected the two tables. 
 
+There are 4 main types of relationships between tables:
+* One to One - each item in the first table has exactly one match in the second table.
+* One to Many - each item in the first table is related to many items in the second table, sometimes represented as 1 to * or 1 to  ∞
+* Many to One - many items in the first table is related to one item in the second table.
+* Many to Many - many items in the first table are related to many items in the second table.
+
+In our previous example of the 'PublisherID' field in the 'journals' table, the 'publisher' table has a one to many relationship with the journals table. This is because one publisher may publish many journals, so it will appear multiple times in that field. 
+
+A key attribute is often included when designing databases to facilitate joins. 
 
 ## Normalisation
 
