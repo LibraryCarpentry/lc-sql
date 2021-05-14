@@ -4,11 +4,11 @@ teaching: 15
 exercises: 0
 questions:
 - "What is the order of execution in SQL queries?"
-- "How can you organise and comment more complex SQL queries?"
+- "How can you organize and comment more complex SQL queries?"
 objectives:
 - "Understand how to build queries, and the order in which to build the parts."
 keypoints:
-- "Queries often have the structure: SELECT data FROM table WHERE certain criteria are present." 
+- "Queries often have the structure: SELECT data FROM table WHERE certain criteria are present."
 ---
 
 ## Order of execution
@@ -23,7 +23,7 @@ ORDER BY First_Author ASC;
 ~~~
 {: .sql}
 
-What is interesting to note about this query is that we don't necessarily have to display the `First_Author` column in our results in order to sort by it. 
+What is interesting to note about this query is that we don't necessarily have to display the `First_Author` column in our results in order to sort by it.
 
 We can do this because sorting occurs earlier in the computational pipeline than field selection.
 
@@ -61,17 +61,25 @@ WHERE (ISSNs IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy, to make sure you are getting what you want.  Sometimes it might help to take a subset of the data that you can easily see in a temporary database to practice your queries on before working on a larger or more complicated database.
 
-When the queries become more complex, it can be useful to add comments. In SQL, comments begin with `--` and end at the end of the line. For example, a
-commented version of the above query can be written as:
+When the queries become more complex, it can be useful to add comments to express, to yourself, or to others, what you are doing with your query. It's essentially a way of making notes within your SQL. In SQL, comments begin using <code class="language-plaintext highlighter-rouge">--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /* and */. For example, a commented version of the above query can be written as:
 
 ~~~
--- Select all columns
-SELECT * 
--- From the article table
+/*In this section we want to give an example how to
+join multiple tables.*/
+
+-- First we mention all the fields we want to display
+SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
+-- from the first table
 FROM articles
--- Select only the records that have the following ISSNs in them
-WHERE (ISSNs IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
+-- and join it with the second table.
+JOIN journals
+-- The related attributes are:
+ON articles.ISSNs = journals.ISSNs
+-- We want to join a third table,
+JOIN publishers
+-- the related attributes are:
+ON publishers.id = journals.PublisherId;
 ~~~
 {: .sql}
 
-Although SQL queries often read like plain English, it is *always* useful to write comments especially when the queries become more complex. 
+Although SQL queries often read like plain English, it is *always* useful to write comments especially when the queries become more complex.

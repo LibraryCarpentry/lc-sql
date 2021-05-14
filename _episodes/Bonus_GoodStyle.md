@@ -46,24 +46,4 @@ ON publishers.id = journals.PublisherId;
 
 In some programs (such as MySQL), there will be tools that can automatically "beautify" your code for better readability.
 
-## Commenting
-Commenting is a great opportunity for you to express to yourself, or to others, what you are doing. It's essentially a way of making notes within your SQL. 
-As already mentioned in section "Ordering and commenting" you may add comments to your SQL queries using <code class="language-plaintext highlighter-rouge">--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /* and */.
-~~~
-/*In this section we want to give an example how to
-join multiple tables.*/
-
--- First we mention all the fields we want to display
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
--- from the first table
-FROM articles
--- and join it with the second table. 
-JOIN journals
--- The related attributes are:
-ON articles.ISSNs = journals.ISSNs
--- We want to join a third table,
-JOIN publishers
--- the related attributes are:
-ON publishers.id = journals.PublisherId;
-~~~
 {: .sql}
