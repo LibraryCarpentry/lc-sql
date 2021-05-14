@@ -41,7 +41,7 @@ SQL is well established and has been around since the 1970s. It is still widely 
 in a variety of settings. 
 
 SQL lets you keep the data separate from the analysis. There is no risk of
-accidentally changing data when you are analysing it. If the data is changed,
+accidentally changing data when you are analysing it. If the data is updated,
 a saved query can be re-run to analyse the new data.
 
 SQL is optimised for handling large amounts of data. Data types help
@@ -53,12 +53,12 @@ such as R or Python.
 Many web applications (including WordPress and ecommerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
 
 ## Why are people working in library- and information-related roles well suited to SQL?
-Librarianship is about information management. As librarians, we help sort and organise
+Library work is about information management. As library workers, we help sort and organise
 information, and we help people find information. Most of us go through mediated queries
 to help people find the information they need, e.g., we assist with or conduct a search via
 a library catalogue. With SQL, you can directly construct your database queries
 without the constraints (e.g., field name or search limitations) imposed by
-a mediated search interface. Librarians are good at searching information – constructing queries using SQL is simply a different and more
+a mediated search interface. Library workers are good at searching information – constructing queries using SQL is a different and more
 direct way of finding information. 
 
 > ## What are some of the uses for SQL in libraries?
