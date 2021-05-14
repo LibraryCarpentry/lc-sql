@@ -98,6 +98,6 @@ ORDER BY Author_Count -1 DESC;
 
 In section [6. Joins and aliases](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html) we are going to learn more about the SQL keyword  `AS`  and how make use of aliases.
 
-We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQLRT` or the modulo operator `%`)) if we would like.
+We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQLRT` or the modulo operator `%`) if we would like.
 
 If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes a useful episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc/index.html). 
