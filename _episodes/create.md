@@ -46,7 +46,7 @@ Be very careful when doing this:
 if you drop the wrong table, hope that the person maintaining the database has a backup,
 but it's better not to have to rely on it.
 
-We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference]({{https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference).
+We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference]({https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference}).
 
 When we create a table,
 we can specify several kinds of constraints on its columns.
@@ -79,7 +79,7 @@ Here is an example of inserting rows into the `journals` table:
 ~~~
 INSERT INTO "journals" VALUES (1,'2077-0472','2077-0472',2,'Agriculture');
 INSERT INTO "journals" VALUES (2,'2073-4395','2073-4395',2,'Agronomy');
-INSERT INTO "journals" VALUES (3,'2076-2615','2076-2615',2,'Animals');
+INSERT INTO "journals" VALUES (3,'2076-2616','2076-2616',2,'Animals');
 
 ~~~
 {: .sql}
@@ -97,11 +97,11 @@ To do this we tell the database which table we want to update,
 what we want to change the values to for any or all of the fields,
 and under what conditions we should update the values.
 
-For example, if we made a mistake when entering the lat and long values
+For example, if we made a typo when entering the ISSNs
 of the last `INSERT` statement above, we can correct it with an update:
 
 ~~~
-UPDATE journals SET ISSN-L = 0275-2476, ISSNs = 0275-2476 WHERE id = 3;
+UPDATE journals SET ISSN-L = 2076-2615, ISSNs = 2076-2615 WHERE id = 3;
 ~~~
 {: .sql}
 
@@ -113,57 +113,28 @@ because we have to ensure that the database remains internally consistent.
 If all we care about is a single table,
 we can use the `DELETE` command with a `WHERE` clause
 that matches the records we want to discard.
-For example,
-once we realize that this journal 'Animals' is not an Open Access journal
-we can remove it from the `journals` table like this:
+We can remove the journal `Animals` from the `journals` table like this:
 
 ~~~
 DELETE FROM journals WHERE Journal_Title = 'Animals';
 ~~~
 {: .sql}
 
-But what if we removed Anderson Lake instead?
-Our `Survey` table would still contain seven records
-of measurements he'd taken,
-but that's never supposed to happen:
-`Survey.person` is a foreign key into the `Person` table,
-and all our queries assume there will be a row in the latter
-matching every value in the former.
+But now the article `Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures` from the table `articles`
+has no matching journal anymore.
+That's never supposed to happen:
+Our queries assume there will be a row `ISSNs` in the table 'journals' 
+matching every row `ISSNs`in the table `articles`.
 
-This problem is called [referential integrity]({{ page.root }}{% link reference.md %}#referential-integrity):
-we need to ensure that all references between tables can always be resolved correctly.
-One way to do this is to delete all the records
-that use `'lake'` as a foreign key
-before deleting the record that uses it as a primary key.
-If our database manager supports it,
-we can automate this
-using [cascading delete]({{ page.root }}{% link reference.md %}#cascading-delete).
-However,
-this technique is outside the scope of this chapter.
-
-> ## Hybrid Storage Models
+> ## Exercise
 >
-> Many applications use a hybrid storage model
-> instead of putting everything into a database:
-> the actual data (such as astronomical images) is stored in files,
-> while the database stores the files' names,
-> their modification dates,
-> the region of the sky they cover,
-> their spectral characteristics,
-> and so on.
-> This is also how most music player software is built:
-> the database inside the application keeps track of the MP3 files,
-> but the files themselves live on disk.
-{: .callout}
-
-> ## Replacing NULL
->
-> Write an SQL statement to replace all uses of `null` in
-> `Survey.person` with the string `'unknown'`.
+> Write an SQL statement to add the journal "New Journal of Physics" (ISSNs & ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table 
+> `journals`. You need to add the publisher "IOP" to the table  `publishers` as well.
 >
 > > ## Solution
 > > ~~~
-> > UPDATE Survey SET person = 'unknown' WHERE person IS NULL;
+> > INSERT INTO "publishers" VALUES (7,'Institute of Physics (IOP)');
+> > INSERT INTO "journals" VALUES (52,'1367-2630','1367-2630',7,'New Journal of Physics');
 > > ~~~
 > > {: .sql}
 > {: .solution}
