@@ -46,7 +46,7 @@ Be very careful when doing this:
 if you drop the wrong table, hope that the person maintaining the database has a backup,
 but it's better not to have to rely on it.
 
-We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference]({https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference}).
+We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference](https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference).
 
 When we create a table,
 we can specify several kinds of constraints on its columns.
