@@ -40,6 +40,11 @@ Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER BY`
 
 ## Complex queries & commenting
 
+The goal is to make a query easy to read and understand, even when the logic becomes complex. This can be handled in two ways:
+
+1. Rewriting the query so that the logic is easy to follow
+2. Adding comments for context and clarity. 
+
 Consider the following query:
 
 ~~~
@@ -61,7 +66,7 @@ WHERE (ISSNs IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy, to make sure you are getting what you want.  Sometimes it might help to take a subset of the data that you can easily see in a temporary database to practice your queries on before working on a larger or more complicated database.
 
-When the queries become more complex, it can be useful to add comments to express, to yourself, or to others, what you are doing with your query. It's essentially a way of making notes within your SQL. In SQL, comments begin using <code class="language-plaintext highlighter-rouge">--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /* and */. For example, a commented version of the above query can be written as:
+When the queries become more complex, it can be useful to add comments to express to yourself, or to others, what you are doing with your query. Comments help explain the logic of a section and provide context for anyone reading the query. It's essentially a way of making notes within your SQL. In SQL, comments begin using <code class="language-plaintext highlighter-rouge">--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /* and */. For example, a commented version of the above query can be written as:
 
 ~~~
 /*In this section we want to give an example how to
