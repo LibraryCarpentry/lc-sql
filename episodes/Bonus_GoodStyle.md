@@ -21,7 +21,7 @@ When choosing column names, it's important to remember that a large part of what
 
 ## Capitalization (sometimes) matters
 
-In section two, we talked about SQL keywords/commands being case-insensitive ("We have capitalised the words SELECT and FROM because they are SQL keywords. This makes no difference to the SQL interpreter as it is case-insensitive, but it helps for readability and is therefore considered good style."). But did you know that in some SQL programs, depending on the settings, table and column names are column sensitive? If your query isn't working, check the capitalization.
+In section two, we talked about SQL keywords/commands being case-insensitive ("We have capitalised the words SELECT and FROM because they are SQL keywords. This makes no difference to the SQL interpreter as it is case-insensitive, but it helps for readability and is therefore considered good style."). But did you know that in some SQL programs, depending on the settings, table and column names are case sensitive? If your query isn't working, check the capitalization.
 
 ## Readability
 
