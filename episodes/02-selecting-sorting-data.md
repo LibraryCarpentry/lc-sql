@@ -86,7 +86,7 @@ FROM articles;
 
 ## Sorting
 
-We can also sort the results of our queries by using the keyword `ORDER BY`. Let's create a query that sorts the articles table alphabetically by ISSNs using the `ASC` keyword in conjunction with `ORDER BY`. 
+We can also sort the results of our queries by using the keyword `ORDER BY`. Let's create a query that sorts the articles table in ascending order by ISSNs using the `ASC` keyword in conjunction with `ORDER BY`. 
 
 ~~~
 SELECT *
