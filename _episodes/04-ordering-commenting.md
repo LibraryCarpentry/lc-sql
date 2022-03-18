@@ -69,8 +69,8 @@ their effects as we went along.  For complex queries, this is a good strategy, t
 When the queries become more complex, it can be useful to add comments to express to yourself, or to others, what you are doing with your query. Comments help explain the logic of a section and provide context for anyone reading the query. It's essentially a way of making notes within your SQL. In SQL, comments begin using <code class="language-plaintext highlighter-rouge">--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /* and */. For example, a commented version of the above query can be written as:
 
 ~~~
-/*In this section we want to give an example how to
-join multiple tables.*/
+/*In this section, even though JOINS (see link below this code block) are not introduced until Episode 6, we want to give an example how to
+join multiple tables becasue they represent a good example of using comments in SQL to explain more complex queries.*/
 
 -- First we mention all the fields we want to display
 SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
@@ -86,3 +86,4 @@ JOIN publishers
 ON publishers.id = journals.PublisherId;
 ~~~
 {: .sql}
+To see the introduction and explanation of JOINS, please click to [Episode 6](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html).
