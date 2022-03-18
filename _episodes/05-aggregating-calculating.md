@@ -96,7 +96,7 @@ ORDER BY Author_Count -1 DESC;
 ~~~
 {: .sql}
 
-In section [6. Joins and aliases](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html) we are going to learn more about the SQL keyword `AS` and how to make use of aliases.
+In section [6. Joins and aliases](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html) we are going to learn more about the SQL keyword `AS` and how to make use of aliases - in this example we simply used the calculation and `AS` to separate the new column from the original SQL table data.
 
 We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQLRT` or the modulo operator `%`) if we would like.
 
