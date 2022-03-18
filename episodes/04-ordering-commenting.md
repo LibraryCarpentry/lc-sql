@@ -85,6 +85,6 @@ JOIN publishers
 -- the related attributes are:
 ON publishers.id = journals.PublisherId;
 ~~~
-{: .sql}
+
 To see the introduction and explanation of JOINS, please click to [Episode 6](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html).
 {: .sql}
