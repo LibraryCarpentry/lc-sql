@@ -4,7 +4,6 @@
 
 - [Lise Doucette](https://github.com/librarianlise)
 - [Chris Erdmann](https://github.com/libcce)
-- [Jaki Frisina](https://github.com/jfrisina)
 - [Jesse Lambertson](https://github.com/jyssy) (Lead)
 - [Kristin Lee](https://github.com/kristindawn)
 - [Julika Mimkes](https://github.com/mimkes)
@@ -12,6 +11,7 @@
 Past Maintainers:
 
 - [Janice Chan](https://github.com/icecjan)
+- [Jaki Frisina](https://github.com/jfrisina)
 - [Jordan Pedersen](https://github.com/JordanPedersen)
 - [Elaine Wong](https://github.com/elainewong)
 
