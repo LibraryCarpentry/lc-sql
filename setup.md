@@ -18,16 +18,16 @@ To import data, you'll need to open DB Browser for SQLite and download a zip fil
 1. Download the data files doaj-article-sample.zip from 
 [Zenodo](http://doi.org/10.5281/zenodo.2822005).
 2. Open the zip file with the zip utlity on your machine and save the folder and files to a location where you can easily find them. For example, your Desktop.
-2. Contained in the zip file are two files, doaj-article-sample.db and doaj-article-sample.db.sql. You can either open the database file (less steps) or import the SQL file (more steps).
+2. Contained in the zip file are two files, doaj-article-sample.db and doaj-article-sample.db.sql. You can either open the database file (less steps) **or** import the SQL file (more steps).
 
-### Open the database file
+### Option a) Open the database file
 
 1. Open DB Browser for SQLite.
 2. Choose "File" > "Open Database" from the menu bar at the top of your screen.
 3. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
 4. Select "doaj-article-sample.db".
 
-### Import the SQL file
+### Option b) Import the SQL file
 
 1. Open DB Browser for SQLite.
 2. Choose "File" > "Import" > "Database" from SQL file from the menu bar at the top of your screen.
