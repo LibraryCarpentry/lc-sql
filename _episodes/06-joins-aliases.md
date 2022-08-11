@@ -30,7 +30,7 @@ ON articles.ISSNs = journals.ISSNs;
 
 `ON` is similar to `WHERE`, it filters things out according to a test condition.  We use the `table.colname` format to tell the SQL manager what column in which table we are referring to.
 
-We can represent this join using the following diagram.
+We can represent `a LEFT` join using the following diagram.
 
 ![Join Diagram for Example](../assets/img/left-join-articles-journals_40.png)
 
@@ -118,7 +118,7 @@ ON publishers.id = journals.PublisherId;
 > {: .solution}
 {: .challenge}
 
-There are different types of joins which you can learn more about at [SQL Joins Explained](http://www.sql-join.com/sql-join-types).
+There are different types of joins which you can learn more about at [SQL Joins Explained](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/).
 
 
 ## Aliases
