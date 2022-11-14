@@ -37,7 +37,7 @@ ____
 
 * If you are short on time, consider pointing workshop participants to the [Ordering and commenting](https://librarycarpentry.org/lc-sql/05-ordering-commenting/index.html) and [Saving queries](https://librarycarpentry.org/lc-sql/07-saving-queries/index.html) episodes to refer to later. 
 
-* The [Extra challenges](https://librarycarpentry.org/lc-sql/10-extra-challenges/index.html) episode is optional if workshop participants want to try additional challenge exercises later. Depending on time it can be done as homework or at the end of a workshop.
+* The [Extra challenges](https://librarycarpentry.org/lc-sql/11-extra-challenges/index.html) episode is optional if workshop participants want to try additional challenge exercises later. Depending on time it can be done as homework or at the end of a workshop.
 
 * [Database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) episode can be positioned at the start, during, at the end of the lesson. It adds more time and can be a more complex episode to teach but it also helps with providing further background on how databases can be helpful with structured data.
 
