@@ -88,7 +88,7 @@ We can also insert values into one table directly from another:
 
 ~~~
 CREATE TABLE "myjournals"(Journal_Title text, ISSNs text);
-INSERT INTO "myjournals" SELECT Journal_Title, long ISSNs journals;
+INSERT INTO "myjournals" SELECT Journal_Title, ISSNs FROM journals;
 ~~~
 {: .sql}
 
