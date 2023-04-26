@@ -83,7 +83,7 @@ direct way of finding information.
 > 
 > * [An Introduction to SQL for Librarians](http://ruthtillman.com/an-introduction-to-sql-for-librarians/)
 > 
-> * [Data Science is Different Now: Learn SQL](https://veekaybee.github.io/2019/02/13/data-science-is-different/)
+> * [Data Science is Different Now: Learn SQL](https://vickiboykis.com/2019/02/13/data-science-is-different-now/)
 >
 {: .callout}
 
