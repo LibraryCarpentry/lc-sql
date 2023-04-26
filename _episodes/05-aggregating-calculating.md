@@ -39,14 +39,14 @@ ORDER BY AVG(Citation_Count) DESC;
 {: .sql}
 
 > ## Challenge
-> Write a query using an aggregate function that returns the number of article titles per ISSNs, sorted by title count in descending order. Which ISSN has the most titles?  (Hint to choosing which aggregate function to use - it is one of the common aggreggate functions `MAX, MIN, AVG, COUNT, SUM`.)
+> Write a query using an aggregate function that returns the number of article titles per ISSNs, sorted by title count in descending order. Which ISSN has the most titles?  (Hint to choosing which aggregate function to use - it is one of the common aggregate functions `MAX, MIN, AVG, COUNT, SUM`.)
 >
 > > ## Solution
 > > ~~~
 > > SELECT ISSNs, COUNT(Title)
 > > FROM articles
 > > GROUP BY ISSNs
-> > ORDER BY count(Title) DESC;
+> > ORDER BY COUNT(Title) DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -98,6 +98,6 @@ ORDER BY Author_Count -1 DESC;
 
 In section [6. Joins and aliases](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html) we are going to learn more about the SQL keyword `AS` and how to make use of aliases - in this example we simply used the calculation and `AS` to represent that the new column is different from the original SQL table data.
 
-We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQLRT` or the modulo operator `%`) if we would like.
+We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQRT` or the modulo operator `%`) if we would like.
 
 If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes a useful episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc/index.html). 
