@@ -35,13 +35,13 @@ To make a handout for this lesson, adapt/print from [https://librarycarpentry.or
 
 ## Overall
 
-- Libraries often start off with spreadsheet-based projects and there are a number of examples provided in the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) where they might move to a database and use SQL. The *What are some of the uses of SQL in libraries* section can be possibly turned into a group exercise where workshop participants can share some projects that can benefit from moving to a database.
+- Libraries often start off with spreadsheet-based projects and there are a number of examples provided in the [Introduction to SQL](01-introduction.md) where they might move to a database and use SQL. The *What are some of the uses of SQL in libraries* section can be possibly turned into a group exercise where workshop participants can share some projects that can benefit from moving to a database.
 
-- If you are short on time, consider pointing workshop participants to the [Ordering and commenting](https://librarycarpentry.org/lc-sql/05-ordering-commenting/index.html) and [Saving queries](https://librarycarpentry.org/lc-sql/07-saving-queries/index.html) episodes to refer to later.
+- If you are short on time, consider pointing workshop participants to the [Ordering and commenting](04-ordering-commenting.md) and [Saving queries](07-saving-queries.md) episodes to refer to later.
 
-- The [Extra challenges](https://librarycarpentry.org/lc-sql/11-extra-challenges/index.html) episode is optional if workshop participants want to try additional challenge exercises later. Depending on time it can be done as homework or at the end of a workshop.
+- The [Extra challenges](11-extra-challenges.md) episode is optional if workshop participants want to try additional challenge exercises later. Depending on time it can be done as homework or at the end of a workshop.
 
-- [Database design](https://librarycarpentry.org/lc-sql/08-database-design/index.html) episode can be positioned at the start, during, at the end of the lesson. It adds more time and can be a more complex episode to teach but it also helps with providing further background on how databases can be helpful with structured data.
+- [Database design](08-database-design.md) episode can be positioned at the start, during, at the end of the lesson. It adds more time and can be a more complex episode to teach but it also helps with providing further background on how databases can be helpful with structured data.
 
 - Some advanced learners may have heard that NoSQL databases (i.e., ones that don't use the relational model) are the next big thing, and ask why we're not teaching those.
   The answers are:
@@ -66,6 +66,6 @@ sqlite> .schema
 ## Resources
 
 - Where to go for more SQL tutorials: [https://brohrer.github.io/sql\_resources.html](https://brohrer.github.io/sql_resources.html).
-- Software Carpentry has some starter lesson material on interacting with databases with [Python](https://swcarpentry.github.io/sql-novice-survey/10-prog/index.html) and [R](https://swcarpentry.github.io/sql-novice-survey/11-prog-R/index.html).
+- Software Carpentry has some starter lesson material on interacting with databases with [Python](https://swcarpentry.github.io/sql-novice-survey/10-prog) and [R](https://swcarpentry.github.io/sql-novice-survey/11-prog-R).
 
 

@@ -90,7 +90,7 @@ JOIN publishers
 ON publishers.id = journals.PublisherId;
 ```
 
-To see the introduction and explanation of JOINS, please click to [Episode 6](https://librarycarpentry.org/lc-sql/06-joins-aliases/index.html).
+To see the introduction and explanation of JOINS, please click to [Episode 6](06-joins-aliases.md).
 {: .sql}
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

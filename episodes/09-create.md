@@ -46,7 +46,7 @@ Be very careful when doing this:
 if you drop the wrong table, hope that the person maintaining the database has a backup,
 but it's better not to have to rely on it.
 
-We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference](https://librarycarpentry.org/lc-sql/01-introduction/index.html#sql-data-type-quick-reference).
+We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference](01-introduction.md#sql-data-type-quick-reference).
 
 When we create a table,
 we can specify several kinds of constraints on its columns.
@@ -170,19 +170,13 @@ stored in any particular order.)
 #### Disadvantages
 
 - Artificial differences between commits because records don't have a fixed order
-  
-  
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Adaped from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creating and Modifying Data'.
-[https://github.com/swcarpentry/sql-novice-survey/edit/gh-pages/\_episodes/09-create.md](https://github.com/swcarpentry/sql-novice-survey/edit/gh-pages/_episodes/09-create.md)
-
-[create-table]: https://www.sqlite.org/lang_createtable.html
-[drop-table]: https://www.sqlite.org/lang_droptable.html
-
+<https://swcarpentry.github.io/sql-novice-survey/09-create>
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -194,5 +188,9 @@ Adaped from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creat
 - Do not create dangling references by deleting records that other records refer to.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+[create-table]: https://www.sqlite.org/lang_createtable.html
+[drop-table]: https://www.sqlite.org/lang_droptable.html
+
 
 

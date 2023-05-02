@@ -18,7 +18,7 @@ exercises: 20
 
 ## Spreadsheets
 
-In libraries, spreadsheets are often created to keep lists of a variety of things like an inventory of equipment, reference statistics, or items to review for purchase (See *[What are some of the uses for SQL in libraries?](https://librarycarpentry.org/lc-sql/01-introduction/index.html)*). Spreadsheets, sometimes referred to as tabular data or flat files, are an easy way to display data organized in columns and rows. Column headers describe the data contained in corresponding columns. Each row is a record (sometimes called an observation) with data about it contained in separate column cells.
+In libraries, spreadsheets are often created to keep lists of a variety of things like an inventory of equipment, reference statistics, or items to review for purchase (See *[What are some of the uses for SQL in libraries?](01-introduction.md)*). Spreadsheets, sometimes referred to as tabular data or flat files, are an easy way to display data organized in columns and rows. Column headers describe the data contained in corresponding columns. Each row is a record (sometimes called an observation) with data about it contained in separate column cells.
 
 Spreadsheets can make data gathering easier but they can also lead to messy data. Over time, if you gather enough data in spreadsheets, you will likely end up with inconsistent data (i.e. misformatted, misspelled data).
 
@@ -39,8 +39,6 @@ In the figure below, can you identify where inconsistencies in the data have bee
 3. Date format is MM/DD/YYYY and not the commonly used ISO 8601 format;
 4. The "Subjects" column delimits data by pipes and the data is in a variety of formats such as abbreviations, classifications, and sometimes capitalised.
   **Can you spot anything else?**
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -54,9 +52,9 @@ Database design involves a model or plan developed to determine how the data is 
 
 ## Terminology
 
-<img src="assets/img/field-record-value.png" alt="Fields, Records, Values" width="500"/>
+<img src="fig/field-record-value.png" alt="Fields, Records, Values" width="500"/>
 
-In the [Introduction to SQL](https://librarycarpentry.org/lc-sql/01-introduction/index.html) lesson, we introduced the terms "fields", "records", and "values". These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. Fields store a single kind of information (text, integers, etc.) related to one topic (title, author, year), while records are a set of fields containing specific values related to one item in your database (a book, a person, a library).
+In the [Introduction to SQL](01-introduction.md) lesson, we introduced the terms "fields", "records", and "values". These terms are commonly used in databases while the "columns", "rows", and "cells" terms are more common in spreadsheets. Fields store a single kind of information (text, integers, etc.) related to one topic (title, author, year), while records are a set of fields containing specific values related to one item in your database (a book, a person, a library).
 
 To design a database, we must first decide what kinds of things we want to represent as tables. A table is the physical manifestation of a kind of "entity". An entity is the conceptual representation of the thing we want to store informtation about in the database, with each row containing information about one entity. An entity has "attributes" that describe it, represented as fields. For example, an article or a journal is an entity. Attributes would be things like the article title, or journal ISSN which would appear as fields.
 
@@ -116,8 +114,6 @@ For this exercise, you can either use pencil/pen and paper to draw new tables an
 1. An 'authors' table can be created with a many-to-many relationship with the 'articles' table and an [associative entity](https://en.wikipedia.org/wiki/Associative_entity) or bridge table between them.
 2. A 'subjects' table can be created with a many-to-many relationship with the 'articles' table and a bridge table between them.
   **Can you spot anything else?**
-  
-  
 
 :::::::::::::::::::::::::
 
