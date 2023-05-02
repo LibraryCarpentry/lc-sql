@@ -2,97 +2,79 @@
   "contributors": [
     {
       "type": "Editor",
-      "name": "Jordan Pedersen",
-      "orcid": "0000-0003-4548-9957"
-    },
-    {
-      "type": "Editor",
-      "name": "Kristin Lee",
-      "orcid": "0000-0003-4906-1800"
-    },
-    {
-      "type": "Editor",
       "name": "Christopher Erdmann",
       "orcid": "0000-0003-2554-180X"
     },
     {
       "type": "Editor",
-      "name": "Lise Doucette"
+      "name": "Jesse Lambertson",
+      "orcid": "0000-0001-8105-1800"
+    },
+    {
+      "type": "Editor",
+      "name": "Julika Mimkes",
+      "orcid": "0000-0003-0550-8818"
+    },
+    {
+      "type": "Editor",
+      "name": "Jacqueline Frisina"
     }
   ],
   "creators": [
     {
+      "name": "Jesse Lambertson",
+      "orcid": "0000-0001-8105-1800"
+    },
+    {
       "name": "Christopher Erdmann",
       "orcid": "0000-0003-2554-180X"
     },
     {
-      "name": "James Baker",
-      "orcid": "0000-0002-2682-6922"
+      "name": "Kristin Lee"
     },
     {
-      "name": "Fernando Rios"
+      "name": "Julika Mimkes",
+      "orcid": "0000-0003-0550-8818"
     },
     {
-      "name": "Janice Chan"
+      "name": "Lise Doucette"
     },
     {
-      "name": "Tim Dennis",
-      "orcid": "0000-0001-6632-3812"
+      "name": "Jordan Pedersen"
     },
     {
-      "name": "Belinda Weaver"
+      "name": "Jacqueline Frisina"
     },
     {
-      "name": "Anna-Maria Sichani"
+      "name": "Jesse Lambertson",
+      "orcid": "0000-0001-8105-1800"
     },
     {
-      "name": "Jamene Brooks-Kieffer"
+      "name": "Sarah Lynn Fisher"
     },
     {
-      "name": "Ruud Steltenpool"
+      "name": "Elizabeth McAulay",
+      "orcid": "0000-0002-8679-9727"
     },
     {
-      "name": "222064h"
+      "name": "Siobhan Dunlop"
     },
     {
-      "name": "Dan Michael Heggø",
-      "orcid": "0000-0002-6189-5958"
+      "name": "Ian van der Linde",
+      "orcid": "0000-0001-9232-9599"
     },
     {
-      "name": "Elaine Wong",
-      "orcid": "0000-0002-9799-3576"
+      "name": "Jens Nieschulze"
     },
     {
-      "name": "Emanuele Lanzani"
+      "name": "Jessica Simpson"
     },
     {
-      "name": "thegsi"
+      "name": "RonHLEb"
     },
     {
-      "name": "Reid Otsuji",
-      "orcid": "0000-0002-1842-0295"
-    },
-    {
-      "name": "David Kane",
-      "orcid": "0000-0002-1625-6815"
-    },
-    {
-      "name": "Jeffrey Oliver",
-      "orcid": "0000-0003-2160-1086"
-    },
-    {
-      "name": "Katrin Leinweber",
-      "orcid": "0000-0001-5135-5758"
-    },
-    {
-      "name": "Kunal Marwaha",
-      "orcid": "0000-0001-9084-6971"
-    },
-    {
-      "name": "mdschleu"
-    },
-    {
-      "name": "orobecca"
+      "name": "Scott Carl Peterson",
+      "orcid": "0000-0002-1920-616X"
     }
   ],
   "license": {
