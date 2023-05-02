@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Setup
 ---
 
@@ -7,7 +6,7 @@ title: Setup
 
 ## DB Browser for SQLite
 
-You  will need to install [DB Browser for SQLite](http://sqlitebrowser.org) to complete these lessons. DB Browser for SQLite provides a graphical user interface for connecting to and interacting with a SQLite database. This application bundles SQLite, so you won't need to install SQLite separately.
+You  will need to install [DB Browser for SQLite](https://sqlitebrowser.org) to complete these lessons. DB Browser for SQLite provides a graphical user interface for connecting to and interacting with a SQLite database. This application bundles SQLite, so you won't need to install SQLite separately.
 
 Note: on Windows, the PortableApp download is recommended as the regular version may take a long time to install on certain systems.
 
@@ -15,10 +14,10 @@ Note: on Windows, the PortableApp download is recommended as the regular version
 
 To import data, you'll need to open DB Browser for SQLite and download a zip file containing the data files for this tutorial.
 
-1. Download the data files doaj-article-sample.zip from 
-[Zenodo](http://doi.org/10.5281/zenodo.2822005).
+1. Download the data files doaj-article-sample.zip from
+  [Zenodo](https://doi.org/10.5281/zenodo.2822005).
 2. Open the zip file with the zip utlity on your machine and save the folder and files to a location where you can easily find them. For example, your Desktop.
-2. Contained in the zip file are two files, doaj-article-sample.db and doaj-article-sample.db.sql. You can either open the database file (less steps) or import the SQL file (more steps).
+3. Contained in the zip file are two files, doaj-article-sample.db and doaj-article-sample.db.sql. You can either open the database file (less steps) or import the SQL file (more steps).
 
 ### Open the database file
 
@@ -52,9 +51,9 @@ This step is optional. If you are completing the tutorial with DB Browser for SQ
 
 SQLite command line tools come preinstalled on Linux and Mac OS x.
 
-In order to check they are available type `sqlite3 --version` at the terminal command line. 
+In order to check they are available type `sqlite3 --version` at the terminal command line.
 If this text displays, "Command 'sqlite3' not found, but can be installed with:
-                        sudo apt install sqlite3," it means sqllite3 is not installed on the machine.
+sudo apt install sqlite3," it means sqllite3 is not installed on the machine.
 To install sqlite3, type `sudo apt install sqlite3`.
 To exit type `exit`.
 
@@ -63,7 +62,7 @@ To exit type `exit`.
 On Windows download the [Windows Installer](https://github.com/swcarpentry/windows-installer/releases/download/v0.3/SWCarpentryInstaller.exe)
 Copy the file to a directory and open the directory using the windows command line. Type `sqlite3`.
 
-For a more detailed explanation see this [tutorial](http://www.sqlitetutorial.net/download-install-sqlite/).
+For a more detailed explanation see this [tutorial](https://www.sqlitetutorial.net/download-install-sqlite/).
 
 ### SqliteOnline
 
@@ -79,6 +78,8 @@ This step is optional. If you are completing the tutorial with DB Browser for SQ
 
 1. Choose "File > "Text-SQL" > "Open SQL" from the SqliteOnline menu bar.
 2. Navigate to where you saved the doaj-article-sample folder and/or files. For example, your Desktop.
-3. Select "doaj-article-sample.db.sql". 
+3. Select "doaj-article-sample.db.sql".
 4. You should see the SQL in a text box below the home icon.
 5. Click the "Run" button in the SqliteOnline menu bar.
+
+

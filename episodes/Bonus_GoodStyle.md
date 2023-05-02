@@ -1,14 +1,20 @@
 ---
-title: "Good Style"
+title: Good Style
 teaching: 10
 exercises: 0
-questions:
-- "What is good SQL Style, and how can I abide by SQL conventions?"
-objectives:
-- "Understand the foundation for making clean, readable SQL queries."
-keypoints:
-- "There are many ways to write an SQL queries, but some look better than others."
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Understand the foundation for making clean, readable SQL queries.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is good SQL Style, and how can I abide by SQL conventions?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## An Introduction to good style
 
@@ -17,7 +23,7 @@ These are some quick tips for making your SQL look clean.
 
 ## Pick column names that are precise and short
 
-When choosing column names, it's important to remember that a large part of what you type in your query will be composed of your column names. Choosing a column name that is one or two words (without any spaces!) will ensure that your queries are easier to type and read. If you include spaces in your column names, you will get an error message when you try to run your queries, so we would recommend using CamelCase, or An_Underscore.
+When choosing column names, it's important to remember that a large part of what you type in your query will be composed of your column names. Choosing a column name that is one or two words (without any spaces!) will ensure that your queries are easier to type and read. If you include spaces in your column names, you will get an error message when you try to run your queries, so we would recommend using CamelCase, or An\_Underscore.
 
 ## Capitalization (sometimes) matters
 
@@ -27,23 +33,27 @@ In section two, we talked about SQL keywords/commands being case-insensitive ("W
 
 As you may have noticed, we are able to write our query on one line, or on many. The general consensus with SQL is that if you can break it into components on multiple lines, it becomes easier to read. Using multiple lines and indenting, you can turn something that looks like this:
 
-~~~
+```sql
 SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher FROM articles JOIN journals ON articles.ISSNs = journals.ISSNs JOIN publishers ON publishers.id = journals.PublisherId;
-~~~
-{: .sql}
+```
 
 Into something that looks like this:
 
-~~~
+```sql
 SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs
 JOIN publishers
 ON publishers.id = journals.PublisherId;
-~~~
-{: .sql}
+```
 
 In some programs (such as MySQL), there will be tools that can automatically "beautify" your code for better readability.
 
-{: .sql}
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- There are many ways to write an SQL queries, but some look better than others.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
