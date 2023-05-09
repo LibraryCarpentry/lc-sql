@@ -46,7 +46,13 @@
     <loc>https://librarycarpentry.github.io/lc-sql/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/aio.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-sql/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/images.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-sql/index.html</loc>
@@ -97,16 +103,34 @@
     <loc>https://librarycarpentry.github.io/lc-sql/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-sql/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-sql/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-sql/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-sql/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-sql/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-sql/profiles.html</loc>
