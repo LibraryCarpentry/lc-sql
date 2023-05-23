@@ -455,13 +455,13 @@ queries without the constraints (e.g., field name or search limitations)
 imposed by a mediated search interface. Library workers are good at
 searching information – constructing queries using SQL is a different
 and more direct way of finding information.</p>
-<div id="callout1" class="callout callout">
+<div id="what-are-some-of-the-uses-for-sql-in-libraries" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="what-are-some-of-the-uses-for-sql-in-libraries" class="callout-inner">
 <h3 class="callout-title">What are some of the uses for SQL in
-libraries?<a class="anchor" aria-label="anchor" href="#callout1"></a>
+libraries?<a class="anchor" aria-label="anchor" href="#what-are-some-of-the-uses-for-sql-in-libraries"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -842,12 +842,12 @@ For example, we can order by <code>ISSNs</code> descending and then
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> ISSNs <span class="kw">DESC</span>, First_Author <span class="kw">ASC</span>;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns <code>Title</code>,
@@ -995,12 +995,12 @@ lowercase, the addition of ‘s’ at the end of structures, etc.</p>
 <p>To learn more about other comparison keywords you can use, see
 Beginner SQL Tutorial on <a href="https://beginner-sql-tutorial.com/sql-like-in-operators.htm" class="external-link">SQL
 Comparison Keywords</a>.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns the <code>Title</code>,
@@ -1104,12 +1104,12 @@ necessarily have to display the <code>First_Author</code> column in our
 results in order to sort by it.</p>
 <p>We can do this because sorting occurs earlier in the computational
 pipeline than field selection.</p>
-<div id="callout1" class="callout callout">
+<div id="the-computer-is-basically-doing-this" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="the-computer-is-basically-doing-this" class="callout-inner">
-<h3 class="callout-title">The computer is basically doing this:<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">The computer is basically doing this:<a class="anchor" aria-label="anchor" href="#the-computer-is-basically-doing-this"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
@@ -1274,12 +1274,12 @@ query above by using <code>ORDER BY</code> and <code>DESC</code>.</p>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">AVG</span>(Citation_Count) <span class="kw">DESC</span>;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query using an aggregate function that returns the number of
@@ -1297,7 +1297,7 @@ function to use - it is one of the common aggregate functions
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1338,12 +1338,12 @@ filter based on the individual values in a database field, use
 retrieved (<code>SELECT</code>), can be filtered (<code>WHERE</code>),
 then joined in groups (<code>GROUP BY</code>); finally, we only select
 some of these groups (<code>HAVING</code>).</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns, from the <code>articles</code> table, the
@@ -1359,7 +1359,7 @@ the journals with 5 or more citations on average.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1489,13 +1489,14 @@ common column is <code>ISSNs</code>.</p>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">USING</span> (ISSNs);</span></code></pre>
 </div>
-<figure>This figure shows the relations between the tables and helps to
-visualise joining or linking the tables in the database: <img src="../fig/articles-erd-v02.png" alt="Articles Database" class="figure mx-auto d-block"> We will cover
+<p>This figure shows the relations between the tables and helps to
+visualise joining or linking the tables in the database: <img src="../fig/articles-erd-v02.png" alt="Articles Database" class="figure"> We will cover
 <a href="08-database-design.html">relational database design</a> in the
 next episode. In addition to visual above, <em><a href="https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/" class="external-link">SQL
 Join Types Explained Visually</a></em> provides visual/animated examples
 to help convey to learners what is happening in SQL
-<code>JOIN</code>s.</figure><p>When joining tables, you can specify the columns you want by using
+<code>JOIN</code>s.</p>
+<p>When joining tables, you can specify the columns you want by using
 <code>table.colname</code> instead of selecting all the columns using
 <code>*</code>. For example:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -1521,12 +1522,12 @@ we can use the following query:</p>
 <p>The <code>ROUND</code> function allows us to round the
 <code>Author_Count</code> number returned by the <code>AVG</code>
 function by 2 decimal places.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that <code>JOINS</code> the <code>articles</code> and
@@ -1543,7 +1544,7 @@ average number of citations for every journal ISSN.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1569,12 +1570,12 @@ average number of citations for every journal ISSN.</p>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns the <code>Journal_Title</code>,
@@ -1590,7 +1591,7 @@ by number of articles in descending order.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1739,12 +1740,12 @@ clicking the small Save icon at the bottom of the Execute SQL tab and
 then clicking <strong>Save as view</strong>. Whatever method you use to
 create a view, it will appear in the list of views under the Database
 Structure tab.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a <code>CREATE VIEW</code> query that <code>JOINS</code> the
@@ -1844,13 +1845,13 @@ data about it contained in separate column cells.</p>
 messy data. Over time, if you gather enough data in spreadsheets, you
 will likely end up with inconsistent data (i.e. misformatted, misspelled
 data).</p>
-<div id="challenge1" class="callout challenge">
+<div id="identifying-inconsistencies-in-spreadsheet-data" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-inconsistencies-in-spreadsheet-data" class="callout-inner">
 <h3 class="callout-title">Identifying inconsistencies in spreadsheet
-data<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+data<a class="anchor" aria-label="anchor" href="#identifying-inconsistencies-in-spreadsheet-data"></a>
 </h3>
 <div class="callout-content">
 <p>In the figure below, can you identify where inconsistencies in the
@@ -1994,13 +1995,13 @@ or alternate names as demonstrated below.</p>
 <figure><img src="../fig/normalisation.png" alt="Introducting inconsistencies and normalising data" class="figure mx-auto d-block"></figure><p>There are a number of normal forms in the normalisation process that
 can help you reduce redundancy in database tables. <a href="https://www.studytonight.com/dbms/database-normalization.php" class="external-link">Study
 Tonight</a> features tutorials where you can learn more about them.</p>
-<div id="challenge2" class="callout challenge">
+<div id="identifying-remaining-inconsistencies-in-the-erd" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="identifying-remaining-inconsistencies-in-the-erd" class="callout-inner">
 <h3 class="callout-title">Identifying remaining inconsistencies in the
-ERD<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+ERD<a class="anchor" aria-label="anchor" href="#identifying-remaining-inconsistencies-in-the-erd"></a>
 </h3>
 <div class="callout-content">
 <p>Are there other tables and relationships you can create to further
@@ -2184,12 +2185,12 @@ from the table <code>articles</code> has no matching journal anymore.
 That’s never supposed to happen: Our queries assume there will be a row
 <code>ISSNs</code> in the table ‘journals’ matching every row
 <code>ISSNs</code>in the table <code>articles</code>.</p>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>Write an SQL statement to add the journal “New Journal of Physics”
@@ -2206,7 +2207,7 @@ to the table <code>publishers</code> as well.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2218,12 +2219,12 @@ to the table <code>publishers</code> as well.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="backing-up-with-sql" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="backing-up-with-sql" class="callout-inner">
-<h3 class="callout-title">Backing Up with SQL<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Backing Up with SQL<a class="anchor" aria-label="anchor" href="#backing-up-with-sql"></a>
 </h3>
 <div class="callout-content">
 <p>SQLite has several administrative commands that aren’t part of the
@@ -2244,7 +2245,7 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a>
@@ -2409,12 +2410,12 @@ give a suitable answer?</p>
 <p>Also, if you would like to learn more SQL concepts and try additional
 challenges, see the <a href="https://swcarpentry.github.io/sql-novice-survey/" class="external-link">Software
 Carpentry Databases and SQL</a> lesson.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge 1<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>How many <code>articles</code> are there from each
@@ -2430,7 +2431,7 @@ articles? Can you order the results by articles?</p>
   Solution 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2444,12 +2445,12 @@ articles? Can you order the results by articles?</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge 2<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>How many papers have a single author? How many have 2 authors? How
@@ -2464,7 +2465,7 @@ many 3? etc?</p>
   Solution 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2477,12 +2478,12 @@ many 3? etc?</p>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge 3<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>How many articles are published for each <code>Language</code>?
@@ -2497,7 +2498,7 @@ Ignore articles where language is unknown.</p>
   Solution 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2513,12 +2514,12 @@ Ignore articles where language is unknown.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge 4<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>How many articles are published for each <code>Licence</code> type,
@@ -2534,7 +2535,7 @@ and what is the average number of citations for that
   Solution 4
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2550,12 +2551,12 @@ and what is the average number of citations for that
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Challenge 5<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns
@@ -2571,7 +2572,7 @@ for articles in the database.</p>
   Solution 5
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2730,7 +2731,7 @@ than others.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -2754,8 +2755,8 @@ than others.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/instructor/aio.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/aio.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-05-16",
-  "datePublished": "2023-05-16"
+  "dateModified": "2023-05-23",
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
