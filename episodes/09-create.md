@@ -175,7 +175,7 @@ stored in any particular order.)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Adaped from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creating and Modifying Data'.
+Adapted from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creating and Modifying Data'.
 <https://swcarpentry.github.io/sql-novice-survey/09-create>
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

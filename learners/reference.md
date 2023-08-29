@@ -8,28 +8,28 @@ title: 'SQL Cheat Sheet'
 
 ### Basic query
 
-```
+```sql
 SELECT column_names
 FROM table_name;
 ```
 
 - selects only the specified columns from a table.
 
-```
+```sql
 SELECT * 
 FROM table_name;
 ```
 
 - select all of the columns in a table.
 
-```
-SELECT DINSTINCT column_name 
+```sql
+SELECT DISTINCT column_name 
 FROM table_name;
 ```
 
 - selects only the unique values from a table.
 
-```
+```sql
 SELECT column_names
 FROM table_name
 WHERE column_name operator value;
@@ -39,7 +39,7 @@ WHERE column_name operator value;
 - you can use operators `=`,`<`,`>`, etc
 - you can also combine tests using `AND`, `OR` in the WHERE clause.
 
-```
+```sql
 SELECT column_names
 FROM table_name
 WHERE column_name IN (value1, value2, value3);
@@ -47,7 +47,7 @@ WHERE column_name IN (value1, value2, value3);
 
 - selects only the data where column\_name equals to `value1`, `value2`, and so on.
 
-```
+```sql
 SELECT column_names
 FROM table_name
 ORDER BY column_name ASC;
@@ -59,7 +59,7 @@ ORDER BY column_name ASC;
 
 ### Aggregation
 
-```
+```sql
 SELECT aggregate_function(column_name)
 FROM table_name;
 ```
@@ -68,7 +68,7 @@ FROM table_name;
 - E.g. `SELECT COUNT(*) FROM table_name` will display the total number of records.
 - You can use aggregate functions `COUNT`, `SUM`, `MAX`, `MIN`, `AVG`.
 
-```
+```sql
 SELECT column_name, aggregate_function(column_name)
 FROM table_name
 WHERE column_name operator value
@@ -77,7 +77,7 @@ GROUP BY column_name;
 
 - `GROUP BY` tells SQL what field or fields we want to use to aggregate the data. If we want to group by multiple fields, we give `GROUP BY` a comma separated list.
 
-```
+```sql
 SELECT column_name, aggregate_function(column_name)
 FROM table_name
 GROUP BY column_name
@@ -90,7 +90,7 @@ HAVING aggregate_function(column_name) operator value;
 
 ### Joins and aliases
 
-```
+```sql
 SELECT column_names
 FROM table_name1
 JOIN table_name2 
@@ -100,7 +100,7 @@ ON table_name1.column_name = table_name2.column_name;
 - Combine data from two tables where the values of column\_name in the two tables are the same.
 - Instead of `ON`, you can use the `USING` keyword as a shorthand. E.g. `USING (coolumn_name)`.
 
-```
+```sql
 SELECT alias1.column_name1, alias1.column_name2, alias2.column_name3
 FROM table_name1 AS alias1
 JOIN table_name2 AS alias2
@@ -114,7 +114,7 @@ ON alias1.column_name = alias2.column_name;
 
 ### Saving queries
 
-```
+```sql
 CREATE VIEW viewname AS
 SELECT column_names
 FROM table_name;
@@ -126,7 +126,7 @@ FROM table_name;
 
 ### Commenting
 
-```
+```sql
 -- Select all columns
 SELECT * 
 -- From the table_name
