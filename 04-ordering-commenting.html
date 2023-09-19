@@ -423,23 +423,27 @@ notes within your SQL. In SQL, comments begin using
 the end of the line. To mark a whole paragraph as a comment, you can
 enclose it with the characters /* and */. For example, a commented
 version of the above query can be written as:</p>
-<pre><code>/*In this section, even though JOINS (see link below this code block)
-are not introduced until Episode 6, we want to give an example how to
-join multiple tables becasue they represent a good example of using
-comments in SQL to explain more complex queries.*/
-
--- First we mention all the fields we want to display
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
--- from the first table
-FROM articles
--- and join it with the second table.
-JOIN journals
--- The related attributes are:
-ON articles.ISSNs = journals.ISSNs
--- We want to join a third table,
-JOIN publishers
--- the related attributes are:
-ON publishers.id = journals.PublisherId;</code></pre>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*In this section, even though JOINS (see link below this code block)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">are not introduced until Episode 6, we want to give an example how to</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">join multiple tables because they represent a good example of using</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">comments in SQL to explain more complex queries.*/</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- First we mention all the fields we want to display</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- from the first table</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">-- and join it with the second table.</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">-- The related attributes are:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">-- We want to join a third table,</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">-- the related attributes are:</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
+</div>
 <p>To see the introduction and explanation of JOINS, please click to <a href="06-joins-aliases.html">Episode 6</a>. {: .sql}</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">

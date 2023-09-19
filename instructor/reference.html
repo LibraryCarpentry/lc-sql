@@ -301,7 +301,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>SQL Cheat Sheet</h1>
-        <p> Last updated on 2023-05-02 | 
+        <p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -318,39 +318,67 @@
 </h2>
 <hr class="half-width"><hr><div class="section level3">
 <h3 id="basic-query">Basic query<a class="anchor" aria-label="anchor" href="#basic-query"></a></h3>
-<pre><code>SELECT column_names
-FROM table_name;</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name;</span></code></pre>
+</div>
 <ul><li>selects only the specified columns from a table.</li>
-</ul><pre><code>SELECT * 
-FROM table_name;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name;</span></code></pre>
+</div>
 <ul><li>select all of the columns in a table.</li>
-</ul><pre><code>SELECT DINSTINCT column_name 
-FROM table_name;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> column_name </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name;</span></code></pre>
+</div>
 <ul><li>selects only the unique values from a table.</li>
-</ul><pre><code>SELECT column_names
-FROM table_name
-WHERE column_name operator value;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> column_name <span class="kw">operator</span> <span class="fu">value</span>;</span></code></pre>
+</div>
 <ul><li>selects only the data that meets certain criteria.</li>
 <li>you can use operators
 <code>=</code>,<code>&lt;</code>,<code>&gt;</code>, etc</li>
 <li>you can also combine tests using <code>AND</code>, <code>OR</code>
 in the WHERE clause.</li>
-</ul><pre><code>SELECT column_names
-FROM table_name
-WHERE column_name IN (value1, value2, value3);</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> column_name <span class="kw">IN</span> (value1, value2, value3);</span></code></pre>
+</div>
 <ul><li>selects only the data where column_name equals to
 <code>value1</code>, <code>value2</code>, and so on.</li>
-</ul><pre><code>SELECT column_names
-FROM table_name
-ORDER BY column_name ASC;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> column_name <span class="kw">ASC</span>;</span></code></pre>
+</div>
 <ul><li>selects only the specified columns from a table, sort the results by
 a column in <code>ASC</code> (ascending) or <code>DESC</code>
 (descending) order.</li>
 </ul><hr></div>
 <div class="section level3">
 <h3 id="aggregation">Aggregation<a class="anchor" aria-label="anchor" href="#aggregation"></a></h3>
-<pre><code>SELECT aggregate_function(column_name)
-FROM table_name;</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> aggregate_function(column_name)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name;</span></code></pre>
+</div>
 <ul><li>Aggregate results by grouping records based on value and calculating
 combined values in groups.</li>
 <li>E.g. <code>SELECT COUNT(*) FROM table_name</code> will display the
@@ -358,54 +386,78 @@ total number of records.</li>
 <li>You can use aggregate functions <code>COUNT</code>,
 <code>SUM</code>, <code>MAX</code>, <code>MIN</code>,
 <code>AVG</code>.</li>
-</ul><pre><code>SELECT column_name, aggregate_function(column_name)
-FROM table_name
-WHERE column_name operator value
-GROUP BY column_name;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_name, aggregate_function(column_name)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> column_name <span class="kw">operator</span> <span class="fu">value</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> column_name;</span></code></pre>
+</div>
 <ul><li>
 <code>GROUP BY</code> tells SQL what field or fields we want to use
 to aggregate the data. If we want to group by multiple fields, we give
 <code>GROUP BY</code> a comma separated list.</li>
-</ul><pre><code>SELECT column_name, aggregate_function(column_name)
-FROM table_name
-GROUP BY column_name
-HAVING aggregate_function(column_name) operator value;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_name, aggregate_function(column_name)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> column_name</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> aggregate_function(column_name) <span class="kw">operator</span> <span class="fu">value</span>;</span></code></pre>
+</div>
 <ul><li>The <code>HAVING</code> keyword works exactly like the
 <code>WHERE</code> keyword, but uses aggregate functions instead of
 database fields.</li>
 </ul><hr></div>
 <div class="section level3">
 <h3 id="joins-and-aliases">Joins and aliases<a class="anchor" aria-label="anchor" href="#joins-and-aliases"></a></h3>
-<pre><code>SELECT column_names
-FROM table_name1
-JOIN table_name2 
-ON table_name1.column_name = table_name2.column_name;</code></pre>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name1</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> table_name2 </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> table_name1.column_name <span class="op">=</span> table_name2.column_name;</span></code></pre>
+</div>
 <ul><li>Combine data from two tables where the values of column_name in the
 two tables are the same.</li>
 <li>Instead of <code>ON</code>, you can use the <code>USING</code>
 keyword as a shorthand. E.g. <code>USING (coolumn_name)</code>.</li>
-</ul><pre><code>SELECT alias1.column_name1, alias1.column_name2, alias2.column_name3
-FROM table_name1 AS alias1
-JOIN table_name2 AS alias2
-ON alias1.column_name = alias2.column_name;</code></pre>
+</ul><div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> alias1.column_name1, alias1.column_name2, alias2.column_name3</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name1 <span class="kw">AS</span> alias1</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> table_name2 <span class="kw">AS</span> alias2</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> alias1.column_name <span class="op">=</span> alias2.column_name;</span></code></pre>
+</div>
 <ul><li>we can use aliases to assign new names to things in the query.</li>
 <li>we can use as to rename column names too. E.g.
 <code>SELECT journal_title AS journal</code>.</li>
 </ul><hr></div>
 <div class="section level3">
 <h3 id="saving-queries">Saving queries<a class="anchor" aria-label="anchor" href="#saving-queries"></a></h3>
-<pre><code>CREATE VIEW viewname AS
-SELECT column_names
-FROM table_name;</code></pre>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> viewname <span class="kw">AS</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_names</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name;</span></code></pre>
+</div>
 <ul><li>create a stored query or virtual table in database for repeated
 queries</li>
 </ul><hr></div>
 <div class="section level3">
 <h3 id="commenting">Commenting<a class="anchor" aria-label="anchor" href="#commenting"></a></h3>
-<pre><code>-- Select all columns
-SELECT * 
--- From the table_name
-FROM table_name</code></pre>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Select all columns</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- From the table_name</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table_name</span></code></pre>
+</div>
 <ul><li>we can create comments in SQL queries to help us/others understand
 the query better</li>
 </ul><hr></div>
@@ -479,7 +531,7 @@ the query better</li>
   "url": "https://librarycarpentry.github.io/lc-sql/instructor/reference.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/reference.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-05-02",
+  "dateModified": "2023-09-19",
   "datePublished": "2023-09-19"
 }
 

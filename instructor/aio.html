@@ -685,7 +685,7 @@ that allow them to use SQL to organize and access data.</li>
 </div>
 </section></section><section id="aio-02-selecting-sorting-data"><p>Content from <a href="02-selecting-sorting-data.html">Selecting and sorting data</a></p>
 <hr>
-<p> Last updated on 2023-05-02 | 
+<p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/02-selecting-sorting-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -761,8 +761,12 @@ that style when naming tables and columns. Some tables and columns
 require capitalization and some do not. An occasional change of
 capitalization for these table and column names may be needed.</p>
 <p>Example:</p>
-<pre><code>SELECT Title, Authors, ISSNs, Year
-FROM Articles;</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Articles;</span></code></pre>
+</div>
 <p>instead of</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -867,7 +871,7 @@ cited article and alphabetically by title.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1170,23 +1174,27 @@ notes within your SQL. In SQL, comments begin using
 the end of the line. To mark a whole paragraph as a comment, you can
 enclose it with the characters /* and */. For example, a commented
 version of the above query can be written as:</p>
-<pre><code>/*In this section, even though JOINS (see link below this code block)
-are not introduced until Episode 6, we want to give an example how to
-join multiple tables becasue they represent a good example of using
-comments in SQL to explain more complex queries.*/
-
--- First we mention all the fields we want to display
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
--- from the first table
-FROM articles
--- and join it with the second table.
-JOIN journals
--- The related attributes are:
-ON articles.ISSNs = journals.ISSNs
--- We want to join a third table,
-JOIN publishers
--- the related attributes are:
-ON publishers.id = journals.PublisherId;</code></pre>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*In this section, even though JOINS (see link below this code block)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">are not introduced until Episode 6, we want to give an example how to</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">join multiple tables because they represent a good example of using</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">comments in SQL to explain more complex queries.*/</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- First we mention all the fields we want to display</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- from the first table</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">-- and join it with the second table.</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">-- The related attributes are:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">-- We want to join a third table,</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">-- the related attributes are:</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
+</div>
 <p>To see the introduction and explanation of JOINS, please click to <a href="06-joins-aliases.html">Episode 6</a>. {: .sql}</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -1422,7 +1430,7 @@ New Values</a>.</p>
 </div>
 </section></section><section id="aio-06-joins-aliases"><p>Content from <a href="06-joins-aliases.html">Joins and aliases</a></p>
 <hr>
-<p> Last updated on 2023-05-02 | 
+<p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/06-joins-aliases.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 45 minutes </p>
@@ -1580,7 +1588,7 @@ average number of citations for every journal ISSN.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns the <code>Journal_Title</code>,
@@ -1802,7 +1810,7 @@ repeating the same operation more than once.</li>
 </div>
 </section></section><section id="aio-08-database-design"><p>Content from <a href="08-database-design.html">Database design</a></p>
 <hr>
-<p> Last updated on 2023-05-02 | 
+<p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/08-database-design.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 45 minutes </p>
@@ -1961,12 +1969,12 @@ integrity of the data (see the Normalization section below).</p>
 </h2>
 <hr class="half-width">
 <p>The degree of relationship between entities is known as their
-‘cardinality’. Using the journals-publishers example, the ‘publisheres’
-tble contains a primary key (PK) called ‘id’. When the PK is used to
+‘cardinality’. Using the journals-publishers example, the ‘publishers’
+table contains a primary key (PK) called ‘id’. When the PK is used to
 create a connection between the original table and a different table, it
 is called a foreign key (FK) in the other table. To follow the example,
 we see a field in the ‘journal’ table called PublisherID that contains
-the values from the ‘id’ field in the ‘publisher’ table, connected the
+the values from the ‘id’ field in the ‘publisher’ table, connecting the
 two tables.</p>
 <p>There are 4 main types of relationships between tables:</p>
 <ul>
@@ -2063,7 +2071,7 @@ databases.</li>
 </div>
 </section></section><section id="aio-09-create"><p>Content from <a href="09-create.html">Creating tables and modifying data</a></p>
 <hr>
-<p> Last updated on 2023-05-02 | 
+<p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/09-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
@@ -2212,7 +2220,7 @@ to the table <code>publishers</code> as well.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2250,7 +2258,7 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a>
@@ -2277,7 +2285,7 @@ fixed order</li>
 </div>
 </div>
 </div>
-<p>Adaped from the Software Carpentry Course “Databases and SQL”,
+<p>Adapted from the Software Carpentry Course “Databases and SQL”,
 Chapter 9. ‘Creating and Modifying Data’. <a href="https://swcarpentry.github.io/sql-novice-survey/09-create" class="external-link uri">https://swcarpentry.github.io/sql-novice-survey/09-create</a></p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -2436,7 +2444,7 @@ articles? Can you order the results by articles?</p>
   Solution 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2470,7 +2478,7 @@ many 3? etc?</p>
   Solution 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2503,7 +2511,7 @@ Ignore articles where language is unknown.</p>
   Solution 3
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2540,7 +2548,7 @@ and what is the average number of citations for that
   Solution 4
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2577,7 +2585,7 @@ for articles in the database.</p>
   Solution 5
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

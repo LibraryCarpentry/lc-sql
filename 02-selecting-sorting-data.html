@@ -317,7 +317,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Selecting and sorting data</h1>
-        <p> Last updated on 2023-05-02 | 
+        <p> Last updated on 2023-09-19 | 
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/02-selecting-sorting-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -391,8 +391,12 @@ that style when naming tables and columns. Some tables and columns
 require capitalization and some do not. An occasional change of
 capitalization for these table and column names may be needed.</p>
 <p>Example:</p>
-<pre><code>SELECT Title, Authors, ISSNs, Year
-FROM Articles;</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Articles;</span></code></pre>
+</div>
 <p>instead of</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -495,7 +499,7 @@ cited article and alphabetically by title.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -582,7 +586,7 @@ criteria that can be used.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/02-selecting-sorting-data.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/02-selecting-sorting-data.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-05-02",
+  "dateModified": "2023-09-19",
   "datePublished": "2023-09-19"
 }
 
