@@ -76,7 +76,7 @@ Conceptually, we know that a journal has only one publisher but a publisher can 
 
 ## More Terminology
 
-The degree of relationship between entities is known as their 'cardinality'. Using the journals-publishers example, the 'publisheres' tble contains a primary key (PK) called 'id'. When the PK is used to create a connection between the original table and a different table, it is called a foreign key (FK) in the other table. To follow the example, we see a field in the 'journal' table called PublisherID that contains the values from the 'id' field in the 'publisher' table, connected the two tables.
+The degree of relationship between entities is known as their 'cardinality'. Using the journals-publishers example, the 'publishers' table contains a primary key (PK) called 'id'. When the PK is used to create a connection between the original table and a different table, it is called a foreign key (FK) in the other table. To follow the example, we see a field in the 'journal' table called PublisherID that contains the values from the 'id' field in the 'publisher' table, connecting the two tables.
 
 There are 4 main types of relationships between tables:
 
