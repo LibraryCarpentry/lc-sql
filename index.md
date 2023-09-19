@@ -8,7 +8,7 @@ This Library Carpentry lesson introduces librarians to relational database manag
 
 ## Before You Start:
 
-You will need to install **DB Browser for SQLite** and download the **doaj-article-sample** database. See [Setup](https://librarycarpentry.org/lc-sql/setup.html) for instructions and further information.
+You will need to install **DB Browser for SQLite** and download the **doaj-article-sample** database. See [Setup](learners/setup.md) for instructions and further information.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
