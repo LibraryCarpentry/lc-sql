@@ -107,7 +107,7 @@ ON publishers.id = journals.PublisherId;
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge:
+## Challenge
 
 Write a query that returns the `Journal_Title`, `Publisher` name, and number of
 articles published, ordered by number of articles in descending order.

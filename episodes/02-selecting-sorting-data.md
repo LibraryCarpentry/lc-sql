@@ -41,7 +41,7 @@ In the first query above, we have capitalized the words `SELECT` and `FROM` beca
 
 Example:
 
-```
+```sql
 SELECT Title, Authors, ISSNs, Year
 FROM Articles;
 ```
