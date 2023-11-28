@@ -2,10 +2,6 @@
 title: 'SQL Cheat Sheet'
 ---
 
-## SQL Cheat Sheet
-
-***
-
 ### Basic query
 
 ```sql
@@ -98,7 +94,7 @@ ON table_name1.column_name = table_name2.column_name;
 ```
 
 - Combine data from two tables where the values of column\_name in the two tables are the same.
-- Instead of `ON`, you can use the `USING` keyword as a shorthand. E.g. `USING (coolumn_name)`.
+- Instead of `ON`, you can use the `USING` keyword as a shorthand. E.g. `USING (column_name)`.
 
 ```sql
 SELECT alias1.column_name1, alias1.column_name2, alias2.column_name3

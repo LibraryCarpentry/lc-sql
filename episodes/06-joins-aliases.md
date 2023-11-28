@@ -83,7 +83,7 @@ Write a query that `JOINS` the `articles` and `journals` tables and that returns
 ## Solution
 
 ```sql
-SELECT journals.Journal_Title, count(*), avg(articles.Citation_Count)
+SELECT journals.Journal_Title, COUNT(*), AVG(articles.Citation_Count)
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs

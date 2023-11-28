@@ -22,11 +22,11 @@ exercises: 5
 
 ## What is a query?
 
-A query is a question or request for data. For example, "How many journals does our library subscribe to?" When we query a database, we can ask the same question using a common language called Structured Query Language or SQL in what is called a statement. Some of the most useful queries - the ones we are introducing in this first section - are used to return results from a table that match specific criteria.
+A query is a question or request for data. For example, "How many journals does our library subscribe to?". When we query a database, we can ask the same question using Structured Query Language (SQL) in what is called a statement. Some of the most useful queries - the ones we are introducing in this first section - are used to return results from a table that match specific criteria.
 
 ## Writing my first query
 
-Let's start by opening DB Browser for SQLite and the doaj-article-sample database (see Setup). Choose `Browse Data` and the `articles` table. The articles table contains columns or fields such as `Title`, `Authors`, `DOI`, `URL`, etc.
+Let's start by opening DB Browser for SQLite and the doaj-article-sample database (see [Setup](/)). Click "Browse Data" and select the `articles` table in the "Table" dropdown menu. The articles table contains columns or fields such as `Title`, `Authors`, `DOI`, `URL`, etc.
 
 Let's write a SQL query that selects only the `Title` column from the `articles` table.
 
@@ -60,7 +60,7 @@ SELECT Title, Authors, ISSNs, Year, DOI
 FROM articles;
 ```
 
-Or we can select all of the columns in a table using the wildcard `*`.
+Or we can select all of the columns in a table using the wildcard `*`:
 
 ```sql
 SELECT *
