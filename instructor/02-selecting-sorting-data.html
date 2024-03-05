@@ -378,8 +378,8 @@ column from the <code>articles</code> table.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> title</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> title</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 </section><section id="capitalization-and-good-style"><h2 class="section-heading">Capitalization and good style<a class="anchor" aria-label="anchor" href="#capitalization-and-good-style"></a>
 </h2>
@@ -396,31 +396,31 @@ capitalization for these table and column names may be needed.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Articles;</span></code></pre>
 </div>
 <p>instead of</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, authors, ISSNs, <span class="dt">Year</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, authors, ISSNs, <span class="dt">Year</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 <p>If we want more information, we can add a new column to the list of
 fields right after <code>SELECT</code>:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span>, DOI</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, Authors, ISSNs, <span class="dt">Year</span>, DOI</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 <p>Or we can select all of the columns in a table using the wildcard
 <code>*</code>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 </section><section id="unique-values"><h2 class="section-heading">Unique values<a class="anchor" aria-label="anchor" href="#unique-values"></a>
 </h2>
@@ -432,8 +432,8 @@ in a SQL query.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> ISSNs</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> ISSNs</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 <p>Note, some database systems require a semicolon <code>;</code> after
 each SQL statement. If we select more than one column, then the distinct
@@ -441,8 +441,8 @@ pairs of values are returned.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> ISSNs, <span class="dt">Day</span>, <span class="dt">Month</span>, <span class="dt">Year</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> ISSNs, <span class="dt">Day</span>, <span class="dt">Month</span>, <span class="dt">Year</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 </section><section id="sorting"><h2 class="section-heading">Sorting<a class="anchor" aria-label="anchor" href="#sorting"></a>
 </h2>
@@ -453,9 +453,9 @@ conjunction with <code>ORDER BY</code>.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> ISSNs <span class="kw">ASC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> ISSNs <span class="kw">ASC</span>;</span></code></pre>
 </div>
 <p>The keyword <code>ASC</code> tells us to order it in ascending order.
 Instead, we can use <code>DESC</code> to get the descending order
@@ -463,9 +463,9 @@ sorting by <code>First_Author</code>.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> First_Author <span class="kw">DESC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> First_Author <span class="kw">DESC</span>;</span></code></pre>
 </div>
 <p><code>ASC</code> is the default, so by omitting <code>ASC</code> or
 <code>DESC</code>, SQLite will sort ascending (ASC).</p>
@@ -475,9 +475,9 @@ For example, we can order by <code>ISSNs</code> descending and then
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> ISSNs <span class="kw">DESC</span>, First_Author <span class="kw">ASC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> ISSNs <span class="kw">DESC</span>, First_Author <span class="kw">ASC</span>;</span></code></pre>
 </div>
 <div id="challenge" class="callout challenge">
 <div class="callout-square">
@@ -504,9 +504,9 @@ cited article and alphabetically by title.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, ISSNs, Citation_Count</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Citation_Count <span class="kw">DESC</span>, Title <span class="kw">ASC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, ISSNs, Citation_Count</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Citation_Count <span class="kw">DESC</span>, Title <span class="kw">ASC</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -586,7 +586,7 @@ criteria that can be used.</li>
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/02-selecting-sorting-data.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-09-19",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

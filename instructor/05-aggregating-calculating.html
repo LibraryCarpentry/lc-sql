@@ -370,9 +370,9 @@ for each of the <code>ISSNs</code>. We can use <code>AVG</code> and the
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs;</span></code></pre>
 </div>
 <p><code>GROUP BY</code> is used by SQL to arrange identical data into
 groups. In this case, we are arranging all the citation counts by ISSNs.
@@ -386,10 +386,10 @@ query above by using <code>ORDER BY</code> and <code>DESC</code>.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">AVG</span>(Citation_Count) <span class="kw">DESC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs </span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">AVG</span>(Citation_Count) <span class="kw">DESC</span>;</span></code></pre>
 </div>
 <div id="challenge" class="callout challenge">
 <div class="callout-square">
@@ -412,15 +412,15 @@ function to use - it is one of the common aggregate functions
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">COUNT</span>(Title)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(Title) <span class="kw">DESC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">COUNT</span>(Title)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(Title) <span class="kw">DESC</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -436,10 +436,10 @@ articles:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">count</span>(Title) <span class="op">&gt;=</span> <span class="dv">10</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">count</span>(Title) <span class="op">&gt;=</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 <p>The <code>HAVING</code> keyword works exactly like the
 <code>WHERE</code> keyword, but uses aggregate functions instead of
@@ -471,15 +471,15 @@ the journals with 5 or more citations on average.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(Citation_Count)<span class="op">&gt;=</span><span class="dv">5</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(Citation_Count)<span class="op">&gt;=</span><span class="dv">5</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -495,9 +495,9 @@ if we wanted to calculate a new column called
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, ISSNs, Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">as</span> CoAuthor_Count</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">DESC</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, ISSNs, Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">as</span> CoAuthor_Count</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">DESC</span>;</span></code></pre>
 </div>
 <p>In section <a href="06-joins-aliases.html">6. Joins and aliases</a>
 we are going to learn more about the SQL keyword <code>AS</code> and how
@@ -583,7 +583,7 @@ New Values</a>.</p>
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/05-aggregating-calculating.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

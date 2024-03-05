@@ -362,9 +362,9 @@ instance, for the <em>Acta Crystallographica</em> journal from the
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">WHERE</span> ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>;</span></code></pre>
 </div>
 <p>We can add additional conditions by using <code>AND</code>,
 <code>OR</code>, and/or <code>NOT</code>. For example, suppose we want
@@ -372,9 +372,9 @@ the data on <em>Acta Crystallographica</em> published after October:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>) <span class="kw">AND</span> (<span class="dt">Month</span> <span class="op">&gt;</span> <span class="dv">10</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>) <span class="kw">AND</span> (<span class="dt">Month</span> <span class="op">&gt;</span> <span class="dv">10</span>);</span></code></pre>
 </div>
 <p>Parentheses are used merely for readability in this case but can be
 required by the SQL interpreter in order to disambiguate formulas.</p>
@@ -384,9 +384,9 @@ required by the SQL interpreter in order to disambiguate formulas.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (issns <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (issns <span class="op">=</span> <span class="st">'2077-1444'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">WHERE</span> (issns <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (issns <span class="op">=</span> <span class="st">'2077-1444'</span>);</span></code></pre>
 </div>
 <p>When you do not know the entire value you are searching for, you can
 use comparison keywords such as <code>LIKE</code>, <code>IN</code>,
@@ -399,9 +399,9 @@ for data that matches a pattern.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Subjects <span class="kw">LIKE</span> <span class="st">'%Crystal Structure%'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">WHERE</span> Subjects <span class="kw">LIKE</span> <span class="st">'%Crystal Structure%'</span>;</span></code></pre>
 </div>
 <p>You may have noticed the wildcard character <code>%</code>. It is
 used to match zero to many characters. So in the SQL statement above, it
@@ -438,9 +438,9 @@ citations.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Subjects, ISSNs, <span class="dt">Month</span>, <span class="dt">Year</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (Subjects <span class="kw">LIKE</span> <span class="st">'%computer%'</span>) <span class="kw">AND</span> (Citation_Count <span class="op">&gt;</span> <span class="dv">8</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Subjects, ISSNs, <span class="dt">Month</span>, <span class="dt">Year</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">WHERE</span> (Subjects <span class="kw">LIKE</span> <span class="st">'%computer%'</span>) <span class="kw">AND</span> (Citation_Count <span class="op">&gt;</span> <span class="dv">8</span>);</span></code></pre>
 </div>
 </div>
 </div>
@@ -523,7 +523,7 @@ such as <code>%</code> to match patterns.</li>
   "identifier": "https://librarycarpentry.github.io/lc-sql/03-filtering.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

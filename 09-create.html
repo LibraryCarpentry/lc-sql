@@ -354,13 +354,13 @@ table <code>journals</code>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> journals(<span class="kw">id</span> text, ISSN<span class="op">-</span>L text, ISSNs text, PublisherId text, Journal_Title text);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> journals(<span class="kw">id</span> text, ISSN<span class="op">-</span>L text, ISSNs text, PublisherId text, Journal_Title text);</span></code></pre>
 </div>
 <p>We can get rid of one of our tables using:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> journals;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> journals;</span></code></pre>
 </div>
 <p>Be very careful when doing this: if you drop the wrong table, hope
 that the person maintaining the database has a backup, but it’s better
@@ -373,14 +373,14 @@ on its columns. For example, a better definition for the
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"journals"</span> (</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>	<span class="ot">"id"</span>	<span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>	TEXT,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	TEXT,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>	<span class="dt">INTEGER</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>	<span class="ot">"Journal_Title"</span>	TEXT,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>	<span class="kw">CONSTRAINT</span> <span class="ot">"PublisherId"</span> <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(<span class="ot">"PublisherId"</span>) <span class="kw">REFERENCES</span> <span class="ot">"publishers"</span>(<span class="ot">"id"</span>) </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"journals"</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>	<span class="ot">"id"</span>	<span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>	TEXT,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	TEXT,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>	<span class="dt">INTEGER</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>	<span class="ot">"Journal_Title"</span>	TEXT,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>	<span class="kw">CONSTRAINT</span> <span class="ot">"PublisherId"</span> <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(<span class="ot">"PublisherId"</span>) <span class="kw">REFERENCES</span> <span class="ot">"publishers"</span>(<span class="ot">"id"</span>) </span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>);</span></code></pre>
 </div>
 <p>Once again, exactly what constraints are available and what they’re
 called depends on which database manager we are using.</p>
@@ -392,16 +392,16 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
 </div>
 <p>We can also insert values into one table directly from another:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span>(Journal_Title text, ISSNs text);</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> <span class="kw">SELECT</span> Journal_Title, ISSNs <span class="kw">FROM</span> journals;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span>(Journal_Title text, ISSNs text);</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> <span class="kw">SELECT</span> Journal_Title, ISSNs <span class="kw">FROM</span> journals;</span></code></pre>
 </div>
 <p>Modifying existing records is done using the <code>UPDATE</code>
 statement. To do this we tell the database which table we want to
@@ -413,7 +413,7 @@ update:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> journals <span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">UPDATE</span> journals <span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
 </div>
 <p>Be careful to not forget the <code>WHERE</code> clause or the update
 statement will modify <em>all</em> of the records in the database.</p>
@@ -426,7 +426,7 @@ We can remove the journal <code>Animals</code> from the
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals <span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals <span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
 </div>
 <p>But now the article
 <code>Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures</code>
@@ -454,13 +454,13 @@ to the table <code>publishers</code> as well.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span> <span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span> <span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
 </div>
 </div>
 </div>
@@ -490,7 +490,7 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a></h4>
@@ -594,7 +594,7 @@ records refer to.</li>
   "identifier": "https://librarycarpentry.github.io/lc-sql/09-create.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-09-19",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
