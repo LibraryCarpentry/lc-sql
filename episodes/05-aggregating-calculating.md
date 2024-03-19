@@ -94,7 +94,7 @@ but only for the journals with 5 or more citations on average.
 SELECT ISSNs, AVG(Citation_Count)
 FROM articles
 GROUP BY ISSNs
-HAVING AVG(Citation_Count)>=5;
+HAVING AVG(Citation_Count) >= 5;
 ```
 
 :::::::::::::::::::::::::
@@ -106,9 +106,10 @@ HAVING AVG(Citation_Count)>=5;
 In SQL, we can also perform calculations as we query the database. Also known as computed columns, we can use expressions on a column or multiple columns to get new values during our query. For example, what if we wanted to calculate a new column called `CoAuthor_Count`:
 
 ```sql
-SELECT Title, ISSNs, Author_Count -1 as CoAuthor_Count
+SELECT Title, ISSNs, Author_Count - 1 as CoAuthor_Count
 FROM articles
 ORDER BY CoAuthor_Count DESC;
+
 ```
 
 In section [6\. Joins and aliases](06-joins-aliases.md) we are going to learn more about the SQL keyword `AS` and how to make use of aliases - in this example we simply used the calculation and `AS` to represent that the new column is different from the original SQL table data.

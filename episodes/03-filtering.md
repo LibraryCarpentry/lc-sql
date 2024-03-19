@@ -25,7 +25,7 @@ SQL is a powerful tool for filtering data in databases based on a set of conditi
 ```sql
 SELECT *
 FROM articles
-WHERE ISSNs='2056-9890';
+WHERE ISSNs = '2056-9890';
 ```
 
 We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example, suppose we want the data on *Acta Crystallographica* published after October:
@@ -33,7 +33,7 @@ We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example
 ```sql
 SELECT *
 FROM articles
-WHERE (ISSNs='2056-9890') AND (Month > 10);
+WHERE (ISSNs = '2056-9890') AND (Month > 10);
 ```
 
 Parentheses are used merely for readability in this case but can be required by the SQL interpreter in order to disambiguate formulas.

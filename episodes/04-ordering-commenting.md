@@ -56,7 +56,8 @@ Consider the following query:
 ```sql
 SELECT *
 FROM articles
-WHERE (ISSNs = '2076-0787') OR (ISSNs = '2077-1444') OR (ISSNs = '2067-2764|2247-6202');
+WHERE (ISSNs = '2076-0787') OR (ISSNs = '2077-1444')
+      OR (ISSNs = '2067-2764|2247-6202');
 ```
 
 SQL offers the flexibility of iteratively adding new conditions but you may reach a point where the query is difficult to read and inefficient. For instance, we can use `IN` to improve the query and make it more readable:
@@ -79,7 +80,8 @@ join multiple tables because they represent a good example of using
 comments in SQL to explain more complex queries.*/
 
 -- First we mention all the fields we want to display
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
+SELECT articles.Title, articles.First_Author, journals.Journal_Title,
+       publishers.Publisher
 -- from the first table
 FROM articles
 -- and join it with the second table.
