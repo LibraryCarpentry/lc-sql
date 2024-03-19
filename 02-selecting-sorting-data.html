@@ -190,7 +190,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -317,7 +317,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Selecting and sorting data</h1>
-        <p>Last updated on 2023-09-19 |
+        <p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/02-selecting-sorting-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -359,18 +359,19 @@
 <section id="what-is-a-query"><h2 class="section-heading">What is a query?<a class="anchor" aria-label="anchor" href="#what-is-a-query"></a>
 </h2>
 <hr class="half-width"><p>A query is a question or request for data. For example, “How many
-journals does our library subscribe to?” When we query a database, we
-can ask the same question using a common language called Structured
-Query Language or SQL in what is called a statement. Some of the most
-useful queries - the ones we are introducing in this first section - are
-used to return results from a table that match specific criteria.</p>
+journals does our library subscribe to?”. When we query a database, we
+can ask the same question using Structured Query Language (SQL) in what
+is called a statement. Some of the most useful queries - the ones we are
+introducing in this first section - are used to return results from a
+table that match specific criteria.</p>
 </section><section id="writing-my-first-query"><h2 class="section-heading">Writing my first query<a class="anchor" aria-label="anchor" href="#writing-my-first-query"></a>
 </h2>
 <hr class="half-width"><p>Let’s start by opening DB Browser for SQLite and the
-doaj-article-sample database (see Setup). Choose
-<code>Browse Data</code> and the <code>articles</code> table. The
-articles table contains columns or fields such as <code>Title</code>,
-<code>Authors</code>, <code>DOI</code>, <code>URL</code>, etc.</p>
+doaj-article-sample database (see <a href="/">Setup</a>). Click “Browse
+Data” and select the <code>articles</code> table in the “Table” dropdown
+menu. The articles table contains columns or fields such as
+<code>Title</code>, <code>Authors</code>, <code>DOI</code>,
+<code>URL</code>, etc.</p>
 <p>Let’s write a SQL query that selects only the <code>Title</code>
 column from the <code>articles</code> table.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -413,7 +414,7 @@ fields right after <code>SELECT</code>:</p>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 <p>Or we can select all of the columns in a table using the wildcard
-<code>*</code>.</p>
+<code>*</code>:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -583,7 +584,7 @@ criteria that can be used.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/02-selecting-sorting-data.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/02-selecting-sorting-data.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-09-19",
+  "dateModified": "2024-03-19",
   "datePublished": "2024-03-19"
 }
 

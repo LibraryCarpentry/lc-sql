@@ -195,7 +195,7 @@ well suited to SQL?</a></li>
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -392,7 +392,7 @@ quality control of entries - you will receive an error if you try to
 enter a word into a field that should contain a number. Understanding
 the nature of relational databases, and using SQL, will help you in
 using databases in programming languages such as R or Python.</p>
-<p>Many web applications (including WordPress and ecommerce sites like
+<p>Many web applications (including WordPress and e-commerce sites like
 Amazon) run on a SQL (relational) database. Understanding SQL is the
 first step in eventually building custom web applications that can serve
 data to users.</p>
@@ -431,7 +431,7 @@ tools.</p></li>
 views that are not necessarily provided via library systems patron
 facing interfaces.</p></li>
 <li><p>SQL can be used to keep an inventory of items, for instance, for
-a library’s makerspace, or it can be used to track licenses for
+a library’s makerspace, or it can be used to track licences for
 journals.</p></li>
 <li><p>For projects involving migrating and cleaning data from one
 system to another, SQL can be a handy tool.</p></li>
@@ -464,38 +464,42 @@ and export data and possibly some differences in datatype.</p>
 for SQLite.</p>
 <p>You can see the tables in the database by looking at the left hand
 side of the screen under Tables.</p>
-<p>To see the contents of a table, click on that table and then click on
-the Browse Data tab above the table data.</p>
-<p>If we want to write a query, we click on the Execute SQL tab.</p>
+<p>To see the contents of a table, click on “Browse Data” then select
+the table in the “Table” dropdown in the upper left corner.</p>
+<p>If we want to write a query, we click on the “Execute SQL” tab.</p>
 <p>There are two ways to add new data to a table without writing
 SQL:</p>
 <ol style="list-style-type: decimal"><li>Enter data into a CSV file and append</li>
 <li>Click the “Browse Data” tab, then click the “New Record”
 button.</li>
-</ol><p>The steps for adding data from a CSV file are:</p>
-<ol style="list-style-type: decimal"><li>Choose “File” &gt; “Import” &gt; “Table” from CSV file…</li>
-<li>DB Browser for SQLite will prompt you if you want to add the data to
-the existing table.</li>
+</ol><p>To add data from a CSV file:</p>
+<ol style="list-style-type: decimal"><li>Choose “File” &gt; “Import” &gt; “Table from CSV file…”</li>
+<li>Select a CSV file to import</li>
+<li>Review the import settings and confirm that the column names and
+fields are correct</li>
+<li>Click “OK” to import the data. If the table name matches an existing
+table and the number of columns match, DB Browser will ask if you want
+to add the data to the existing table.</li>
 </ol></section><section id="dataset-description"><h2 class="section-heading">Dataset Description<a class="anchor" aria-label="anchor" href="#dataset-description"></a>
 </h2>
-<hr class="half-width"><p>The data we will be using consists of 5 csv files that contain tables
-of article titles, journals, languages, licenses, and publishers. The
+<hr class="half-width"><p>The data we will use was created from 5 csv files that contain tables
+of article titles, journals, languages, licences, and publishers. The
 information in these tables are from a sample of 51 different journals
 published during 2015.</p>
 <p><strong>articles</strong></p>
-<ul><li>Contains individual article Titles and the associated citations and
-metadata</li>
+<ul><li>Contains individual article titles and the associated citations and
+metadata.</li>
 <li>(16 fields, 1001 records)</li>
 <li>Field names: <code>id</code>, <code>Title</code>,
 <code>Authors</code>, <code>DOI</code>, <code>URL</code>,
 <code>Subjects</code>, <code>ISSNs</code>, <code>Citation</code>,
-<code>LanguageID</code>, <code>LicenseID</code>,
+<code>LanguageID</code>, <code>LicenceID</code>,
 <code>Author_Count</code>, <code>First_Author</code>,
 <code>Citation_Count</code>, <code>Day</code>, <code>Month</code>,
 <code>Year</code>
 </li>
 </ul><p><strong>journals</strong></p>
-<ul><li>Contains various journal Titles and associated metadata. The table
+<ul><li>Contains various journal titles and associated metadata. The table
 also associates Journal Titles with ISSN numbers that are then
 referenced in the ‘articles’ table by the <code>ISSNs</code> field.</li>
 <li>(5 fields, 51 records)</li>
@@ -510,10 +514,10 @@ numbers are then referenced in the ‘articles’ table by the
 <li>(2 fields, 4 records)</li>
 <li>Field names: <code>id</code>, <code>Language</code>
 </li>
-</ul><p><strong>licenses</strong></p>
-<ul><li>ID table which associates License codes with id numbers. These id
+</ul><p><strong>licences</strong></p>
+<ul><li>ID table which associates Licence codes with id numbers. These id
 numbers are then referenced in the ‘articles’ table by the
-<code>LicenseID</code> field.</li>
+<code>LicenceID</code> field.</li>
 <li>(2 fields, 4 records)</li>
 <li>Field names: <code>id</code>, <code>Licence</code>
 </li>
@@ -555,7 +559,7 @@ etc.</td>
 possible size of the number may be specified.</td>
 <td align="left">REAL</td>
 </tr><tr class="even"><td align="left">text or string</td>
-<td align="left">and combination of numbers, letters, symbols. Platforms
+<td align="left">any combination of numbers, letters, symbols. Platforms
 may have different data types: one for variables with a set number of
 characters - e.g., a zip code or postal code, and one for variables with
 an open number of characters, e.g., an address or description

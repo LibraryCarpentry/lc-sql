@@ -223,7 +223,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -444,7 +444,7 @@ quality control of entries - you will receive an error if you try to
 enter a word into a field that should contain a number. Understanding
 the nature of relational databases, and using SQL, will help you in
 using databases in programming languages such as R or Python.</p>
-<p>Many web applications (including WordPress and ecommerce sites like
+<p>Many web applications (including WordPress and e-commerce sites like
 Amazon) run on a SQL (relational) database. Understanding SQL is the
 first step in eventually building custom web applications that can serve
 data to users.</p>
@@ -485,7 +485,7 @@ tools.</p></li>
 views that are not necessarily provided via library systems patron
 facing interfaces.</p></li>
 <li><p>SQL can be used to keep an inventory of items, for instance, for
-a library’s makerspace, or it can be used to track licenses for
+a library’s makerspace, or it can be used to track licences for
 journals.</p></li>
 <li><p>For projects involving migrating and cleaning data from one
 system to another, SQL can be a handy tool.</p></li>
@@ -523,9 +523,9 @@ and export data and possibly some differences in datatype.</p>
 for SQLite.</p>
 <p>You can see the tables in the database by looking at the left hand
 side of the screen under Tables.</p>
-<p>To see the contents of a table, click on that table and then click on
-the Browse Data tab above the table data.</p>
-<p>If we want to write a query, we click on the Execute SQL tab.</p>
+<p>To see the contents of a table, click on “Browse Data” then select
+the table in the “Table” dropdown in the upper left corner.</p>
+<p>If we want to write a query, we click on the “Execute SQL” tab.</p>
 <p>There are two ways to add new data to a table without writing
 SQL:</p>
 <ol style="list-style-type: decimal">
@@ -533,27 +533,31 @@ SQL:</p>
 <li>Click the “Browse Data” tab, then click the “New Record”
 button.</li>
 </ol>
-<p>The steps for adding data from a CSV file are:</p>
+<p>To add data from a CSV file:</p>
 <ol style="list-style-type: decimal">
-<li>Choose “File” &gt; “Import” &gt; “Table” from CSV file…</li>
-<li>DB Browser for SQLite will prompt you if you want to add the data to
-the existing table.</li>
+<li>Choose “File” &gt; “Import” &gt; “Table from CSV file…”</li>
+<li>Select a CSV file to import</li>
+<li>Review the import settings and confirm that the column names and
+fields are correct</li>
+<li>Click “OK” to import the data. If the table name matches an existing
+table and the number of columns match, DB Browser will ask if you want
+to add the data to the existing table.</li>
 </ol></section><section id="dataset-description"><h2 class="section-heading">Dataset Description<a class="anchor" aria-label="anchor" href="#dataset-description"></a>
 </h2>
 <hr class="half-width">
-<p>The data we will be using consists of 5 csv files that contain tables
-of article titles, journals, languages, licenses, and publishers. The
+<p>The data we will use was created from 5 csv files that contain tables
+of article titles, journals, languages, licences, and publishers. The
 information in these tables are from a sample of 51 different journals
 published during 2015.</p>
 <p><strong>articles</strong></p>
 <ul>
-<li>Contains individual article Titles and the associated citations and
-metadata</li>
+<li>Contains individual article titles and the associated citations and
+metadata.</li>
 <li>(16 fields, 1001 records)</li>
 <li>Field names: <code>id</code>, <code>Title</code>,
 <code>Authors</code>, <code>DOI</code>, <code>URL</code>,
 <code>Subjects</code>, <code>ISSNs</code>, <code>Citation</code>,
-<code>LanguageID</code>, <code>LicenseID</code>,
+<code>LanguageID</code>, <code>LicenceID</code>,
 <code>Author_Count</code>, <code>First_Author</code>,
 <code>Citation_Count</code>, <code>Day</code>, <code>Month</code>,
 <code>Year</code>
@@ -561,7 +565,7 @@ metadata</li>
 </ul>
 <p><strong>journals</strong></p>
 <ul>
-<li>Contains various journal Titles and associated metadata. The table
+<li>Contains various journal titles and associated metadata. The table
 also associates Journal Titles with ISSN numbers that are then
 referenced in the ‘articles’ table by the <code>ISSNs</code> field.</li>
 <li>(5 fields, 51 records)</li>
@@ -579,11 +583,11 @@ numbers are then referenced in the ‘articles’ table by the
 <li>Field names: <code>id</code>, <code>Language</code>
 </li>
 </ul>
-<p><strong>licenses</strong></p>
+<p><strong>licences</strong></p>
 <ul>
-<li>ID table which associates License codes with id numbers. These id
+<li>ID table which associates Licence codes with id numbers. These id
 numbers are then referenced in the ‘articles’ table by the
-<code>LicenseID</code> field.</li>
+<code>LicenceID</code> field.</li>
 <li>(2 fields, 4 records)</li>
 <li>Field names: <code>id</code>, <code>Licence</code>
 </li>
@@ -645,7 +649,7 @@ possible size of the number may be specified.</td>
 </tr>
 <tr class="even">
 <td align="left">text or string</td>
-<td align="left">and combination of numbers, letters, symbols. Platforms
+<td align="left">any combination of numbers, letters, symbols. Platforms
 may have different data types: one for variables with a set number of
 characters - e.g., a zip code or postal code, and one for variables with
 an open number of characters, e.g., an address or description
@@ -688,7 +692,7 @@ that allow them to use SQL to organize and access data.</li>
 </div>
 </section></section><section id="aio-02-selecting-sorting-data"><p>Content from <a href="02-selecting-sorting-data.html">Selecting and sorting data</a></p>
 <hr>
-<p>Last updated on 2023-09-19 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/02-selecting-sorting-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -729,19 +733,20 @@ that allow them to use SQL to organize and access data.</li>
 </h2>
 <hr class="half-width">
 <p>A query is a question or request for data. For example, “How many
-journals does our library subscribe to?” When we query a database, we
-can ask the same question using a common language called Structured
-Query Language or SQL in what is called a statement. Some of the most
-useful queries - the ones we are introducing in this first section - are
-used to return results from a table that match specific criteria.</p>
+journals does our library subscribe to?”. When we query a database, we
+can ask the same question using Structured Query Language (SQL) in what
+is called a statement. Some of the most useful queries - the ones we are
+introducing in this first section - are used to return results from a
+table that match specific criteria.</p>
 </section><section id="writing-my-first-query"><h2 class="section-heading">Writing my first query<a class="anchor" aria-label="anchor" href="#writing-my-first-query"></a>
 </h2>
 <hr class="half-width">
 <p>Let’s start by opening DB Browser for SQLite and the
-doaj-article-sample database (see Setup). Choose
-<code>Browse Data</code> and the <code>articles</code> table. The
-articles table contains columns or fields such as <code>Title</code>,
-<code>Authors</code>, <code>DOI</code>, <code>URL</code>, etc.</p>
+doaj-article-sample database (see <a href="/">Setup</a>). Click “Browse
+Data” and select the <code>articles</code> table in the “Table” dropdown
+menu. The articles table contains columns or fields such as
+<code>Title</code>, <code>Authors</code>, <code>DOI</code>,
+<code>URL</code>, etc.</p>
 <p>Let’s write a SQL query that selects only the <code>Title</code>
 column from the <code>articles</code> table.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -785,7 +790,7 @@ fields right after <code>SELECT</code>:</p>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles;</span></code></pre>
 </div>
 <p>Or we can select all of the columns in a table using the wildcard
-<code>*</code>.</p>
+<code>*</code>:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1193,7 +1198,7 @@ version of the above query can be written as:</p>
 <span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">-- the related attributes are:</span></span>
 <span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
-<p>To see the introduction and explanation of JOINS, please click to <a href="06-joins-aliases.html">Episode 6</a>. {: .sql}</p>
+<p>To see the introduction and explanation of JOINS, please click to <a href="06-joins-aliases.html">Episode 6</a>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1205,11 +1210,12 @@ version of the above query can be written as:</p>
 <ul>
 <li>Queries often have the structure: SELECT data FROM table WHERE
 certain criteria are present.</li>
+<li>Comments can make our queries easier to read and understand.</li>
 </ul>
 </div>
 </div>
 </div>
-</section></section><section id="aio-05-aggregating-calculating"><p>Content from <a href="05-aggregating-calculating.html">Aggregating &amp; calculating values</a></p>
+</section></section><section id="aio-05-aggregating-calculating"><p>Content from <a href="05-aggregating-calculating.html">Aggregating and calculating values</a></p>
 <hr>
 <p>Last updated on 2024-03-19 |
         
@@ -1305,7 +1311,7 @@ function to use - it is one of the common aggregate functions
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1365,7 +1371,7 @@ the journals with 5 or more citations on average.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1392,7 +1398,7 @@ if we wanted to calculate a new column called
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, ISSNs, Author_Count <span class="op">-</span> <span class="dv">1</span> <span class="kw">as</span> CoAuthor_Count</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Author_Count <span class="op">-</span> <span class="dv">1</span> <span class="kw">DESC</span>;</span></code></pre>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> CoAuthor_Count <span class="kw">DESC</span>;</span></code></pre>
 </div>
 <p>In section <a href="06-joins-aliases.html">6. Joins and aliases</a>
 we are going to learn more about the SQL keyword <code>AS</code> and how
@@ -1765,7 +1771,7 @@ order.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1799,7 +1805,7 @@ repeating the same operation more than once.</li>
 </div>
 </section></section><section id="aio-08-database-design"><p>Content from <a href="08-database-design.html">Database design</a></p>
 <hr>
-<p>Last updated on 2023-09-19 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/08-database-design.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1900,7 +1906,7 @@ database.</p>
 </section><section id="terminology"><h2 class="section-heading">Terminology<a class="anchor" aria-label="anchor" href="#terminology"></a>
 </h2>
 <hr class="half-width">
-<figure><img src="fig/field-record-value.png" alt="Fields, Records, Values" width="500" class="figure mx-auto d-block"></figure><p>In the <a href="01-introduction.html">Introduction to SQL</a> lesson,
+<figure><img src="fig/field-record-value.png" alt="Fields, Records, Values" class="figure mx-auto d-block"></figure><p>In the <a href="01-introduction.html">Introduction to SQL</a> lesson,
 we introduced the terms “fields”, “records”, and “values”. These terms
 are commonly used in databases while the “columns”, “rows”, and “cells”
 terms are more common in spreadsheets. Fields store a single kind of
@@ -1910,7 +1916,7 @@ related to one item in your database (a book, a person, a library).</p>
 <p>To design a database, we must first decide what kinds of things we
 want to represent as tables. A table is the physical manifestation of a
 kind of “entity”. An entity is the conceptual representation of the
-thing we want to store informtation about in the database, with each row
+thing we want to store information about in the database, with each row
 containing information about one entity. An entity has “attributes” that
 describe it, represented as fields. For example, an article or a journal
 is an entity. Attributes would be things like the article title, or
@@ -1935,7 +1941,7 @@ efficiently. They allow you to map relationships between concepts and
 ultimately construct a relational database. The following is an ERD of
 the database used in this lesson:</p>
 <figure><img src="https://user-images.githubusercontent.com/30397506/115917162-6cc7ef00-a43b-11eb-97af-16fe50caa6a6.png" alt="Articles Database" class="figure mx-auto d-block"></figure><p><em>Or you can view the <a href="https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530" class="external-link">dbdiagram.io
-interactive version of the ERD</a></em></p>
+interactive version of the ERD</a>.</em></p>
 <p>Relationships between entities and their attributes are represented
 by lines linking them together. For example, the line linking journals
 and publishers is interpreted as follows: The ‘journals’ entity is
@@ -1950,7 +1956,8 @@ table, the ‘id’ attribute is that unique identifier. We use that same
 identifier in the ‘journals’ table to refer to an individual publisher.
 That way, there is an unambiguous way for us to distinguish which
 journals are associated with which publisher in a way that keeps the
-integrity of the data (see the Normalization section below).</p>
+integrity of the data (see <a href="#normalisation">the Normalisation
+section</a> below).</p>
 </section><section id="more-terminology"><h2 class="section-heading">More Terminology<a class="anchor" aria-label="anchor" href="#more-terminology"></a>
 </h2>
 <hr class="half-width">
@@ -1991,7 +1998,7 @@ and linking to it from the journals table via PK and FK identifiers
 allows us to normalise the data and avoid inconsistencies. If we used
 one table, we could introduce publisher name errors such as misspellings
 or alternate names as demonstrated below.</p>
-<figure><img src="fig/normalisation.png" alt="Introducting inconsistencies and normalising data" class="figure mx-auto d-block"></figure><p>There are a number of normal forms in the normalisation process that
+<figure><img src="fig/normalisation.png" alt="Introducing inconsistencies and normalising data" class="figure mx-auto d-block"></figure><p>There are a number of normal forms in the normalisation process that
 can help you reduce redundancy in database tables. <a href="https://www.studytonight.com/dbms/database-normalization.php" class="external-link">Study
 Tonight</a> features tutorials where you can learn more about them.</p>
 <div id="identifying-remaining-inconsistencies-in-the-erd" class="callout challenge">
@@ -2139,16 +2146,21 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
 </div>
 <p>We can also insert values into one table directly from another:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span> (Journal_Title text, ISSNs text);</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> <span class="kw">SELECT</span> Journal_Title, ISSNs <span class="kw">FROM</span> journals;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span>(Journal_Title text, ISSNs text);</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">SELECT</span> Journal_Title, ISSNs </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">FROM</span> journals;</span></code></pre>
 </div>
 <p>Modifying existing records is done using the <code>UPDATE</code>
 statement. To do this we tell the database which table we want to
@@ -2160,7 +2172,9 @@ update:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">UPDATE</span> journals <span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">UPDATE</span> journals</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
 </div>
 <p>Be careful to not forget the <code>WHERE</code> clause or the update
 statement will modify <em>all</em> of the records in the database.</p>
@@ -2173,7 +2187,8 @@ We can remove the journal <code>Animals</code> from the
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals <span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
 </div>
 <p>But now the article
 <code>Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures</code>
@@ -2206,8 +2221,10 @@ to the table <code>publishers</code> as well.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span> <span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
 </div>
 </div>
 </div>
@@ -2239,9 +2256,9 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="section level4">
-<h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a>
-</h4>
+<div class="section level3">
+<h3 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a>
+</h3>
 <ul>
 <li>A version control system will be able to show differences between
 versions of the dump file; something it can’t do for binary files like
@@ -2252,9 +2269,9 @@ copy of each version (save disk space)</li>
 each version of the database</li>
 </ul>
 </div>
-<div class="section level4">
-<h4 id="disadvantages">Disadvantages<a class="anchor" aria-label="anchor" href="#disadvantages"></a>
-</h4>
+<div class="section level3">
+<h3 id="disadvantages">Disadvantages<a class="anchor" aria-label="anchor" href="#disadvantages"></a>
+</h3>
 <ul>
 <li>Artificial differences between commits because records don’t have a
 fixed order</li>
@@ -2419,7 +2436,7 @@ articles? Can you order the results by articles?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Solution 1</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2451,7 +2468,7 @@ many 3? etc?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Solution 2</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2482,7 +2499,7 @@ Ignore articles where language is unknown.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Solution 3</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2517,7 +2534,7 @@ and what is the average number of citations for that
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Solution 4</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2552,7 +2569,7 @@ for articles in the database.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Solution 5</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
