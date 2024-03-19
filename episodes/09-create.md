@@ -55,10 +55,10 @@ a better definition for the `journals` table would be:
 
 ```sql
 CREATE TABLE "journals" (
-	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"ISSN-L"	TEXT,
-	"ISSNs"	TEXT,
-	"PublisherId"	INTEGER,
+	"id"            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"ISSN-L"        TEXT,
+	"ISSNs"	        TEXT,
+	"PublisherId"   INTEGER,
 	"Journal_Title"	TEXT,
 	CONSTRAINT "PublisherId" FOREIGN KEY("PublisherId") REFERENCES "publishers"("id") 
 );
@@ -85,7 +85,7 @@ INSERT INTO "journals" VALUES (3,'2076-2616','2076-2616',2,'Animals');
 We can also insert values into one table directly from another:
 
 ```sql
-CREATE TABLE "myjournals"(Journal_Title text, ISSNs text);
+CREATE TABLE "myjournals" (Journal_Title text, ISSNs text);
 INSERT INTO "myjournals" SELECT Journal_Title, ISSNs FROM journals;
 ```
 
