@@ -373,7 +373,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction to SQL</a></p>
 <hr>
-<p>Last updated on 2023-05-02 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -633,7 +633,7 @@ values of 0 or 1.</td>
 <tr class="even">
 <td align="left">integer</td>
 <td align="left">sometimes called whole numbers or counting numbers. Can
-be 1,2,3, etc., as well as 0 and negative whole numbers: -1,-2,-3,
+be 1, 2, 3, etc., as well as 0 and negative whole numbers: -1, -2, -3,
 etc.</td>
 <td align="left">INTEGER</td>
 </tr>
@@ -871,7 +871,7 @@ cited article and alphabetically by title.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -903,7 +903,7 @@ criteria that can be used.</li>
 </div>
 </section></section><section id="aio-03-filtering"><p>Content from <a href="03-filtering.html">Filtering</a></p>
 <hr>
-<p>Last updated on 2023-05-02 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/03-filtering.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -953,7 +953,7 @@ instance, for the <em>Acta Crystallographica</em> journal from the
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">WHERE</span> ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>;</span></code></pre>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">WHERE</span> ISSNs <span class="op">=</span> <span class="st">'2056-9890'</span>;</span></code></pre>
 </div>
 <p>We can add additional conditions by using <code>AND</code>,
 <code>OR</code>, and/or <code>NOT</code>. For example, suppose we want
@@ -963,7 +963,7 @@ the data on <em>Acta Crystallographica</em> published after October:</p>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs<span class="op">=</span><span class="st">'2056-9890'</span>) <span class="kw">AND</span> (<span class="dt">Month</span> <span class="op">&gt;</span> <span class="dv">10</span>);</span></code></pre>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs <span class="op">=</span> <span class="st">'2056-9890'</span>) <span class="kw">AND</span> (<span class="dt">Month</span> <span class="op">&gt;</span> <span class="dv">10</span>);</span></code></pre>
 </div>
 <p>Parentheses are used merely for readability in this case but can be
 required by the SQL interpreter in order to disambiguate formulas.</p>
@@ -975,7 +975,7 @@ required by the SQL interpreter in order to disambiguate formulas.</p>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">WHERE</span> (issns <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (issns <span class="op">=</span> <span class="st">'2077-1444'</span>);</span></code></pre>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (ISSNs <span class="op">=</span> <span class="st">'2077-1444'</span>);</span></code></pre>
 </div>
 <p>When you do not know the entire value you are searching for, you can
 use comparison keywords such as <code>LIKE</code>, <code>IN</code>,
@@ -1057,7 +1057,7 @@ such as <code>%</code> to match patterns.</li>
 </div>
 </section></section><section id="aio-04-ordering-commenting"><p>Content from <a href="04-ordering-commenting.html">Ordering and commenting</a></p>
 <hr>
-<p>Last updated on 2023-09-19 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/04-ordering-commenting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1142,7 +1142,8 @@ the logic becomes complex. This can be handled in two ways:</p>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (ISSNs <span class="op">=</span> <span class="st">'2077-1444'</span>) <span class="kw">OR</span> (ISSNs <span class="op">=</span> <span class="st">'2067-2764|2247-6202'</span>);</span></code></pre>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">WHERE</span> (ISSNs <span class="op">=</span> <span class="st">'2076-0787'</span>) <span class="kw">OR</span> (ISSNs <span class="op">=</span> <span class="st">'2077-1444'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>      <span class="kw">OR</span> (ISSNs <span class="op">=</span> <span class="st">'2067-2764|2247-6202'</span>);</span></code></pre>
 </div>
 <p>SQL offers the flexibility of iteratively adding new conditions but
 you may reach a point where the query is difficult to read and
@@ -1179,17 +1180,18 @@ version of the above query can be written as:</p>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">comments in SQL to explain more complex queries.*/</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">-- First we mention all the fields we want to display</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">-- from the first table</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">-- and join it with the second table.</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">-- The related attributes are:</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">-- We want to join a third table,</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">-- the related attributes are:</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title,</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>       publishers.Publisher</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">-- from the first table</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">-- and join it with the second table.</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">-- The related attributes are:</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">-- We want to join a third table,</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">-- the related attributes are:</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
 <p>To see the introduction and explanation of JOINS, please click to <a href="06-joins-aliases.html">Episode 6</a>. {: .sql}</p>
 <div id="keypoints1" class="callout keypoints">
@@ -1209,7 +1211,7 @@ certain criteria are present.</li>
 </div>
 </section></section><section id="aio-05-aggregating-calculating"><p>Content from <a href="05-aggregating-calculating.html">Aggregating &amp; calculating values</a></p>
 <hr>
-<p>Last updated on 2023-05-02 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/05-aggregating-calculating.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1331,7 +1333,7 @@ articles:</p>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">count</span>(Title) <span class="op">&gt;=</span> <span class="dv">10</span>;</span></code></pre>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(Title) <span class="op">&gt;=</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 <p>The <code>HAVING</code> keyword works exactly like the
 <code>WHERE</code> keyword, but uses aggregate functions instead of
@@ -1371,7 +1373,7 @@ the journals with 5 or more citations on average.</p>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> ISSNs, <span class="fu">AVG</span>(Citation_Count)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> ISSNs</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(Citation_Count)<span class="op">&gt;=</span><span class="dv">5</span>;</span></code></pre>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(Citation_Count) <span class="op">&gt;=</span> <span class="dv">5</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1388,9 +1390,9 @@ if we wanted to calculate a new column called
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, ISSNs, Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">as</span> CoAuthor_Count</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, ISSNs, Author_Count <span class="op">-</span> <span class="dv">1</span> <span class="kw">as</span> CoAuthor_Count</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Author_Count <span class="op">-</span><span class="dv">1</span> <span class="kw">DESC</span>;</span></code></pre>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Author_Count <span class="op">-</span> <span class="dv">1</span> <span class="kw">DESC</span>;</span></code></pre>
 </div>
 <p>In section <a href="06-joins-aliases.html">6. Joins and aliases</a>
 we are going to learn more about the SQL keyword <code>AS</code> and how
@@ -1421,7 +1423,7 @@ New Values</a>.</p>
 </div>
 </section></section><section id="aio-06-joins-aliases"><p>Content from <a href="06-joins-aliases.html">Joins and aliases</a></p>
 <hr>
-<p>Last updated on 2023-09-19 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/06-joins-aliases.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1505,10 +1507,11 @@ to help convey to learners what is happening in SQL
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.ISSNs, journals.Journal_Title, articles.Title, articles.First_Author, articles.<span class="dt">Month</span>, articles.<span class="dt">Year</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.ISSNs, journals.Journal_Title, articles.Title,</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>       articles.First_Author, articles.<span class="dt">Month</span>, articles.<span class="dt">Year</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs;</span></code></pre>
 </div>
 <p>Joins can be combined with sorting, filtering, and aggregation. So,
 if we wanted the average number of authors for articles on each journal,
@@ -1516,11 +1519,12 @@ we can use the following query:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.ISSNs, journals.Journal_Title, <span class="fu">ROUND</span>(<span class="fu">AVG</span>(articles.Author_Count), <span class="dv">2</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> articles.ISSNs;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.ISSNs, journals.Journal_Title,</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>       <span class="fu">ROUND</span>(<span class="fu">AVG</span>(articles.Author_Count), <span class="dv">2</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> articles.ISSNs;</span></code></pre>
 </div>
 <p>The <code>ROUND</code> function allows us to round the
 <code>Author_Count</code> number returned by the <code>AVG</code>
@@ -1550,7 +1554,7 @@ average number of citations for every journal ISSN.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> journals.Journal_Title, <span class="fu">count</span>(<span class="op">*</span>), <span class="fu">avg</span>(articles.Citation_Count)</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> journals.Journal_Title, <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">AVG</span>(articles.Citation_Count)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
@@ -1623,17 +1627,19 @@ the query.</p>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> ar.Title, ar.First_Author, jo.Journal_Title</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">FROM</span> articles <span class="kw">AS</span> ar</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">JOIN</span> journals  <span class="kw">AS</span> jo</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">JOIN</span> journals <span class="kw">AS</span> jo</span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">ON</span> ar.ISSNs <span class="op">=</span> jo.ISSNs;</span></code></pre>
 </div>
 <p>And column names:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> ar.title <span class="kw">AS</span> title, ar.first_author <span class="kw">AS</span> author, jo.journal_title <span class="kw">AS</span> journal</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">FROM</span> articles <span class="kw">AS</span> ar</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">JOIN</span> journals  <span class="kw">AS</span> jo</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">ON</span> ar.issns <span class="op">=</span> jo.issns;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> ar.title <span class="kw">AS</span> title,</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       ar.first_author <span class="kw">AS</span> author,</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>       jo.journal_title <span class="kw">AS</span> journal</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">FROM</span> articles <span class="kw">AS</span> ar</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">JOIN</span> journals <span class="kw">AS</span> jo</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="kw">ON</span> ar.issns <span class="op">=</span> jo.issns;</span></code></pre>
 </div>
 <p>The <code>AS</code> isn’t technically required, so you could do:</p>
 <div class="codewrapper sourceCode" id="cb10">
@@ -2049,7 +2055,7 @@ databases.</li>
 </div>
 </section></section><section id="aio-09-create"><p>Content from <a href="09-create.html">Creating tables and modifying data</a></p>
 <hr>
-<p>Last updated on 2023-09-19 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/09-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2115,10 +2121,10 @@ on its columns. For example, a better definition for the
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"journals"</span> (</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>	<span class="ot">"id"</span>	<span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>	TEXT,</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	TEXT,</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>	<span class="dt">INTEGER</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>	<span class="ot">"id"</span>            <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>        TEXT,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	        TEXT,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>   <span class="dt">INTEGER</span>,</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>	<span class="ot">"Journal_Title"</span>	TEXT,</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>	<span class="kw">CONSTRAINT</span> <span class="ot">"PublisherId"</span> <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(<span class="ot">"PublisherId"</span>) <span class="kw">REFERENCES</span> <span class="ot">"publishers"</span>(<span class="ot">"id"</span>) </span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>);</span></code></pre>
@@ -2141,7 +2147,7 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span>(Journal_Title text, ISSNs text);</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span> (Journal_Title text, ISSNs text);</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> <span class="kw">SELECT</span> Journal_Title, ISSNs <span class="kw">FROM</span> journals;</span></code></pre>
 </div>
 <p>Modifying existing records is done using the <code>UPDATE</code>
@@ -2195,7 +2201,7 @@ to the table <code>publishers</code> as well.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2231,7 +2237,7 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="section level4">
 <h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a>
@@ -2349,7 +2355,7 @@ SqliteOnline.</li>
 </div>
 </section></section><section id="aio-11-extra-challenges"><p>Content from <a href="11-extra-challenges.html">Extra challenges (optional)</a></p>
 <hr>
-<p>Last updated on 2023-05-02 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/11-extra-challenges.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2418,7 +2424,7 @@ articles? Can you order the results by articles?</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> First_Author, <span class="fu">COUNT</span>( <span class="op">*</span> ) <span class="kw">AS</span> n_articles</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> First_Author, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_articles</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> First_Author</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> n_articles <span class="kw">DESC</span>;</span></code></pre>
@@ -2450,7 +2456,7 @@ many 3? etc?</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> Author_Count, <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> Author_Count, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Author_Count;</span></code></pre>
 </div>
@@ -2481,10 +2487,10 @@ Ignore articles where language is unknown.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Language, <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Language, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">JOIN</span> languages</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> articles.LanguageId<span class="op">=</span>languages.<span class="kw">id</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> articles.LanguageId <span class="op">=</span> languages.<span class="kw">id</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">WHERE</span> Language <span class="op">!=</span> <span class="st">''</span></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Language;</span></code></pre>
 </div>
@@ -2516,10 +2522,10 @@ and what is the average number of citations for that
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> Licence, <span class="fu">AVG</span>( Citation_Count ), <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> Licence, <span class="fu">AVG</span>(Citation_Count), <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">JOIN</span> licences</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">ON</span> articles.LicenceId<span class="op">=</span>licences.<span class="kw">id</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">ON</span> articles.LicenceId <span class="op">=</span> licences.<span class="kw">id</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">WHERE</span> Licence <span class="op">!=</span> <span class="st">''</span></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Licence;</span></code></pre>
 </div>
@@ -2551,12 +2557,13 @@ for articles in the database.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Author_Count, Citation_Count, <span class="dt">Month</span>, <span class="dt">Year</span>, Journal_Title, Publisher</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">ON</span> articles.issns<span class="op">=</span>journals.ISSNs</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span><span class="op">=</span>journals.PublisherId;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Author_Count, Citation_Count,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       <span class="dt">Month</span>, <span class="dt">Year</span>, Journal_Title, Publisher</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">ON</span> articles.issns <span class="op">=</span> journals.ISSNs</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
 </div>
 </div>
@@ -2579,7 +2586,7 @@ queries into SQL queries.</li>
 </div>
 </section></section><section id="aio-Bonus_GoodStyle"><p>Content from <a href="Bonus_GoodStyle.html">Good Style</a></p>
 <hr>
-<p>Last updated on 2023-05-02 |
+<p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/Bonus_GoodStyle.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2655,12 +2662,13 @@ this:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title,</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>       publishers.Publisher</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
 <p>In some programs (such as MySQL), there will be tools that can
 automatically “beautify” your code for better readability.</p>

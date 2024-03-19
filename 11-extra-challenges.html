@@ -313,7 +313,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Extra challenges (optional)</h1>
-        <p>Last updated on 2023-05-02 |
+        <p>Last updated on 2024-03-19 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/11-extra-challenges.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -383,7 +383,7 @@ articles? Can you order the results by articles?</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> First_Author, <span class="fu">COUNT</span>( <span class="op">*</span> ) <span class="kw">AS</span> n_articles</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> First_Author, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_articles</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> First_Author</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> n_articles <span class="kw">DESC</span>;</span></code></pre>
@@ -415,7 +415,7 @@ many 3? etc?</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> Author_Count, <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> Author_Count, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Author_Count;</span></code></pre>
 </div>
@@ -446,10 +446,10 @@ Ignore articles where language is unknown.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Language, <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Language, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">JOIN</span> languages</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> articles.LanguageId<span class="op">=</span>languages.<span class="kw">id</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> articles.LanguageId <span class="op">=</span> languages.<span class="kw">id</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">WHERE</span> Language <span class="op">!=</span> <span class="st">''</span></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Language;</span></code></pre>
 </div>
@@ -481,10 +481,10 @@ and what is the average number of citations for that
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> Licence, <span class="fu">AVG</span>( Citation_Count ), <span class="fu">COUNT</span>( <span class="op">*</span> )</span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> Licence, <span class="fu">AVG</span>(Citation_Count), <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">JOIN</span> licences</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">ON</span> articles.LicenceId<span class="op">=</span>licences.<span class="kw">id</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">ON</span> articles.LicenceId <span class="op">=</span> licences.<span class="kw">id</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">WHERE</span> Licence <span class="op">!=</span> <span class="st">''</span></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Licence;</span></code></pre>
 </div>
@@ -516,12 +516,13 @@ for articles in the database.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Author_Count, Citation_Count, <span class="dt">Month</span>, <span class="dt">Year</span>, Journal_Title, Publisher</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">ON</span> articles.issns<span class="op">=</span>journals.ISSNs</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span><span class="op">=</span>journals.PublisherId;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> Title, First_Author, Author_Count, Citation_Count,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       <span class="dt">Month</span>, <span class="dt">Year</span>, Journal_Title, Publisher</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">ON</span> articles.issns <span class="op">=</span> journals.ISSNs</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
 </div>
 </div>
@@ -598,7 +599,7 @@ queries into SQL queries.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/11-extra-challenges.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/11-extra-challenges.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-05-02",
+  "dateModified": "2024-03-19",
   "datePublished": "2024-03-19"
 }
 
