@@ -35,7 +35,7 @@ How many `articles` are there from each `First_author`? Can you make an alias fo
 ## Solution 1
 
 ```sql
-SELECT First_Author, COUNT( * ) AS n_articles
+SELECT First_Author, COUNT(*) AS n_articles
 FROM articles
 GROUP BY First_Author
 ORDER BY n_articles DESC;
@@ -56,7 +56,7 @@ How many papers have a single author? How many have 2 authors? How many 3? etc?
 ## Solution 2
 
 ```sql
-SELECT Author_Count, COUNT( * )
+SELECT Author_Count, COUNT(*)
 FROM articles
 GROUP BY Author_Count;
 ```
@@ -77,10 +77,10 @@ language is unknown.
 ## Solution 3
 
 ```sql
-SELECT Language, COUNT( * )
+SELECT Language, COUNT(*)
 FROM articles
 JOIN languages
-ON articles.LanguageId=languages.id
+ON articles.LanguageId = languages.id
 WHERE Language != ''
 GROUP BY Language;
 ```
@@ -101,10 +101,10 @@ number of citations for that `Licence` type?
 ## Solution 4
 
 ```sql
-SELECT Licence, AVG( Citation_Count ), COUNT( * )
+SELECT Licence, AVG(Citation_Count), COUNT(*)
 FROM articles
 JOIN licences
-ON articles.LicenceId=licences.id
+ON articles.LicenceId = licences.id
 WHERE Licence != ''
 GROUP BY Licence;
 ```
@@ -124,12 +124,13 @@ Write a query that returns `Title, First_Author, Author_Count, Citation_Count, M
 ## Solution 5
 
 ```sql
-SELECT Title, First_Author, Author_Count, Citation_Count, Month, Year, Journal_Title, Publisher
+SELECT Title, First_Author, Author_Count, Citation_Count,
+       Month, Year, Journal_Title, Publisher
 FROM articles
 JOIN journals
-ON articles.issns=journals.ISSNs
+ON articles.issns = journals.ISSNs
 JOIN publishers
-ON publishers.id=journals.PublisherId;
+ON publishers.id = journals.PublisherId;
 ```
 
 :::::::::::::::::::::::::
