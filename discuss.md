@@ -4,7 +4,6 @@ title: Discussion
 
 There are many ways to discuss Library Carpentry lessons:
 
-- Join our [Gitter discussion forum](https://gitter.im/LibraryCarpentry/).
 - Join our [Slack organisation](https://slack-invite.carpentries.org/) and #libraries channel.
 - Stay in touch with our [Topicbox Group](https://carpentries.topicbox.com/groups/discuss-library-carpentry).
 - Follow updates on [Twitter](https://twitter.com/LibCarpentry).

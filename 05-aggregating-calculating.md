@@ -1,5 +1,5 @@
 ---
-title: Aggregating & calculating values
+title: Aggregating and calculating values
 teaching: 15
 exercises: 5
 ---
@@ -108,7 +108,8 @@ In SQL, we can also perform calculations as we query the database. Also known as
 ```sql
 SELECT Title, ISSNs, Author_Count - 1 as CoAuthor_Count
 FROM articles
-ORDER BY Author_Count - 1 DESC;
+ORDER BY CoAuthor_Count DESC;
+
 ```
 
 In section [6\. Joins and aliases](06-joins-aliases.md) we are going to learn more about the SQL keyword `AS` and how to make use of aliases - in this example we simply used the calculation and `AS` to represent that the new column is different from the original SQL table data.
