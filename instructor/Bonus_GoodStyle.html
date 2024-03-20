@@ -175,7 +175,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -316,7 +316,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Good Style</h1>
-        <p>Last updated on 2024-03-19 |
+        <p>Last updated on 2024-03-20 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/Bonus_GoodStyle.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -392,13 +392,12 @@ this:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title,</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>       publishers.Publisher</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> articles</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">JOIN</span> journals</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">ON</span> articles.ISSNs <span class="op">=</span> journals.ISSNs</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="kw">JOIN</span> publishers</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="kw">ON</span> publishers.<span class="kw">id</span> <span class="op">=</span> journals.PublisherId;</span></code></pre>
 </div>
 <p>In some programs (such as MySQL), there will be tools that can
 automatically “beautify” your code for better readability.</p>
@@ -473,8 +472,8 @@ than others.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/instructor/Bonus_GoodStyle.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/Bonus_GoodStyle.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-19",
-  "datePublished": "2024-03-19"
+  "dateModified": "2024-03-20",
+  "datePublished": "2024-03-20"
 }
 
   </script><script>

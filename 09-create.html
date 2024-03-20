@@ -175,7 +175,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -306,7 +306,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating tables and modifying data</h1>
-        <p>Last updated on 2024-03-19 |
+        <p>Last updated on 2024-03-20 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/09-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -374,10 +374,10 @@ on its columns. For example, a better definition for the
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"journals"</span> (</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>	<span class="ot">"id"</span>            <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>        TEXT,</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	        TEXT,</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>   <span class="dt">INTEGER</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>	<span class="ot">"id"</span>	<span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>	<span class="ot">"ISSN-L"</span>	TEXT,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="ot">"ISSNs"</span>	TEXT,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	<span class="ot">"PublisherId"</span>	<span class="dt">INTEGER</span>,</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>	<span class="ot">"Journal_Title"</span>	TEXT,</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>	<span class="kw">CONSTRAINT</span> <span class="ot">"PublisherId"</span> <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(<span class="ot">"PublisherId"</span>) <span class="kw">REFERENCES</span> <span class="ot">"publishers"</span>(<span class="ot">"id"</span>) </span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>);</span></code></pre>
@@ -392,21 +392,16 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">1</span>,<span class="st">'2077-0472'</span>,<span class="st">'2077-0472'</span>,<span class="dv">2</span>,<span class="st">'Agriculture'</span>);</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">2</span>,<span class="st">'2073-4395'</span>,<span class="st">'2073-4395'</span>,<span class="dv">2</span>,<span class="st">'Agronomy'</span>);</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">3</span>,<span class="st">'2076-2616'</span>,<span class="st">'2076-2616'</span>,<span class="dv">2</span>,<span class="st">'Animals'</span>);</span></code></pre>
 </div>
 <p>We can also insert values into one table directly from another:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="ot">"myjournals"</span>(Journal_Title text, ISSNs text);</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> </span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">SELECT</span> Journal_Title, ISSNs </span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">FROM</span> journals;</span></code></pre>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"myjournals"</span> <span class="kw">SELECT</span> Journal_Title, ISSNs <span class="kw">FROM</span> journals;</span></code></pre>
 </div>
 <p>Modifying existing records is done using the <code>UPDATE</code>
 statement. To do this we tell the database which table we want to
@@ -418,9 +413,7 @@ update:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">UPDATE</span> journals</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">UPDATE</span> journals <span class="kw">SET</span> ISSN<span class="op">-</span>L <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span>, ISSNs <span class="op">=</span> <span class="dv">2076</span><span class="op">-</span><span class="dv">2615</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</span></code></pre>
 </div>
 <p>Be careful to not forget the <code>WHERE</code> clause or the update
 statement will modify <em>all</em> of the records in the database.</p>
@@ -433,8 +426,7 @@ We can remove the journal <code>Animals</code> from the
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> journals <span class="kw">WHERE</span> Journal_Title <span class="op">=</span> <span class="st">'Animals'</span>;</span></code></pre>
 </div>
 <p>But now the article
 <code>Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures</code>
@@ -467,10 +459,8 @@ to the table <code>publishers</code> as well.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"publishers"</span> <span class="kw">VALUES</span> (<span class="dv">7</span>,<span class="st">'Institute of Physics (IOP)'</span>);</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="ot">"journals"</span> <span class="kw">VALUES</span> (<span class="dv">52</span>,<span class="st">'1367-2630'</span>,<span class="st">'1367-2630'</span>,<span class="dv">7</span>,<span class="st">'New Journal of Physics'</span>);</span></code></pre>
 </div>
 </div>
 </div>
@@ -502,8 +492,8 @@ approach? (Hint: records aren’t stored in any particular order.)</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="section level3">
-<h3 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a></h3>
+<div class="section level4">
+<h4 id="advantages">Advantages<a class="anchor" aria-label="anchor" href="#advantages"></a></h4>
 <ul><li>A version control system will be able to show differences between
 versions of the dump file; something it can’t do for binary files like
 databases</li>
@@ -512,8 +502,8 @@ copy of each version (save disk space)</li>
 <li>The version control log will explain the reason for the changes in
 each version of the database</li>
 </ul></div>
-<div class="section level3">
-<h3 id="disadvantages">Disadvantages<a class="anchor" aria-label="anchor" href="#disadvantages"></a></h3>
+<div class="section level4">
+<h4 id="disadvantages">Disadvantages<a class="anchor" aria-label="anchor" href="#disadvantages"></a></h4>
 <ul><li>Artificial differences between commits because records don’t have a
 fixed order</li>
 </ul></div>
@@ -603,8 +593,8 @@ records refer to.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/09-create.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/09-create.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-19",
-  "datePublished": "2024-03-19"
+  "dateModified": "2024-03-20",
+  "datePublished": "2024-03-20"
 }
 
   </script><script>

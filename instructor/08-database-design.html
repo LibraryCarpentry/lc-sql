@@ -175,7 +175,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-aggregating-calculating.html">5. Aggregating and calculating values</a>
+        <a href="05-aggregating-calculating.html">5. Aggregating &amp; calculating values</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -318,7 +318,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Database design</h1>
-        <p>Last updated on 2024-03-19 |
+        <p>Last updated on 2024-03-20 |
         
         <a href="https://github.com/librarycarpentry/lc-sql/edit/main/episodes/08-database-design.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -417,7 +417,7 @@ interrelationships between the data across different tables in the
 database.</p>
 </section><section id="terminology"><h2 class="section-heading">Terminology<a class="anchor" aria-label="anchor" href="#terminology"></a>
 </h2>
-<hr class="half-width"><figure><img src="../fig/field-record-value.png" alt="Fields, Records, Values" class="figure mx-auto d-block"></figure><p>In the <a href="01-introduction.html">Introduction to SQL</a> lesson,
+<hr class="half-width"><figure><img src="../fig/field-record-value.png" alt="Fields, Records, Values" width="500" class="figure mx-auto d-block"></figure><p>In the <a href="01-introduction.html">Introduction to SQL</a> lesson,
 we introduced the terms “fields”, “records”, and “values”. These terms
 are commonly used in databases while the “columns”, “rows”, and “cells”
 terms are more common in spreadsheets. Fields store a single kind of
@@ -427,7 +427,7 @@ related to one item in your database (a book, a person, a library).</p>
 <p>To design a database, we must first decide what kinds of things we
 want to represent as tables. A table is the physical manifestation of a
 kind of “entity”. An entity is the conceptual representation of the
-thing we want to store information about in the database, with each row
+thing we want to store informtation about in the database, with each row
 containing information about one entity. An entity has “attributes” that
 describe it, represented as fields. For example, an article or a journal
 is an entity. Attributes would be things like the article title, or
@@ -451,7 +451,7 @@ efficiently. They allow you to map relationships between concepts and
 ultimately construct a relational database. The following is an ERD of
 the database used in this lesson:</p>
 <figure><img src="https://user-images.githubusercontent.com/30397506/115917162-6cc7ef00-a43b-11eb-97af-16fe50caa6a6.png" alt="Articles Database" class="figure mx-auto d-block"></figure><p><em>Or you can view the <a href="https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530" class="external-link">dbdiagram.io
-interactive version of the ERD</a>.</em></p>
+interactive version of the ERD</a></em></p>
 <p>Relationships between entities and their attributes are represented
 by lines linking them together. For example, the line linking journals
 and publishers is interpreted as follows: The ‘journals’ entity is
@@ -466,8 +466,7 @@ table, the ‘id’ attribute is that unique identifier. We use that same
 identifier in the ‘journals’ table to refer to an individual publisher.
 That way, there is an unambiguous way for us to distinguish which
 journals are associated with which publisher in a way that keeps the
-integrity of the data (see <a href="#normalisation">the Normalisation
-section</a> below).</p>
+integrity of the data (see the Normalization section below).</p>
 </section><section id="more-terminology"><h2 class="section-heading">More Terminology<a class="anchor" aria-label="anchor" href="#more-terminology"></a>
 </h2>
 <hr class="half-width"><p>The degree of relationship between entities is known as their
@@ -504,7 +503,7 @@ and linking to it from the journals table via PK and FK identifiers
 allows us to normalise the data and avoid inconsistencies. If we used
 one table, we could introduce publisher name errors such as misspellings
 or alternate names as demonstrated below.</p>
-<figure><img src="../fig/normalisation.png" alt="Introducing inconsistencies and normalising data" class="figure mx-auto d-block"></figure><p>There are a number of normal forms in the normalisation process that
+<figure><img src="../fig/normalisation.png" alt="Introducting inconsistencies and normalising data" class="figure mx-auto d-block"></figure><p>There are a number of normal forms in the normalisation process that
 can help you reduce redundancy in database tables. <a href="https://www.studytonight.com/dbms/database-normalization.php" class="external-link">Study
 Tonight</a> features tutorials where you can learn more about them.</p>
 <div id="identifying-remaining-inconsistencies-in-the-erd" class="callout challenge">
@@ -618,8 +617,8 @@ databases.</li>
   "url": "https://librarycarpentry.github.io/lc-sql/instructor/08-database-design.html",
   "identifier": "https://librarycarpentry.github.io/lc-sql/instructor/08-database-design.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-19",
-  "datePublished": "2024-03-19"
+  "dateModified": "2024-03-20",
+  "datePublished": "2024-03-20"
 }
 
   </script><script>
