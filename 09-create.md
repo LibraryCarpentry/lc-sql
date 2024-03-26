@@ -50,15 +50,14 @@ We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick 
 
 When we create a table,
 we can specify several kinds of constraints on its columns.
-For example,
-a better definition for the `journals` table would be:
+For example, a better definition for the `journals` table would be:
 
 ```sql
 CREATE TABLE "journals" (
-	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"ISSN-L"	TEXT,
-	"ISSNs"	TEXT,
-	"PublisherId"	INTEGER,
+	"id"            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"ISSN-L"        TEXT,
+	"ISSNs"	        TEXT,
+	"PublisherId"   INTEGER,
 	"Journal_Title"	TEXT,
 	CONSTRAINT "PublisherId" FOREIGN KEY("PublisherId") REFERENCES "publishers"("id") 
 );
@@ -76,17 +75,22 @@ we can add, change, and remove records using our other set of commands,
 Here is an example of inserting rows into the `journals` table:
 
 ```sql
-INSERT INTO "journals" VALUES (1,'2077-0472','2077-0472',2,'Agriculture');
-INSERT INTO "journals" VALUES (2,'2073-4395','2073-4395',2,'Agronomy');
-INSERT INTO "journals" VALUES (3,'2076-2616','2076-2616',2,'Animals');
-
+INSERT INTO "journals"
+VALUES (1,'2077-0472','2077-0472',2,'Agriculture');
+INSERT INTO "journals"
+VALUES (2,'2073-4395','2073-4395',2,'Agronomy');
+INSERT INTO "journals"
+VALUES (3,'2076-2616','2076-2616',2,'Animals');
 ```
 
 We can also insert values into one table directly from another:
 
 ```sql
 CREATE TABLE "myjournals"(Journal_Title text, ISSNs text);
-INSERT INTO "myjournals" SELECT Journal_Title, ISSNs FROM journals;
+INSERT INTO "myjournals" 
+SELECT Journal_Title, ISSNs 
+FROM journals;
+
 ```
 
 Modifying existing records is done using the `UPDATE` statement.
@@ -98,7 +102,9 @@ For example, if we made a typo when entering the ISSNs
 of the last `INSERT` statement above, we can correct it with an update:
 
 ```sql
-UPDATE journals SET ISSN-L = 2076-2615, ISSNs = 2076-2615 WHERE id = 3;
+UPDATE journals
+SET ISSN-L = 2076-2615, ISSNs = 2076-2615
+WHERE id = 3;
 ```
 
 Be careful to not forget the `WHERE` clause or the update statement will
@@ -112,7 +118,8 @@ that matches the records we want to discard.
 We can remove the journal `Animals` from the `journals` table like this:
 
 ```sql
-DELETE FROM journals WHERE Journal_Title = 'Animals';
+DELETE FROM journals
+WHERE Journal_Title = 'Animals';
 ```
 
 But now the article `Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures` from the table `articles`
@@ -126,15 +133,17 @@ matching every row `ISSNs`in the table `articles`.
 ## Exercise
 
 Write an SQL statement to add the journal "New Journal of Physics" (ISSNs \& ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table
-`journals`. You need to add the publisher "IOP" to the table  `publishers` as well.
+`journals`. You need to add the publisher "IOP" to the table `publishers` as well.
 
 :::::::::::::::  solution
 
 ## Solution
 
 ```sql
-INSERT INTO "publishers" VALUES (7,'Institute of Physics (IOP)');
-INSERT INTO "journals" VALUES (52,'1367-2630','1367-2630',7,'New Journal of Physics');
+INSERT INTO "publishers"
+VALUES (7,'Institute of Physics (IOP)');
+INSERT INTO "journals"
+VALUES (52,'1367-2630','1367-2630',7,'New Journal of Physics');
 ```
 
 :::::::::::::::::::::::::
@@ -158,7 +167,7 @@ stored in any particular order.)
 
 ## Solution
 
-#### Advantages
+### Advantages
 
 - A version control system will be able to show differences between versions
   of the dump file; something it can't do for binary files like databases
@@ -167,7 +176,7 @@ stored in any particular order.)
 - The version control log will explain the reason for the changes in each version
   of the database
 
-#### Disadvantages
+### Disadvantages
 
 - Artificial differences between commits because records don't have a fixed order
 

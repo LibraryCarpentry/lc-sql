@@ -54,7 +54,8 @@ We will cover [relational database design](08-database-design.md) in the next ep
 When joining tables, you can specify the columns you want by using `table.colname` instead of selecting all the columns using `*`. For example:
 
 ```sql
-SELECT articles.ISSNs, journals.Journal_Title, articles.Title, articles.First_Author, articles.Month, articles.Year
+SELECT articles.ISSNs, journals.Journal_Title, articles.Title,
+       articles.First_Author, articles.Month, articles.Year
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs;
@@ -63,7 +64,8 @@ ON articles.ISSNs = journals.ISSNs;
 Joins can be combined with sorting, filtering, and aggregation.  So, if we wanted the average number of authors for articles on each journal, we can use the following query:
 
 ```sql
-SELECT articles.ISSNs, journals.Journal_Title, ROUND(AVG(articles.Author_Count), 2)
+SELECT articles.ISSNs, journals.Journal_Title,
+       ROUND(AVG(articles.Author_Count), 2)
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs
@@ -83,7 +85,7 @@ Write a query that `JOINS` the `articles` and `journals` tables and that returns
 ## Solution
 
 ```sql
-SELECT journals.Journal_Title, count(*), avg(articles.Citation_Count)
+SELECT journals.Journal_Title, COUNT(*), AVG(articles.Citation_Count)
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs
@@ -142,16 +144,18 @@ We can alias both table names:
 ```sql
 SELECT ar.Title, ar.First_Author, jo.Journal_Title
 FROM articles AS ar
-JOIN journals  AS jo
+JOIN journals AS jo
 ON ar.ISSNs = jo.ISSNs;
 ```
 
 And column names:
 
 ```sql
-SELECT ar.title AS title, ar.first_author AS author, jo.journal_title AS journal
+SELECT ar.title AS title,
+       ar.first_author AS author,
+       jo.journal_title AS journal
 FROM articles AS ar
-JOIN journals  AS jo
+JOIN journals AS jo
 ON ar.issns = jo.issns;
 ```
 

@@ -53,7 +53,7 @@ into a field that should contain a number. Understanding the nature of relationa
 databases, and using SQL, will help you in using databases in programming languages
 such as R or Python.
 
-Many web applications (including WordPress and ecommerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
+Many web applications (including WordPress and e-commerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
 
 ## Why are people working in library- and information-related roles well suited to SQL?
 
@@ -77,7 +77,7 @@ direct way of finding information.
 
 - You can use SQL to query your library database and explore new views that are not necessarily provided via library systems patron facing interfaces.
 
-- SQL can be used to keep an inventory of items, for instance, for a library's makerspace, or it can be used to track licenses for journals.
+- SQL can be used to keep an inventory of items, for instance, for a library's makerspace, or it can be used to track licences for journals.
 
 - For projects involving migrating and cleaning data from one system to another, SQL can be a handy tool.
 
@@ -108,34 +108,35 @@ Let's all open the database we downloaded via the setup in DB Browser for SQLite
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables.
 
-To see the contents of a table, click on that table and then click on the Browse
-Data tab above the table data.
+To see the contents of a table, click on "Browse Data" then select the table in the "Table" dropdown in the upper left corner.
 
-If we want to write a query, we click on the Execute SQL tab.
+If we want to write a query, we click on the "Execute SQL" tab.
 
 There are two ways to add new data to a table without writing SQL:
 
 1. Enter data into a CSV file and append
 2. Click the "Browse Data" tab, then click the "New Record" button.
 
-The steps for adding data from a CSV file are:
+To add data from a CSV file:
 
-1. Choose "File" > "Import" > "Table" from CSV file...
-2. DB Browser for SQLite will prompt you if you want to add the data to the existing table.
+1. Choose "File" > "Import" > "Table from CSV file..."
+2. Select a CSV file to import
+3. Review the import settings and confirm that the column names and fields are correct
+4. Click "OK" to import the data. If the table name matches an existing table and the number of columns match, DB Browser will ask if you want to add the data to the existing table.
 
 ## Dataset Description
 
-The data we will be using consists of 5 csv files that contain tables of article titles, journals, languages, licenses, and publishers. The information in these tables are from a sample of 51 different journals published during 2015.
+The data we will use was created from 5 csv files that contain tables of article titles, journals, languages, licences, and publishers. The information in these tables are from a sample of 51 different journals published during 2015.
 
 **articles**
 
-- Contains individual article Titles and the associated citations and metadata
+- Contains individual article titles and the associated citations and metadata.
 - (16 fields, 1001 records)
-- Field names: `id`, `Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `LanguageID`, `LicenseID`, `Author_Count`, `First_Author`, `Citation_Count`, `Day`, `Month`, `Year`
+- Field names: `id`, `Title`, `Authors`, `DOI`, `URL`, `Subjects`, `ISSNs`, `Citation`, `LanguageID`, `LicenceID`, `Author_Count`, `First_Author`, `Citation_Count`, `Day`, `Month`, `Year`
 
 **journals**
 
-- Contains various journal Titles and associated metadata. The table also associates Journal Titles with ISSN numbers that are then referenced in the 'articles' table by the `ISSNs` field.
+- Contains various journal titles and associated metadata. The table also associates Journal Titles with ISSN numbers that are then referenced in the 'articles' table by the `ISSNs` field.
 - (5 fields, 51 records)
 - Field names: `id`, `ISSN-L`,`ISSNs`, `PublisherID`, `Journal_Title`
 
@@ -145,9 +146,9 @@ The data we will be using consists of 5 csv files that contain tables of article
 - (2 fields, 4 records)
 - Field names: `id`, `Language`
 
-**licenses**
+**licences**
 
-- ID table which associates License codes with id numbers. These id numbers are then referenced in the 'articles' table by the `LicenseID` field.
+- ID table which associates Licence codes with id numbers. These id numbers are then referenced in the 'articles' table by the `LicenceID` field.
 - (2 fields, 4 records)
 - Field names: `id`, `Licence`
 
@@ -163,14 +164,14 @@ The main data types that are used in doaj-article-sample database are `INTEGER` 
 
 ## SQL Data Type Quick Reference
 
-Different database software/platforms have different names and sometimes different definitions of data types, so you'll need to understand the data types for any platform you are using.  The following table explains some of the common data types and how they are represented in SQLite; [more details available on the SQLite website](https://www.sqlite.org/datatype3.html).
+Different database software/platforms have different names and sometimes different definitions of data types, so you'll need to understand the data types for any platform you are using. The following table explains some of the common data types and how they are represented in SQLite; [more details available on the SQLite website](https://www.sqlite.org/datatype3.html).
 
 | Data type              | Details                                                                                                                                                                                                                                                                         | Name in SQLite                                                                                                        | 
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------- |
+| :--------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------- |
 | boolean or binary      | this variable type is often used to represent variables that can only have two values: yes or no, true or false.                                                                                                                                                                | doesn't exist - need to use integer data type and values of 0 or 1.                                                   | 
-| integer                | sometimes called whole numbers or counting numbers.  Can be 1,2,3, etc., as well as 0 and negative whole numbers: -1,-2,-3, etc.                                                                                                                                                | INTEGER                                                                                                               | 
+| integer                | sometimes called whole numbers or counting numbers.  Can be 1, 2, 3, etc., as well as 0 and negative whole numbers: -1, -2, -3, etc.                                                                                                                                            | INTEGER                                                                                                               | 
 | float, real, or double | a decimal number or a floating point value.  The largest possible size of the number may be specified.                                                                                                                                                                          | REAL                                                                                                                  | 
-| text or string         | and combination of numbers, letters, symbols.  Platforms may have different data types: one for variables with a set number of characters - e.g., a zip code or postal code, and one for variables with an open number of characters, e.g., an address or description variable. | TEXT                                                                                                                  | 
+| text or string         | any combination of numbers, letters, symbols.  Platforms may have different data types: one for variables with a set number of characters - e.g., a zip code or postal code, and one for variables with an open number of characters, e.g., an address or description variable. | TEXT                                                                                                                  | 
 | date or datetime       | depending on the platform, may represent the date and time or the number of days since a specified date.  This field often has a specified format, e.g., YYYY-MM-DD                                                                                                             | doesn't exist - need to use built-in date and time functions and store dates in real, integer, or text formats.  See [Section 2.2 of SQLite documentation](https://www.sqlite.org/datatype3.html#date_and_time_datatype) for more details. | 
 | blob                   | a Binary Large OBject can store a large amount of data, documents, audio or video files.                                                                                                                                                                                        | BLOB                                                                                                                  | 
 

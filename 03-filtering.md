@@ -20,12 +20,12 @@ exercises: 10
 
 ## Filtering
 
-SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the *Acta Crystallographica* journal from the `articles` table. The journal has an ISSN code `2056-9890`.  To filter by this ISSN code, we will use the `WHERE` clause.
+SQL is a powerful tool for filtering data in databases based on a set of conditions. Let's say we only want data for a specific ISSN, for instance, for the *Acta Crystallographica* journal from the `articles` table. The journal has an ISSN code `2056-9890`. To filter by this ISSN code, we will use the `WHERE` clause.
 
 ```sql
 SELECT *
 FROM articles
-WHERE ISSNs='2056-9890';
+WHERE ISSNs = '2056-9890';
 ```
 
 We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example, suppose we want the data on *Acta Crystallographica* published after October:
@@ -33,7 +33,7 @@ We can add additional conditions by using `AND`, `OR`, and/or `NOT`. For example
 ```sql
 SELECT *
 FROM articles
-WHERE (ISSNs='2056-9890') AND (Month > 10);
+WHERE (ISSNs = '2056-9890') AND (Month > 10);
 ```
 
 Parentheses are used merely for readability in this case but can be required by the SQL interpreter in order to disambiguate formulas.
@@ -44,7 +44,7 @@ ISSNs codes "2076-0787" and "2077-1444", we can combine the tests using OR:
 ```sql
 SELECT *
 FROM articles
-WHERE (issns = '2076-0787') OR (issns = '2077-1444');
+WHERE (ISSNs = '2076-0787') OR (ISSNs = '2077-1444');
 ```
 
 When you do not know the entire value you are searching for, you can use comparison keywords such as `LIKE`, `IN`, `BETWEEN...AND`, `IS NULL`. For instance, we can use `LIKE` in combination with `WHERE` to search for data that matches a pattern.

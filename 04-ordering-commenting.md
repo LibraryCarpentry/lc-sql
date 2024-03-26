@@ -56,7 +56,8 @@ Consider the following query:
 ```sql
 SELECT *
 FROM articles
-WHERE (ISSNs = '2076-0787') OR (ISSNs = '2077-1444') OR (ISSNs = '2067-2764|2247-6202');
+WHERE (ISSNs = '2076-0787') OR (ISSNs = '2077-1444')
+      OR (ISSNs = '2067-2764|2247-6202');
 ```
 
 SQL offers the flexibility of iteratively adding new conditions but you may reach a point where the query is difficult to read and inefficient. For instance, we can use `IN` to improve the query and make it more readable:
@@ -68,7 +69,7 @@ WHERE (ISSNs IN ('2076-0787', '2077-1444', '2067-2764|2247-6202'));
 ```
 
 We started with something simple, then added more clauses one by one, testing
-their effects as we went along.  For complex queries, this is a good strategy, to make sure you are getting what you want.  Sometimes it might help to take a subset of the data that you can easily see in a temporary database to practice your queries on before working on a larger or more complicated database.
+their effects as we went along.  For complex queries, this is a good strategy, to make sure you are getting what you want. Sometimes it might help to take a subset of the data that you can easily see in a temporary database to practice your queries on before working on a larger or more complicated database.
 
 When the queries become more complex, it can be useful to add comments to express to yourself, or to others, what you are doing with your query. Comments help explain the logic of a section and provide context for anyone reading the query. It's essentially a way of making notes within your SQL. In SQL, comments begin using <code class="language-plaintext highlighter-rouge">\--</code> and end at the end of the line. To mark a whole paragraph as a comment, you can enclose it with the characters /\* and \*/. For example, a commented version of the above query can be written as:
 
@@ -79,7 +80,8 @@ join multiple tables because they represent a good example of using
 comments in SQL to explain more complex queries.*/
 
 -- First we mention all the fields we want to display
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
+SELECT articles.Title, articles.First_Author, journals.Journal_Title,
+       publishers.Publisher
 -- from the first table
 FROM articles
 -- and join it with the second table.
@@ -93,11 +95,11 @@ ON publishers.id = journals.PublisherId;
 ```
 
 To see the introduction and explanation of JOINS, please click to [Episode 6](06-joins-aliases.md).
-{: .sql}
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Queries often have the structure: SELECT data FROM table WHERE certain criteria are present.
+- Comments can make our queries easier to read and understand.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

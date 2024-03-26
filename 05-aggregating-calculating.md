@@ -1,5 +1,5 @@
 ---
-title: Aggregating & calculating values
+title: Aggregating and calculating values
 teaching: 15
 exercises: 5
 ---
@@ -72,7 +72,7 @@ For example, we can adapt the last request we wrote to only return information a
 SELECT ISSNs, COUNT(*)
 FROM articles
 GROUP BY ISSNs
-HAVING count(Title) >= 10;
+HAVING COUNT(Title) >= 10;
 ```
 
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses aggregate functions instead of database fields.  When you want to filter based on an aggregation like `MAX, MIN, AVG, COUNT, SUM`, use `HAVING`; to filter based on the individual values in a database field, use `WHERE`.
@@ -94,7 +94,7 @@ but only for the journals with 5 or more citations on average.
 SELECT ISSNs, AVG(Citation_Count)
 FROM articles
 GROUP BY ISSNs
-HAVING AVG(Citation_Count)>=5;
+HAVING AVG(Citation_Count) >= 5;
 ```
 
 :::::::::::::::::::::::::
@@ -106,9 +106,10 @@ HAVING AVG(Citation_Count)>=5;
 In SQL, we can also perform calculations as we query the database. Also known as computed columns, we can use expressions on a column or multiple columns to get new values during our query. For example, what if we wanted to calculate a new column called `CoAuthor_Count`:
 
 ```sql
-SELECT Title, ISSNs, Author_Count -1 as CoAuthor_Count
+SELECT Title, ISSNs, Author_Count - 1 as CoAuthor_Count
 FROM articles
-ORDER BY Author_Count -1 DESC;
+ORDER BY CoAuthor_Count DESC;
+
 ```
 
 In section [6\. Joins and aliases](06-joins-aliases.md) we are going to learn more about the SQL keyword `AS` and how to make use of aliases - in this example we simply used the calculation and `AS` to represent that the new column is different from the original SQL table data.

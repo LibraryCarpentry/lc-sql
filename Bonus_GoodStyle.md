@@ -40,7 +40,8 @@ SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers
 Into something that looks like this:
 
 ```sql
-SELECT articles.Title, articles.First_Author, journals.Journal_Title, publishers.Publisher
+SELECT articles.Title, articles.First_Author, journals.Journal_Title,
+       publishers.Publisher
 FROM articles
 JOIN journals
 ON articles.ISSNs = journals.ISSNs
