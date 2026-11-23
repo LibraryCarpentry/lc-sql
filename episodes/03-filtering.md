@@ -61,7 +61,7 @@ You may have noticed the wildcard character `%`. It is used to match zero to man
 
 Let's see what variations of the term we got. Notice uppercase and lowercase, the addition of 's' at the end of structures, etc.
 
-To learn more about other comparison keywords you can use, see Beginner SQL Tutorial on [SQL Comparison Keywords](https://beginner-sql-tutorial.com/sql-like-in-operators.htm).
+To learn more about other comparison keywords you can use, see the SQLite documentation on [SQL expressions and operators](https://www.sqlite.org/lang_expr.html), which covers `LIKE`, `IN`, `BETWEEN` and the other comparison operators.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
